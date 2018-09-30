@@ -25,7 +25,7 @@ module.exports = {
     plugins: [
         new TSLintPlugin(
         {
-            files: [ './src/**/*.ts' ]
+            files: [ './src/**/*.ts', './src/**/*.tsx' ]
         })
     ],
     externals: {
