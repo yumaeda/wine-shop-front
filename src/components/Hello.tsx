@@ -12,7 +12,20 @@ export interface IHello {
  * State is never set so we use the '{}' type.
  */
 export class Hello extends React.Component<IHello, {}> {
+    /**
+     * Return an element to render
+     *
+     * @return object
+     */
     public render() {
-        return <h1>Hello from { this.props.compiler } and { this.props.framework }!</h1>;
+        const jsx = (
+            <div>
+                <h1>Hello { this.props.compiler } and { this.props.framework }!</h1>
+                <h2>Mess with the best.  Die like the rest.</h2>
+                <p>It is { new Date().toLocaleTimeString() }</p>.
+            </div>
+        );
+
+        return jsx;
     }
 }
