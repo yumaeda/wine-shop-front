@@ -1,12 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { App } from './components/App';
+import { Footer } from './components/Footer';
 
-function tick() {
-    ReactDOM.render(
-        <App />,
-        document.getElementById('example')
-    );
-}
-
-setInterval(tick, 1000);
+ReactDOM.render(
+    <Footer />,
+    document.getElementById('example')
+);
