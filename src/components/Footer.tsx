@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { PaymentInfo } from './PaymentInfo';
-import { ShippingInfo } from './ShippingInfo';
+import { HtmlPage } from './HtmlPage';
 
 /**
  * Functional component for link separator
@@ -42,8 +41,8 @@ export class Footer extends React.Component {
                         <a href="./index.php?submenu=faq">よくあるご質問</a>
                     </p>
                 </div>
-                <PaymentInfo />
-                <ShippingInfo />
+                <HtmlPage file="payment.html" />
+                <HtmlPage file="shipping.html" />
             </div>
         );
 
