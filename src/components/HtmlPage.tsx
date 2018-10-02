@@ -40,7 +40,9 @@ export class HtmlPage extends React.Component<IHtmlPage, { date: Date }> {
      * Runs when the component is removed from the DOM.
      */
     public componentWillUnmount() {
-        clearInterval(this.timerID);
+        if (this.timerID !== 0) {
+            clearInterval(this.timerID);
+        }
     }
 
     /**
@@ -53,6 +55,7 @@ export class HtmlPage extends React.Component<IHtmlPage, { date: Date }> {
         return (
             <div>
                 <h2>{ this.state.date.toLocaleTimeString() }</h2>
+                <a href="#" onClick={ this.stopTimer }>Stop</a>
                 <iframe src={ srcUrl } width="100%" className={ iframeClass } />
             </div>
         );
@@ -65,5 +68,14 @@ export class HtmlPage extends React.Component<IHtmlPage, { date: Date }> {
         this.setState((state: any, props: any) => ({
             date: new Date()
         }));
+    }
+
+    /**
+     * Event handler for onclick event.
+     */
+    private stopTimer = (e: any): void => {
+        e.preventDefault();
+        clearInterval(this.timerID);
+        this.timerID = 0;
     }
 }
