@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * UtcClock component
+ * Clock component
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
@@ -12,7 +12,7 @@ export class Clock extends React.Component<{}, { date: Date }> {
     private timerID: any;
 
     /**
-     * Constructor for HtmlPage
+     * Constructor for Clock
      */
     public constructor(props: any) {
         super(props);
