@@ -41,8 +41,8 @@ export class Footer extends React.Component {
                         <a href="./index.php?submenu=faq">よくあるご質問</a>
                     </p>
                 </div>
-                <HtmlPage file="payment.html" />
-                <HtmlPage file="shipping.html" />
+                <HtmlPage file="payment.html" timeShown={ true } />
+                <HtmlPage file="shipping.html" timeShown={ false } />
             </div>
         );
 

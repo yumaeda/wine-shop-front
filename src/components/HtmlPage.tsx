@@ -1,10 +1,12 @@
 import * as React from 'react';
+import { Clock } from './Clock';
 
 /**
  * Interface for HtmlPage
  */
 interface IHtmlPage {
     file: string;
+    timeShown: boolean;
 }
 
 /**
@@ -12,39 +14,7 @@ interface IHtmlPage {
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-export class HtmlPage extends React.Component<IHtmlPage, { date: Date }> {
-    /**
-     * Timer ID
-     */
-    private timerID: any;
-
-    /**
-     * Constructor for HtmlPage
-     */
-    public constructor(props: any) {
-        super(props);
-        this.state = { date: new Date() };
-    }
-
-    /**
-     * Runs after the component output has been rendered to the DOM.
-     */
-    public componentDidMount() {
-        this.timerID = setInterval(
-            () => this.tick(),
-            1000
-        );
-    }
-
-    /**
-     * Runs when the component is removed from the DOM.
-     */
-    public componentWillUnmount() {
-        if (this.timerID !== 0) {
-            clearInterval(this.timerID);
-        }
-    }
-
+export class HtmlPage extends React.Component<IHtmlPage, {}> {
     /**
      * Return payment info JSX to render
      */
@@ -52,30 +22,16 @@ export class HtmlPage extends React.Component<IHtmlPage, { date: Date }> {
         const iframeClass = 'content-height-iframe';
         const srcUrl = `//anyway-grapes.jp/pages/ja/${ this.props.file }`;
 
+        let clock;
+        if (this.props.timeShown) {
+            clock = <Clock />;
+        }
+
         return (
             <div>
-                <h2>{ this.state.date.toLocaleTimeString() }</h2>
-                <a href="#" onClick={ this.stopTimer }>Stop</a>
+                { clock }
                 <iframe src={ srcUrl } width="100%" className={ iframeClass } />
             </div>
         );
-    }
-
-    /**
-     * Update current date
-     */
-    private tick() {
-        this.setState((state: any, props: any) => ({
-            date: new Date()
-        }));
-    }
-
-    /**
-     * Event handler for onclick event.
-     */
-    private stopTimer = (e: any): void => {
-        e.preventDefault();
-        clearInterval(this.timerID);
-        this.timerID = 0;
     }
 }
