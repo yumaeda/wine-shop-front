@@ -1,8 +1,11 @@
 const path = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const TSLintPlugin = require('tslint-webpack-plugin');
+const MODE = 'development';
 
-module.exports = {
-    mode: 'development',
+module.exports = [
+{
+    mode: MODE,
     entry: './src/index.tsx',
     devtool: 'source-map',
     module: {
@@ -36,4 +39,28 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
     }
-};
+},
+{
+    mode: MODE,
+    entry: {
+        style: './src/scss/index.scss'
+    },
+    output: {
+        filename: 'index.css',
+        path: path.resolve(__dirname, 'dist')
+    },
+    module: {
+        rules: [
+            {
+                test: /\.scss$/,
+                loader:  ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'sass-loader']
+                })
+            }
+        ]
+    },
+    plugins: [
+        new ExtractTextPlugin('index.css'),
+    ],
+}];

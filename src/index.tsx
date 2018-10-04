@@ -1,10 +1,11 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { FooterNav } from './components/FooterNav';
-import { Iframe } from './components/Iframe';
+import { AnywayFooter } from './components/AnywayFooter';
 import { Calculator } from './components/Sample/Calculator';
 import { WineImage } from './components/WineImage';
 
+const wineId = '10484';
+const wineImgBaseUrl = '//anyway-grapes.jp/images/wines/400px';
 const linkInfos = [
     { href: './index.php?submenu=guide', text: 'ご利用ガイド' },
     { href: './index.php?submenu=quality', text: '品質の保証' },
@@ -17,17 +18,16 @@ const linkInfos = [
 
 ReactDOM.render(
     (
-        <div>
+        <div className="wrapper">
             <Calculator />
-            <WineImage id="10484" baseUrl="//anyway-grapes.jp/images/wines/400px" />
-            <div>
-                <span className="emphasis-span">!! 未成年の方には酒類の販売を行いません。!!</span>
-                <br /><br />
-                <FooterNav links={ linkInfos } />
+            <WineImage id={ wineId } baseUrl={ wineImgBaseUrl } />
+            <header></header>
+            <div id="page-container">
+                <aside></aside>
+                <div id="page-contents"></div>
             </div>
-            <Iframe src="./pages/ja/payment.html" />
-            <Iframe src="./pages/ja/shipping_fee.html" />
+            <AnywayFooter links={ linkInfos } />
         </div>
     ),
-    document.getElementById('footer')
+    document.getElementById('pageBody')
 );
