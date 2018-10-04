@@ -1,9 +1,24 @@
-.footer {
-    .emphasis-text {
+footer {
+    text-align: center;
+
+    .notice-text {
         color: darkred;
     }
 
     .nav-links {
-        display: inline;
+        li {
+            display: inline;
+
+            &::after {
+                content: "\00a0\00a0|\00a0\00a0"
+            }
+
+            a {
+                color: #505050;
+                text-decoration: none;
+                line-height: 20px;
+                font-size: 14px;
+            }
+        }
     }
 }

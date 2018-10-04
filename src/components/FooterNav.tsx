@@ -21,6 +21,6 @@ export class FooterNav extends React.Component<IFooterNav, {}> {
             <li key={ index }><a href={ link.href }>{ link.text }</a></li>
         );
 
-        return <ul>{ jsx }</ul>;
+        return <ul className="nav-links">{ jsx }</ul>;
     }
 }
