@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { FooterNav } from './components/FooterNav';
 import { Iframe } from './components/Iframe';
+import { Calculator } from './components/Sample/Calculator';
 import { WineImage } from './components/WineImage';
 
 const linkInfos = [
@@ -17,6 +18,7 @@ const linkInfos = [
 ReactDOM.render(
     (
         <div>
+            <Calculator />
             <WineImage id="10484" baseUrl="//anyway-grapes.jp/images/wines/400px" />
             <div>
                 <span className="emphasis-span">!! 未成年の方には酒類の販売を行いません。!!</span>
