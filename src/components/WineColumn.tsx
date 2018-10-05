@@ -5,7 +5,7 @@ import { WineImage } from './WineImage';
 /**
  * Interface for WineColumn
  */
-export interface IWineColumn {
+interface IWineColumn {
     id: string;
     name: string;
     baseImgUrl: string;

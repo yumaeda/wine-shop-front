@@ -3,7 +3,7 @@ import * as React from 'react';
 /**
  * Interface for WineImage
  */
-export interface IWineImage {
+interface IWineImage {
     id: string;
     baseUrl: string;
     className: string;
