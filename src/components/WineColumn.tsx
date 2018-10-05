@@ -19,6 +19,11 @@ interface IWineColumn {
  */
 export class WineColumn extends React.Component<IWineColumn, {}> {
     /**
+     * Maximum number of display text to render
+     */
+    private maxDisplayTextLength: number = 40;
+
+    /**
      * Return wine column JSX to render
      */
     public render() {
@@ -28,7 +33,7 @@ export class WineColumn extends React.Component<IWineColumn, {}> {
                     <td>
                         <a href={ this.getDetailPageUrl(this.props.id, lang.code) } target="wine_detail">
                             <WineImage id={ this.props.id } baseUrl={ this.props.baseImgUrl } className="wine-img" />
-                            <div>{ this.props.name }</div>
+                            <div>{ this.getDisplayText(this.props.name) }</div>
                         </a>
                     </td>
                 )}
@@ -45,5 +50,19 @@ export class WineColumn extends React.Component<IWineColumn, {}> {
      */
     private getDetailPageUrl(id: string, lang: string): string {
         return `${this.props.homeUrl}?submenu=wine_detail&id=${id}&lang=${lang}`;
+    }
+
+    /**
+     * Get the text to display.
+     * If the length of the text exceed the limit,
+     * ellipsis chars ... is displayed.
+     *
+     * @param string name Name of the wine
+     * @return string Name of the wine to be displayed
+     */
+    private getDisplayText(name: string): string {
+        return (name.length > this.maxDisplayTextLength) ?
+            name.substr(0, this.maxDisplayTextLength - 3) + '...' :
+            name;
     }
 }
