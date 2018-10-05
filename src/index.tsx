@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { AnywayFooter } from './components/AnywayFooter';
 import { Calculator } from './components/Sample/Calculator';
+import { UserContext } from './components/UserContext';
 import { WineImage } from './components/WineImage';
 
 const wineId = '10484';
@@ -19,14 +20,18 @@ const linkInfos = [
 ReactDOM.render(
     (
         <div className="wrapper">
-            <Calculator />
-            <WineImage id={ wineId } baseUrl={ wineImgBaseUrl } />
-            <header></header>
-            <div id="page-container">
-                <aside></aside>
-                <div id="page-contents"></div>
-            </div>
-            <AnywayFooter links={ linkInfos } />
+            <React.StrictMode>
+                <Calculator />
+                <WineImage id={ wineId } baseUrl={ wineImgBaseUrl } />
+                <header></header>
+                <div id="page-container">
+                    <aside></aside>
+                    <div id="page-contents"></div>
+                </div>
+                <UserContext.Provider value={ { code: 'en' } }>
+                    <AnywayFooter links={ linkInfos } />
+                </UserContext.Provider>
+            </React.StrictMode>
         </div>
     ),
     document.getElementById('pageBody')
