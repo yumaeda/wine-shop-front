@@ -3,9 +3,10 @@ import * as React from 'react';
 /**
  * Interface for WineImage
  */
-interface IWineImage {
+export interface IWineImage {
     id: string;
     baseUrl: string;
+    className: string;
 }
 
 /**
@@ -30,6 +31,7 @@ export class WineImage extends React.Component<IWineImage, { src: string }> {
     public render() {
         return (
             <img src={ this.state.src }
+                 className={ this.props.className }
                  alt={ this.props.id }
                  onError={ this.setDefaultImage }
             />

@@ -3,10 +3,11 @@ import * as ReactDOM from 'react-dom';
 import { AnywayFooter } from './components/AnywayFooter';
 import { UserContext } from './components/context/UserContext';
 import { Calculator } from './components/samples/Calculator';
-import { WineImage } from './components/WineImage';
+import { WineColumn } from './components/WineColumn';
 
 const wineId = '10484';
 const wineImgBaseUrl = '//anyway-grapes.jp/images/wines/400px';
+const homeUrl = 'http://anyway-grapes.jp/store/index.php';
 const linkInfos = [
     { href: './index.php?submenu=guide', text: 'ご利用ガイド' },
     { href: './index.php?submenu=quality', text: '品質の保証' },
@@ -22,14 +23,21 @@ ReactDOM.render(
         <div className="wrapper">
             <React.StrictMode>
                 <Calculator />
-                <WineImage id={ wineId } baseUrl={ wineImgBaseUrl } />
+                <UserContext.Provider value={ { code: 'en' } }>
+                <table>
+                    <tr>
+                        <WineColumn id={ wineId }
+                            name="Test Wine"
+                            baseImgUrl={ wineImgBaseUrl }
+                            homeUrl={ homeUrl } />
+                    </tr>
+                </table>
                 <header></header>
                 <div id="page-container">
                     <aside></aside>
                     <div id="page-contents"></div>
                 </div>
-                <UserContext.Provider value={ { code: 'en' } }>
-                    <AnywayFooter links={ linkInfos } />
+                <AnywayFooter links={ linkInfos } />
                 </UserContext.Provider>
             </React.StrictMode>
         </div>
