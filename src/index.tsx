@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { AnywayFooter } from './components/AnywayFooter';
-import { Calculator } from './components/Sample/Calculator';
-import { UserContext } from './components/UserContext';
+import { UserContext } from './components/context/UserContext';
+import { Calculator } from './components/samples/Calculator';
 import { WineImage } from './components/WineImage';
 
 const wineId = '10484';

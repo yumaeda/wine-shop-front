@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { UserContext } from './context/UserContext';
 import { FooterNav } from './FooterNav';
 import { Iframe } from './Iframe';
-import { UserContext } from './UserContext';
 
 /**
  * Interface for AnywayFooter
