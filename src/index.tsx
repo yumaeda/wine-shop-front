@@ -4,6 +4,18 @@ import { AnywayFooter } from './components/AnywayFooter';
 import { UserContext } from './components/context/UserContext';
 import { HorizontalWineList } from './components/HorizontalWineList';
 import { Calculator } from './components/samples/Calculator';
+import { addArticle } from './redux/actions/index';
+import store from './redux/store/index';
+
+// Setting window variables for Redux demo
+declare global {
+    interface Window {
+        store: any;
+        addArticle: any;
+    }
+}
+window.store = store;
+window.addArticle = addArticle;
 
 const wines = [
     { id: '10473', vintage: '2012', name: '1KSJDFLKDSJFLKSDJFsdfasdfasdfsadfads1', producer: 'Gackt.C' },
