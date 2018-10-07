@@ -1,21 +1,12 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 import { AnywayFooter } from './components/AnywayFooter';
 import { UserContext } from './components/context/UserContext';
 import { HorizontalWineList } from './components/HorizontalWineList';
 import { Calculator } from './components/samples/Calculator';
-import { addArticle } from './redux/actions/index';
-import store from './redux/store/index';
-
-// Setting window variables for Redux demo
-declare global {
-    interface Window {
-        store: any;
-        addArticle: any;
-    }
-}
-window.store = store;
-window.addArticle = addArticle;
+import UserForm from './components/samples/UserForm';
+import store from './redux/Store';
 
 const wines = [
     { id: '10473', vintage: '2012', name: '1KSJDFLKDSJFLKSDJFsdfasdfasdfsadfads1', producer: 'Gackt.C' },
@@ -45,10 +36,13 @@ const linkInfos = [
     { href: './index.php?submenu=faq', text: 'よくあるご質問' },
 ];
 
-ReactDOM.render(
+render(
     (
         <div className="wrapper">
             <React.StrictMode>
+                <Provider store={ store }>
+                    <UserForm />
+                </Provider>,
                 <Calculator />
                 <UserContext.Provider value={ { code: 'en' } }>
                     <HorizontalWineList wines={ wines } baseImgUrl={ wineImgBaseUrl } homeUrl={ homeUrl } />
