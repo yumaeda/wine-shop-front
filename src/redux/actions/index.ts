@@ -1,4 +1,4 @@
-import { ADD_ARTICLE } from '../ActionTypes';
+import keys from '../ActionTypeKeys';
 
 /**
  * Action to add an article
@@ -6,5 +6,5 @@ import { ADD_ARTICLE } from '../ActionTypes';
 export const addArticle =
     (article: { payload: any, type: string }) => ({
         payload: article,
-        type: ADD_ARTICLE
+        type: keys.ADD_ARTICLE
     });

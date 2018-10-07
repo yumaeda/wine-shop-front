@@ -1,4 +1,4 @@
-import { ADD_ARTICLE } from '../ActionTypes';
+import keys from '../ActionTypeKeys';
 
 /**
  * Initial state
@@ -12,7 +12,7 @@ const initialState: { articles: any[] } = {
  */
 const rootReducer = (state = initialState, action: { payload: any, type: string }) => {
     switch (action.type) {
-        case ADD_ARTICLE:
+        case keys.ADD_ARTICLE:
             return {
                 ...state,
                 articles: [
