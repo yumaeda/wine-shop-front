@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect, MapStateToPropsParam } from 'react-redux';
-import { createChangeUserNameAction } from '../../redux/actions/UserNameEvents';
+import { createChangeUserNameAction } from '../../redux/actions/UserNameActionCreator';
 import IUser from '../../redux/states/IUser';
 import store, { IState } from '../../redux/Store';
 import { TextBox } from './TextBox';
@@ -30,8 +30,8 @@ class UserForm extends React.Component<IUser, {}> {
     /**
      * Event handler for onchange event of the text box.
      */
-    private onTextChange = (name: string) => {
-        store.dispatch(createChangeUserNameAction(name));
+    private onTextChange = (value: string) => {
+        store.dispatch(createChangeUserNameAction(value));
     }
 }
 

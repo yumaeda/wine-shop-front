@@ -1,6 +1,6 @@
 import * as Clone from 'clone';
 import * as Redux from 'redux';
-import { IChangeUserNameAction } from '../actions/UserNameEvents';
+import { IChangeUserNameAction } from '../actions/UserNameActionCreator';
 import keys from '../ActionTypeKeys';
 import IUser, { initUser } from '../states/IUser';
 
