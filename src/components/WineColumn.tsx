@@ -3,11 +3,22 @@ import { UserContext } from './context/UserContext';
 import { WineImage } from './WineImage';
 
 /**
+ * Interface Wine
+ */
+export interface IWine {
+    id: string;
+    jpn_name: string;
+    jpn_producer: string;
+    name: string;
+    producer: string;
+    vintage: string;
+}
+
+/**
  * Interface for WineColumn
  */
 interface IWineColumn {
-    id: string;
-    name: string;
+    wine: IWine;
     baseImgUrl: string;
     homeUrl: string;
 }
@@ -27,13 +38,15 @@ export class WineColumn extends React.Component<IWineColumn, {}> {
      * Return wine column JSX to render
      */
     public render() {
+        const wineId = this.props.wine.id;
+
         return (
             <UserContext.Consumer>
                 { (lang: { code: string }) => (
-                    <td>
-                        <a href={ this.getDetailPageUrl(this.props.id, lang.code) } target="wine_detail">
-                            <WineImage id={ this.props.id } baseUrl={ this.props.baseImgUrl } className="wine-img" />
-                            <div>{ this.getDisplayText(this.props.name) }</div>
+                    <td className="wine-column">
+                        <a href={ this.getDetailPageUrl(wineId, lang.code) } target="wine_detail" className="wine-link">
+                            <WineImage id={ wineId } baseUrl={ this.props.baseImgUrl } className="wine-img" />
+                            <div>{ this.getDisplayText(this.getWineName(this.props.wine, lang.code)) }</div>
                         </a>
                     </td>
                 )}
@@ -64,5 +77,19 @@ export class WineColumn extends React.Component<IWineColumn, {}> {
         return (name.length > this.maxDisplayTextLength) ?
             name.substr(0, this.maxDisplayTextLength - 3) + '...' :
             name;
+    }
+
+    /**
+     * Get name of the specified wine
+     *
+     * @param IWine wine Target wine
+     * @param string lang Language code
+     */
+    private getWineName(wine: IWine, lang: string): string {
+        const vintage = wine.vintage;
+        const name = (lang === 'ja') ? wine.jpn_name : wine.name;
+        const producer = (lang === 'ja') ? wine.jpn_producer : wine.producer;
+
+        return `${vintage} ${name} / ${producer}`;
     }
 }

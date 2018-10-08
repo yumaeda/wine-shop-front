@@ -23,17 +23,19 @@ export class AnywayFooter extends React.Component<IAnywayFooter, {}> {
         const noticeText = '!! 未成年の方には酒類の販売を行いません。!!';
         const jsx = (
             <UserContext.Consumer>
-                { (lang: { code: string }) => (
-                    <footer>
-                        <div>
-                            <span className="notice-text">{ noticeText }</span>
-                            <br /><br />
-                            <FooterNav links={ this.props.links } />
-                        </div>
-                        <Iframe src={ `./pages/${lang.code}/payment.html` } />
-                        <Iframe src={ `./pages/${lang.code}/shipping_fee.html` } />
-                    </footer>
-                )}
+                {
+                    (lang: { code: string }) => (
+                        <footer>
+                            <div>
+                                <span className="notice-text">{ noticeText }</span>
+                                <br /><br />
+                                <FooterNav links={ this.props.links } />
+                            </div>
+                            <Iframe src={ `./pages/${lang.code}/payment.html` } />
+                            <Iframe src={ `./pages/${lang.code}/shipping_fee.html` } />
+                        </footer>
+                    )
+                }
             </UserContext.Consumer>
         );
 

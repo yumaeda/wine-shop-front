@@ -9,18 +9,78 @@ import UserForm from './components/samples/UserForm';
 import store from './redux/Store';
 
 const wines = [
-    { id: '10473', vintage: '2012', name: '1KSJDFLKDSJFLKSDJFsdfasdfasdfsadfads1', producer: 'Gackt.C' },
-    { id: '10474', vintage: '2013', name: '2KSJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJDF2', producer: 'Mana' },
-    { id: '10475', vintage: '2014', name: '3KSJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJDF3', producer: 'Kozi' },
-    { id: '10476', vintage: '2015', name: '4KSJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJDF4', producer: 'Yuki' },
-    { id: '10477', vintage: '2016', name: '5KSJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJDF5', producer: 'Kami' },
-    { id: '10478', vintage: '2017', name: '6KSJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJDF6', producer: 'Tamori' },
-    { id: '10479', vintage: '2018', name: '7KSJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJDF7', producer: 'Hide' },
-    { id: '10480', vintage: '2014', name: '8KSJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJDF8', producer: 'Hyde' },
-    { id: '10481', vintage: '2015', name: '9KSJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJDF9', producer: 'Yoshiki' },
-    { id: '10482', vintage: '2016', name: '10SJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJF10', producer: 'Tetsu' },
-    { id: '10483', vintage: '2017', name: '11SJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJD11', producer: 'Kota' },
-    { id: '10484', vintage: '2018', name: '12SJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJD12', producer: 'Shazna' },
+    {
+        id: '10473',
+        jpn_name: 'W.O. ・ヘメル・エン・アーデ・リッジ・シャルドネ',
+        jpn_producer: 'アタラクシア・ワインズ',
+        name: '1KSJDFLKDSJFLKSDJFsdfasdfasdfsadfads1',
+        producer: 'Gackt.C',
+        vintage: '2012'
+    },
+    {
+        id: '11474',
+        jpn_name: 'テラス・デュ・ラルザック・ラ・レゼルヴ・ドォ・ルージュ',
+        jpn_producer: 'ドメーヌ・ド・ラ・レゼルヴ・ドォ',
+        name: '2KSJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJDF2',
+        producer: 'Mana',
+        vintage: '2013'
+    },
+    {
+        id: '10475',
+        jpn_name: 'W.O. ・ザ・ブレンド',
+        jpn_producer: 'ガブリエルスクルーフ',
+        name: '3KSJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJDF3',
+        producer: 'Kozi',
+        vintage: '2014'
+    },
+    {
+        id: '10476',
+        jpn_name: 'ブルイイ',
+        jpn_producer: 'シャトー・カンボン',
+        name: '4KSJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJDF4',
+        producer: 'Yuki',
+        vintage: '2015'
+    },
+    {
+        id: '10477',
+        jpn_name: 'W.O. ・ローズバッド',
+        jpn_producer: 'ガブリエルスクルーフ',
+        name: '5KSJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJDF5',
+        producer: 'Kami',
+        vintage: '2016'
+    },
+    {
+        id: '10478',
+        jpn_name: 'モルゴン',
+        jpn_producer: 'ジョルジュ・デコンブ',
+        name: '6KSJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJDF6',
+        producer: 'Tamori',
+        vintage: '2017'
+    },
+    {
+        id: '10479',
+        jpn_name: 'レニエ・グラン・エ・グラニート',
+        jpn_producer: 'チャーリー・テヴネ',
+        name: '7KSJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJDF7',
+        producer: 'Hide',
+        vintage: '2018'
+    },
+    {
+        id: '10480',
+        jpn_name: 'コンドリュー・レジェンド・ボネッタ',
+        jpn_producer: 'クロ・ド・ラ・ボネット',
+        name: '8KSJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJDF8',
+        producer: 'Hyde',
+        vintage: '2014'
+    },
+    {
+        id: '10481',
+        jpn_name: 'コート・ド・ブルイイ・レ・セット・ヴィーニュ',
+        jpn_producer: 'シャトー・ティヴァン',
+        name: '9KSJDFLKDSJFLKSDJFLKSDJFLKSDJFLKSJDF9',
+        producer: 'Yoshiki',
+        vintage: '2015'
+    }
 ];
 
 const wineId = '10484';
@@ -44,7 +104,7 @@ render(
                     <UserForm />
                 </Provider>,
                 <Calculator />
-                <UserContext.Provider value={ { code: 'en' } }>
+                <UserContext.Provider value={ { code: 'ja' } }>
                     <HorizontalWineList wines={ wines } baseImgUrl={ wineImgBaseUrl } homeUrl={ homeUrl } />
                     <header></header>
                     <div id="page-container">

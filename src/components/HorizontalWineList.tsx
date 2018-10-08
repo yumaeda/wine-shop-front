@@ -1,16 +1,12 @@
 import * as React from 'react';
-import { WineColumn } from './WineColumn';
+import { UserContext } from './context/UserContext';
+import { IWine, WineColumn } from './WineColumn';
 
 /**
  * Interface for HorizontalWineList
  */
 interface IHorizontalWineList {
-    wines: Array<{
-        id: string,
-        vintage: string,
-        name: string,
-        producer: string,
-    }>;
+    wines: IWine[];
     baseImgUrl: string;
     homeUrl: string;
 }
@@ -26,11 +22,10 @@ export class HorizontalWineList extends React.Component<IHorizontalWineList, {}>
      */
     public render() {
         const wineColumns = this.props.wines.map(
-            (wine: { id: string, vintage: string, name: string, producer: string }, index: number) =>
+            (wine: IWine) =>
             <WineColumn
-                key={ index }
-                id={ wine.id }
-                name={ this.getWineName(wine.vintage, wine.name, wine.producer) }
+                key={ wine.id }
+                wine={ wine }
                 baseImgUrl={ this.props.baseImgUrl }
                 homeUrl={ this.props.homeUrl } />
         );
@@ -42,17 +37,5 @@ export class HorizontalWineList extends React.Component<IHorizontalWineList, {}>
                 </tbody>
             </table>
         );
-    }
-
-    /**
-     * Generate name of wine
-     *
-     * @param string vintage Vintage of wine
-     * @param string name Name of wine
-     * @param string producer Producer of wine
-     * @return string Full wine name
-     */
-    private getWineName(vintage: string, name: string, producer: string): string {
-        return `${vintage} ${name} / ${producer}`;
     }
 }
