@@ -3,7 +3,7 @@ import { UserContext } from './context/UserContext';
 import { WineImage } from './WineImage';
 
 /**
- * Interface Wine
+ * Interface for Wine
  */
 export interface IWine {
     id: string;

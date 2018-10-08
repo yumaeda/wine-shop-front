@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { UserContext } from './context/UserContext';
 import { IWine, WineColumn } from './WineColumn';
 
 /**
