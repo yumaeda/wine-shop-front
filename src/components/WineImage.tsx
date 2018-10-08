@@ -18,7 +18,7 @@ export class WineImage extends React.Component<IWineImage, { src: string }> {
     /**
      * Constructor for WineImage
      */
-    public constructor(props: any) {
+    public constructor(props: IWineImage) {
         super(props);
         this.state = {
             src: `${this.props.baseUrl}/${this.props.id}.png`

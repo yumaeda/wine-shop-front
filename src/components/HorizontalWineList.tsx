@@ -4,10 +4,8 @@ import { IWine, WineColumn } from './WineColumn';
 /**
  * Interface for HorizontalWineList
  */
-interface IHorizontalWineList {
+export interface IHorizontalWineList {
     wines: IWine[];
-    baseImgUrl: string;
-    homeUrl: string;
 }
 
 /**
@@ -22,11 +20,7 @@ export class HorizontalWineList extends React.Component<IHorizontalWineList, {}>
     public render() {
         const wineColumns = this.props.wines.map(
             (wine: IWine) =>
-            <WineColumn
-                key={ wine.id }
-                wine={ wine }
-                baseImgUrl={ this.props.baseImgUrl }
-                homeUrl={ this.props.homeUrl } />
+            <WineColumn key={ wine.barcode_number } wine={ wine } />
         );
 
         return (

@@ -6,21 +6,12 @@ import { WineImage } from './WineImage';
  * Interface for Wine
  */
 export interface IWine {
-    id: string;
-    jpn_name: string;
-    jpn_producer: string;
-    name: string;
+    barcode_number: string;
+    combined_name: string;
+    combined_name_jpn: string;
     producer: string;
+    producer_jpn: string;
     vintage: string;
-}
-
-/**
- * Interface for WineColumn
- */
-interface IWineColumn {
-    wine: IWine;
-    baseImgUrl: string;
-    homeUrl: string;
 }
 
 /**
@@ -28,7 +19,7 @@ interface IWineColumn {
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-export class WineColumn extends React.Component<IWineColumn, {}> {
+export class WineColumn extends React.Component<{ wine: IWine }, {}> {
     /**
      * Maximum number of display text to render
      */
@@ -38,31 +29,28 @@ export class WineColumn extends React.Component<IWineColumn, {}> {
      * Return wine column JSX to render
      */
     public render() {
-        const wineId = this.props.wine.id;
+        const wineId = this.props.wine.barcode_number;
 
         return (
             <UserContext.Consumer>
-                { (lang: { code: string }) => (
+                { (ctx: { code: string, rootUrl: string }) => (
                     <td className="wine-column">
-                        <a href={ this.getDetailPageUrl(wineId, lang.code) } target="wine_detail" className="wine-link">
-                            <WineImage id={ wineId } baseUrl={ this.props.baseImgUrl } className="wine-img" />
-                            <div>{ this.getDisplayText(this.getWineName(this.props.wine, lang.code)) }</div>
+                        <a
+                            href={ `${ctx.rootUrl}/store/index.php?submenu=wine_detail&id=${wineId}&lang=${ctx.code}` }
+                            target="wine_detail"
+                            className="wine-link">
+
+                            <WineImage
+                                id={ wineId }
+                                baseUrl={ `${ctx.rootUrl}/images/wines/400px` }
+                                className="wine-img" />
+
+                            <div>{ this.getDisplayText(this.getWineName(this.props.wine, ctx.code)) }</div>
                         </a>
                     </td>
                 )}
             </UserContext.Consumer>
         );
-    }
-
-    /**
-     * Get URL of the wine detail page
-     *
-     * @param string id Wine ID
-     * @param string lang Language code
-     * @return string
-     */
-    private getDetailPageUrl(id: string, lang: string): string {
-        return `${this.props.homeUrl}?submenu=wine_detail&id=${id}&lang=${lang}`;
     }
 
     /**
@@ -87,8 +75,8 @@ export class WineColumn extends React.Component<IWineColumn, {}> {
      */
     private getWineName(wine: IWine, lang: string): string {
         const vintage = wine.vintage;
-        const name = (lang === 'ja') ? wine.jpn_name : wine.name;
-        const producer = (lang === 'ja') ? wine.jpn_producer : wine.producer;
+        const name = (lang === 'ja') ? wine.combined_name_jpn : wine.combined_name;
+        const producer = (lang === 'ja') ? wine.producer_jpn : wine.producer;
 
         return `${vintage} ${name} / ${producer}`;
     }
