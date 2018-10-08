@@ -4,7 +4,7 @@ import { IWine, WineColumn } from './WineColumn';
 /**
  * Interface for HorizontalWineList
  */
-export interface IHorizontalWineList {
+interface IHorizontalWineList {
     wines: IWine[];
 }
 
