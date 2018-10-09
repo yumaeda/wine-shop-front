@@ -2,6 +2,7 @@ import * as React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { AnywayFooter } from './components/AnywayFooter';
+import { AnywayHeader } from './components/AnywayHeader';
 import { APIWineList } from './components/APIWineList';
 import { UserContext } from './components/context/UserContext';
 import { Calculator } from './components/samples/Calculator';
@@ -28,12 +29,13 @@ render(
                 </Provider>
                 <Calculator />
                 <UserContext.Provider value={ { code: 'ja', rootUrl } }>
-                    <APIWineList url="//anyway-grapes.jp/laravel5.3/public/api/v1/new-wines" />
-                    <APIWineList url="//anyway-grapes.jp/laravel5.3/public/api/v1/ranking-wines" />
-                    <header></header>
+                    <AnywayHeader logined={ true } />
                     <div id="page-container">
                         <aside></aside>
-                        <div id="page-contents"></div>
+                        <div id="page-contents">
+                            <APIWineList url="//anyway-grapes.jp/laravel5.3/public/api/v1/new-wines" />
+                            <APIWineList url="//anyway-grapes.jp/laravel5.3/public/api/v1/ranking-wines" />
+                        </div>
                     </div>
                     <AnywayFooter links={ linkInfos } />
                 </UserContext.Provider>
