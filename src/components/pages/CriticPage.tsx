@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { IUserContext, UserContext } from '../context/UserContext';
+import { Iframe } from '../Iframe';
 
 /**
  * CriticPage component
@@ -11,9 +13,15 @@ export class CriticPage extends React.Component {
      */
     public render() {
         return (
-            <div>
-                <h2>Critic</h2>
-            </div>
+            <UserContext.Consumer>
+                {
+                    (ctx: IUserContext) => (
+                        <div>
+                            <Iframe src={ `./pages/${ctx.code}/critics.html` } />
+                        </div>
+                    )
+                }
+            </UserContext.Consumer>
         );
     }
 }
