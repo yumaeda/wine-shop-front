@@ -10,10 +10,15 @@ export interface IUserContext {
 }
 
 /**
+ * Default user context
+ */
+export const defaultContext = {
+    code: 'ja',
+    imgDir: 'http://anyway-grapes.jp/images',
+    siteUrl: 'http://anyway-grapes.jp'
+};
+
+/**
  * UserContext component
  */
-export const UserContext = React.createContext({
-    code: 'ja',
-    imgDir: 'http://localhost:8080/images',
-    siteUrl: 'http://localhost:8080'
-});
+export const UserContext = React.createContext(defaultContext);

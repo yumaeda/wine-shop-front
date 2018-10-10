@@ -1,21 +1,27 @@
 import * as React from 'react';
 import { IUserContext, UserContext } from './context/UserContext';
-import { FooterNav } from './FooterNav';
+import { FooterNav, ILink } from './FooterNav';
 import { Iframe } from './Iframe';
-
-/**
- * Interface for AnywayFooter
- */
-interface IAnywayFooter {
-    links: Array<{ href: string, text: string }>;
-}
 
 /**
  * AnywayFooter component
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-export class AnywayFooter extends React.Component<IAnywayFooter, {}> {
+export class AnywayFooter extends React.Component<{}, {}> {
+    /**
+     * Information of the footer links
+     */
+    private links: ILink[] = [
+        { path: '/guide', text: 'ご利用ガイド' },
+        { path: '/quality', text: '品質の保証' },
+        { path: '/company', text: '会社概要' },
+        { path: '/privacy', text: '個人情報' },
+        { path: '/cmtransaction', text: '特定商取引法' },
+        { path: '/inquiry', text: 'お問い合わせ' },
+        { path: '/faq', text: 'よくあるご質問' },
+    ];
+
     /**
      * Return image JSX to render
      */
@@ -29,7 +35,7 @@ export class AnywayFooter extends React.Component<IAnywayFooter, {}> {
                             <div>
                                 <span className="notice-text">{ noticeText }</span>
                                 <br /><br />
-                                <FooterNav links={ this.props.links } />
+                                <FooterNav links={ this.links } />
                             </div>
                             <Iframe src={ `./pages/${ctx.code}/payment.html` } />
                             <Iframe src={ `./pages/${ctx.code}/shipping_fee.html` } />
