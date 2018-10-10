@@ -1,10 +1,14 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { AnywayContents } from './components/AnywayContents';
 import { AnywayFooter } from './components/AnywayFooter';
 import { AnywayHeader } from './components/AnywayHeader';
-import { APIWineList } from './components/APIWineList';
 import { IUserContext, UserContext } from './components/context/UserContext';
+import { CriticPage } from './components/pages/CriticPage';
+import { ProducerPage } from './components/pages/ProducerPage';
+import { VintagePage } from './components/pages/VintagePage';
 import { Calculator } from './components/samples/Calculator';
 import UserForm from './components/samples/UserForm';
 import store from './redux/Store';
@@ -29,25 +33,29 @@ const context: IUserContext = {
 
 render(
     (
-        <div className="wrapper">
-            <React.StrictMode>
-                <Provider store={ store }>
-                    <UserForm />
-                </Provider>
-                <Calculator />
-                <UserContext.Provider value={ context }>
-                    <AnywayHeader logined={ true } />
-                    <div id="page-container">
-                        <aside></aside>
-                        <div id="page-contents">
-                            <APIWineList url="//anyway-grapes.jp/laravel5.3/public/api/v1/new-wines" />
-                            <APIWineList url="//anyway-grapes.jp/laravel5.3/public/api/v1/ranking-wines" />
+        <Router>
+            <div className="wrapper">
+                <React.StrictMode>
+                    <Provider store={ store }>
+                        <UserForm />
+                    </Provider>
+                    <Calculator />
+                    <UserContext.Provider value={ context }>
+                        <AnywayHeader logined={ true } />
+                        <div id="page-container">
+                            <aside></aside>
+                            <Switch>
+                                <Route exact path="/" component={ AnywayContents } />
+                                <Route path="/vintages" component={ VintagePage } />
+                                <Route path="/producers" component={ ProducerPage } />
+                                <Route path="/critics" component={ CriticPage } />
+                            </Switch>
                         </div>
-                    </div>
-                    <AnywayFooter links={ linkInfos } />
-                </UserContext.Provider>
-            </React.StrictMode>
-        </div>
+                        <AnywayFooter links={ linkInfos } />
+                    </UserContext.Provider>
+                </React.StrictMode>
+            </div>
+        </Router>
     ),
     document.getElementById('pageBody')
 );

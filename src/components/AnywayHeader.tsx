@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { IUserContext, UserContext } from './context/UserContext';
 import { SearchBox } from './SearchBox';
 
@@ -26,12 +27,9 @@ export class AnywayHeader extends React.Component<IAnywayHeader, {}> {
                         <header>
                             <a href={ `${ctx.siteUrl}/index.php` }><img src={ `${ctx.imgDir}/_logo.png` } /></a>
                             <br />
-                            <a
-                                href={ `${ctx.siteUrl}/index.php?submenu=vintage_info` }
-                                className="page-links">Vintages</a>
-
-                            <a href={ `${ctx.siteUrl}/producers/index.html` } className="page-links">Producers</a>
-                            <a href={ `${ctx.siteUrl}/index.php?submenu=critics` } className="page-links">Critics</a>
+                            <Link to={ '/vintages' } className="page-links">Vintages</Link>
+                            <Link to={ '/producers' } className="page-links">Producers</Link>
+                            <Link to={ '/critics' } className="page-links">Critics</Link>
                             <SearchBox placeholder="ワイン検索" />
                             <div id="signup-fld">
                                 <a href={ `${ctx.siteUrl}/cart.php` } className="cmd-links">カート</a>
