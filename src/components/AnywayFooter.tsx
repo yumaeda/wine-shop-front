@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { UserContext } from './context/UserContext';
+import { IUserContext, UserContext } from './context/UserContext';
 import { FooterNav } from './FooterNav';
 import { Iframe } from './Iframe';
 
@@ -24,15 +24,15 @@ export class AnywayFooter extends React.Component<IAnywayFooter, {}> {
         const jsx = (
             <UserContext.Consumer>
                 {
-                    (lang: { code: string }) => (
+                    (ctx: IUserContext) => (
                         <footer>
                             <div>
                                 <span className="notice-text">{ noticeText }</span>
                                 <br /><br />
                                 <FooterNav links={ this.props.links } />
                             </div>
-                            <Iframe src={ `./pages/${lang.code}/payment.html` } />
-                            <Iframe src={ `./pages/${lang.code}/shipping_fee.html` } />
+                            <Iframe src={ `./pages/${ctx.code}/payment.html` } />
+                            <Iframe src={ `./pages/${ctx.code}/shipping_fee.html` } />
                         </footer>
                     )
                 }

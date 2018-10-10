@@ -4,12 +4,13 @@ import { Provider } from 'react-redux';
 import { AnywayFooter } from './components/AnywayFooter';
 import { AnywayHeader } from './components/AnywayHeader';
 import { APIWineList } from './components/APIWineList';
-import { UserContext } from './components/context/UserContext';
+import { IUserContext, UserContext } from './components/context/UserContext';
 import { Calculator } from './components/samples/Calculator';
 import UserForm from './components/samples/UserForm';
 import store from './redux/Store';
 
-const rootUrl = 'http://anyway-grapes.jp';
+const siteUrl = 'http://anyway-grapes.jp';
+const imgDir = `${siteUrl}/images`;
 const linkInfos = [
     { href: './index.php?submenu=guide', text: 'ご利用ガイド' },
     { href: './index.php?submenu=quality', text: '品質の保証' },
@@ -20,6 +21,12 @@ const linkInfos = [
     { href: './index.php?submenu=faq', text: 'よくあるご質問' },
 ];
 
+const context: IUserContext = {
+    code: 'ja',
+    imgDir,
+    siteUrl
+};
+
 render(
     (
         <div className="wrapper">
@@ -28,7 +35,7 @@ render(
                     <UserForm />
                 </Provider>
                 <Calculator />
-                <UserContext.Provider value={ { code: 'ja', rootUrl } }>
+                <UserContext.Provider value={ context }>
                     <AnywayHeader logined={ true } />
                     <div id="page-container">
                         <aside></aside>

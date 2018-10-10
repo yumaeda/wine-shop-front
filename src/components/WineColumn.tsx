@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { UserContext } from './context/UserContext';
+import { IUserContext, UserContext } from './context/UserContext';
 import { WineImage } from './WineImage';
 
 /**
@@ -11,8 +11,7 @@ export interface IWine {
     combined_name_jpn: string;
     producer: string;
     producer_jpn: string;
-    vintage: string;
-}
+    vintage: string; }
 
 /**
  * WineColumn component
@@ -30,25 +29,28 @@ export class WineColumn extends React.Component<{ wine: IWine }, {}> {
      */
     public render() {
         const wineId = this.props.wine.barcode_number;
+        const params = `?submenu=wine_detail&id=${wineId}`;
 
         return (
             <UserContext.Consumer>
-                { (ctx: { code: string, rootUrl: string }) => (
-                    <td className="wine-column">
-                        <a
-                            href={ `${ctx.rootUrl}/store/index.php?submenu=wine_detail&id=${wineId}&lang=${ctx.code}` }
-                            target="wine_detail"
-                            className="wine-link">
+                {
+                    (ctx: IUserContext) => (
+                        <td className="wine-column">
+                            <a
+                                href={ `${ctx.siteUrl}/store/index.php${params}&lang=${ctx.code}` }
+                                target="wine_detail"
+                                className="wine-link">
 
-                            <WineImage
-                                id={ wineId }
-                                baseUrl={ `${ctx.rootUrl}/images/wines/400px` }
-                                className="wine-img" />
+                                <WineImage
+                                    id={ wineId }
+                                    baseUrl={ `${ctx.imgDir}/wines/400px` }
+                                    className="wine-img" />
 
-                            <div>{ this.getDisplayText(this.getWineName(this.props.wine, ctx.code)) }</div>
-                        </a>
-                    </td>
-                )}
+                                <div>{ this.getDisplayText(this.getWineName(this.props.wine, ctx.code)) }</div>
+                            </a>
+                        </td>
+                    )
+                }
             </UserContext.Consumer>
         );
     }
