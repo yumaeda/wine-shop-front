@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { IWine, WineColumn } from './WineColumn';
+import { IWine } from '../redux/states/IFilteredWines';
+import { WineColumn } from './WineColumn';
 
 /**
  * Interface for HorizontalWineList

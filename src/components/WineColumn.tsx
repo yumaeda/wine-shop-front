@@ -1,17 +1,7 @@
 import * as React from 'react';
+import { IWine } from '../redux/states/IFilteredWines';
 import { IUserContext, UserContext } from './context/UserContext';
 import { WineImage } from './WineImage';
-
-/**
- * Interface for Wine
- */
-export interface IWine {
-    barcode_number: string;
-    combined_name: string;
-    combined_name_jpn: string;
-    producer: string;
-    producer_jpn: string;
-    vintage: string; }
 
 /**
  * WineColumn component

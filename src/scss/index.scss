@@ -29,6 +29,18 @@ header {
     }
 }
 
+/* AnywayAside.tsx */
+aside {
+    opacity: 0.8;
+    width: 200px;
+    float: left;
+
+    .type-ul {
+        list-style: none;
+        padding: 0 5px 0 25px;
+    }
+}
+
 /* WineColumn.tsx */
 .wine-column {
     vertical-align: top;

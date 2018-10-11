@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as Redux from 'redux';
-import keys from '../ActionTypeKeys';
+import keys from './ActionTypeKeys';
 
 /**
  * Action interface for changing user name

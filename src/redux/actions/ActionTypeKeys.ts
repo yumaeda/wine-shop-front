@@ -2,7 +2,7 @@
  * Key for Redux action type
  */
 enum ActionTypeKeys {
-    ADD_ARTICLE = 'ADD_ARTICLE',
+    CATEGORY_FILTER = 'CATEGORY_FILTER',
     CHANGE_USER_NAME = 'CHANGE_USER_NAME'
 }
 

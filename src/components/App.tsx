@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import AnywayAside from './AnywayAside';
 import { AnywayContents } from './AnywayContents';
 import { AnywayFooter } from './AnywayFooter';
 import { AnywayHeader } from './AnywayHeader';
@@ -7,8 +8,6 @@ import { defaultContext, IUserContext, UserContext } from './context/UserContext
 import { Iframe } from './Iframe';
 import { InquiryPage } from './pages/InquiryPage';
 import { ProducerPage } from './pages/ProducerPage';
-import { Calculator } from './samples/Calculator';
-import UserForm from './samples/UserForm';
 
 /**
  * App component
@@ -24,11 +23,9 @@ export class App extends React.Component<{}, {}> {
         const jsx = (
             <React.StrictMode>
                 <UserContext.Provider value={ defaultContext }>
-                    <UserForm />
-                    <Calculator />
                     <AnywayHeader logined={ true } />
                     <div id="page-container">
-                        <aside></aside>
+                        <AnywayAside />
                         <Switch>
                             <Route exact path="/" component={ AnywayContents } />
 

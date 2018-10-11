@@ -1,19 +1,19 @@
 import { combineReducers, createStore } from 'redux';
-import { UserReducer } from './reducers/UserReducer';
-import IUser from './states/IUser';
+import { WineListReducer } from './reducers/WineListReducer';
+import { IFilteredWines } from './states/IFilteredWines';
 
 /**
  * Declare data type of the parent state
  */
 export interface IState {
-    user: IUser;
+    filteredWines: IFilteredWines;
 }
 
 /**
  * Combined reducer
  */
 const combinedReducer = combineReducers<IState>({
-    user: UserReducer
+    filteredWines: WineListReducer
 });
 
 /**
