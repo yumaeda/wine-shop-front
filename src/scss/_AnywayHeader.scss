@@ -1,0 +1,29 @@
+header {
+    .page-links {
+        color: cadetblue;
+        text-decoration: none;
+        line-height: 20px;
+        font-size: 16px;
+        font-family: sans-serif;
+        margin: 10px;
+    }
+
+    .cmd-links {
+        color: white;
+        text-decoration: none;
+        background-color: darkgray;
+        font-size: 14px;
+        border-style: none;
+        padding: 6px 15px;
+    }
+
+    .search-input {
+        width: 250px;
+        height: 30px;
+    }
+
+    .search-button {
+        height: 33px;
+        vertical-align: middle;
+    }
+}
