@@ -25,17 +25,16 @@ export interface ICategoryFilterAction extends Redux.Action {
 }
 
 /**
+ * Action interface for filtering wines by vintage
+ */
+export interface IVintageFilterAction extends Redux.Action {
+    vintage: number;
+}
+
+/**
  * Action interface for filtering wines by price
  */
 export interface IPriceFilterAction extends Redux.Action {
     minPrice: number;
     maxPrice: number;
-}
-
-/**
- * Action interface for filtering wines by vintage
- */
-export interface IVintageFilterAction extends Redux.Action {
-    fromYear: number;
-    toYear: number;
 }

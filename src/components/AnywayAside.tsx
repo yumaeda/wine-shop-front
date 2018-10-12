@@ -9,6 +9,7 @@ import { IFilteredWines, IWine } from '../redux/states/IFilteredWines';
 import { IState } from '../redux/Store';
 import { WineCategoryFilterLinks } from './WineCategoryFilterLinks';
 import { WineColumn } from './WineColumn';
+import { WineVintageFilterLinks } from './WineVintageFilterLinks';
 
 /**
  * AnywayAside component
@@ -25,12 +26,15 @@ class AnywayAside extends React.Component<IFilteredWines, {}> {
 
         return (
             <aside>
+                <h2>種類</h2>
                 <WineCategoryFilterLinks />
                 <hr />
+                <h2>年代</h2>
+                <WineVintageFilterLinks />
                 <table>
-                    <tr>
-                        { wineColumns }
-                    </tr>
+                    <tbody>
+                        <tr>{ wineColumns }</tr>
+                    </tbody>
                 </table>
             </aside>
         );

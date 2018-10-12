@@ -40,6 +40,31 @@ export const WineListReducer: Redux.Reducer<IFilteredWines> =
                     ];
                 }
                 break;
+            case keys.VINTAGE_FILTER:
+                if (state.filter !== 'vintage') {
+                    newState = Clone(state);
+                    newState.filter = 'vintage';
+                    newState.wines = [
+                        {
+                            barcode_number: '11111',
+                            combined_name: 'Chambolle-Musigny',
+                            combined_name_jpn: 'シャンボール・ミュジニー',
+                            producer: 'Rumier',
+                            producer_jpn: 'ルーミエ',
+                            vintage: '1980'
+                        },
+                        {
+                            barcode_number: '11112',
+                            combined_name: 'Chateau Margaux',
+                            combined_name_jpn: 'シャト・マルゴー',
+                            producer: 'Chateau Margaux',
+                            producer_jpn: 'シャト・マルゴー',
+                            vintage: '2005'
+                        },
+                    ];
+                }
+                break;
+
             default:
                 break;
         }
