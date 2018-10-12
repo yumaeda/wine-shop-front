@@ -5,6 +5,7 @@
  */
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { IFilteredWines, IWine } from '../redux/states/IFilteredWines';
 import { IState } from '../redux/Store';
 import { APIWineList } from './APIWineList';
@@ -47,11 +48,11 @@ class AnywayContents extends React.Component<IFilteredWines, {}> {
 /**
  * Map Redux state to component.props
  */
-const mapStateToProps = (state: IState) => {
+const mapStateToProps = (state: IState, props: RouteComponentProps<{}>) => {
     return state.filteredWines;
 };
 
 /**
  * Connect Redux state to the component
  */
-export default connect(mapStateToProps)(AnywayContents);
+export default withRouter(connect(mapStateToProps)(AnywayContents));
