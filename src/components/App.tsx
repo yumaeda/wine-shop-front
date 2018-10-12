@@ -5,8 +5,8 @@
  */
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import AnywayAside from './AnywayAside';
-import { AnywayContents } from './AnywayContents';
+import { AnywayAside } from './AnywayAside';
+import AnywayContents from './AnywayContents';
 import { AnywayFooter } from './AnywayFooter';
 import { AnywayHeader } from './AnywayHeader';
 import { defaultContext, IUserContext, UserContext } from './context/UserContext';
