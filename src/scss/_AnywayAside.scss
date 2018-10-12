@@ -6,5 +6,12 @@ aside {
     .type-ul {
         list-style: none;
         padding: 0 5px 0 25px;
+
+        a {
+            color: #505050;
+            text-decoration: none;
+            line-height: 20px;
+            font-size: 14px;
+        }
     }
 }

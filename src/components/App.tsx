@@ -27,7 +27,7 @@ export class App extends React.Component {
             <React.StrictMode>
                 <UserContext.Provider value={ defaultContext }>
                     <AnywayHeader logined={ true } />
-                    <div id="page-container">
+                    <div className="page-container">
                         <AnywayAside />
                         <Switch>
                             <Route exact path="/" component={ AnywayContents } />

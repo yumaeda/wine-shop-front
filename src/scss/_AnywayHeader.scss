@@ -1,4 +1,15 @@
 header {
+    width: 100%;
+    min-width: 500px;
+    height: 145px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    opacity: 0.5;
+    text-align: center;
+    background-color: snow;
+
     .page-links {
         color: cadetblue;
         text-decoration: none;
