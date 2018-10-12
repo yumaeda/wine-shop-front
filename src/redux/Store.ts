@@ -1,3 +1,8 @@
+/**
+ * Store used by Redux
+ *
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
+ */
 import { combineReducers, createStore } from 'redux';
 import { WineListReducer } from './reducers/WineListReducer';
 import { IFilteredWines } from './states/IFilteredWines';
@@ -21,5 +26,4 @@ const combinedReducer = combineReducers<IState>({
  */
 const store = createStore(combinedReducer);
 
-// Enable importing as "import store from './Store'"
 export default store;

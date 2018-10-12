@@ -1,16 +1,21 @@
+/**
+ * Defines filtering actions
+ *
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
+ */
 import * as Redux from 'redux';
 
 /**
  * String literal types fro wine type
  */
 export type WineCategory =
-    'Sparkling' |
+    'Mousseux'  |
     'Champagne' |
-    'White' |
-    'Rose' |
-    'Red' |
-    'Dessert' |
-    'Spirit';
+    'Blanc'     |
+    'Rosé'     |
+    'Rouge'     |
+    'Doux'      |
+    'Eau de Vie';
 
 /**
  * Action interface for filtering wines by category

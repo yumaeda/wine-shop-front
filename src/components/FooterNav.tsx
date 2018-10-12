@@ -1,3 +1,8 @@
+/**
+ * Renders footer navigations
+ *
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
+ */
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -18,14 +23,12 @@ interface IFooterNav {
 
 /**
  * FooterNav component
- *
- * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 export class FooterNav extends React.Component<IFooterNav, {}> {
     /**
      * Return footer navigation JSX to render
      */
-    public render() {
+    public render(): React.ReactElement<FooterNav> {
         const jsx = this.props.links.map((link: ILink, index: number) =>
             <li key={ index }>
                 <Link to={ link.path }>{ link.text }</Link>

@@ -1,3 +1,8 @@
+/**
+ * Renders header element for Anyway
+ *
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
+ */
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { IUserContext, UserContext } from './context/UserContext';
@@ -12,14 +17,12 @@ interface IAnywayHeader {
 
 /**
  * AnywayHeader component
- *
- * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 export class AnywayHeader extends React.Component<IAnywayHeader, {}> {
     /**
      * Return image JSX to render
      */
-    public render() {
+    public render(): React.ReactElement<AnywayHeader> {
         const jsx = (
             <UserContext.Consumer>
                 {

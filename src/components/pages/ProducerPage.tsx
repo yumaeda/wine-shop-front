@@ -1,15 +1,18 @@
+/**
+ * Renders producer page
+ *
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
+ */
 import * as React from 'react';
 
 /**
  * ProducerPage component
- *
- * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 export class ProducerPage extends React.Component {
     /**
      * Return producer page JSX to render
      */
-    public render() {
+    public render(): React.ReactElement<ProducerPage> {
         return (
             <div>
                 <h2>Producer</h2>

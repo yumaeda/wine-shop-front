@@ -1,3 +1,8 @@
+/**
+ * Renders footer element for Anyway
+ *
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
+ */
 import * as React from 'react';
 import { IUserContext, UserContext } from './context/UserContext';
 import { FooterNav, ILink } from './FooterNav';
@@ -5,10 +10,8 @@ import { Iframe } from './Iframe';
 
 /**
  * AnywayFooter component
- *
- * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-export class AnywayFooter extends React.Component<{}, {}> {
+export class AnywayFooter extends React.Component {
     /**
      * Information of the footer links
      */
@@ -25,7 +28,7 @@ export class AnywayFooter extends React.Component<{}, {}> {
     /**
      * Return image JSX to render
      */
-    public render() {
+    public render(): React.ReactElement<AnywayFooter> {
         const noticeText = '!! 未成年の方には酒類の販売を行いません。!!';
         const jsx = (
             <UserContext.Consumer>

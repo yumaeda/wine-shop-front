@@ -1,8 +1,13 @@
+/**
+ * Renders <aside> element for Anyway
+ *
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
+ */
 import * as React from 'react';
-import { connect, MapStateToPropsParam } from 'react-redux';
-import { createCategoryFilterAction } from '../redux/actions/FilterActionCreator';
+import { connect } from 'react-redux';
 import { IFilteredWines, IWine } from '../redux/states/IFilteredWines';
-import store, { IState } from '../redux/Store';
+import { IState } from '../redux/Store';
+import { WineCategoryFilterLinks } from './WineCategoryFilterLinks';
 import { WineColumn } from './WineColumn';
 
 /**
@@ -12,7 +17,7 @@ class AnywayAside extends React.Component<IFilteredWines, {}> {
     /**
      * Return JSX to render
      */
-    public render() {
+    public render(): React.ReactElement<AnywayAside> {
         const wineColumns = this.props.wines.map(
             (wine: IWine) =>
             <WineColumn key={ wine.barcode_number } wine={ wine } />
@@ -20,15 +25,7 @@ class AnywayAside extends React.Component<IFilteredWines, {}> {
 
         return (
             <aside>
-                <ul className="type-ul">
-                    <li><a href="#" onClick={ this.onLinkClick } rel="Mousseux">スパークリング・ワイン</a></li>
-                    <li><a href="#" rel="Champagne">シャンパーニュ</a></li>
-                    <li><a href="#" rel="Blanc">白ワイン</a></li>
-                    <li><a href="#" rel="Rosé">ロゼ</a></li>
-                    <li><a href="#" rel="Rouge">赤ワイン</a></li>
-                    <li><a href="#" rel="Doux">デザートワイン</a></li>
-                    <li><a href="#" rel="Eau de Vie">オー・ド・ヴィ</a></li>
-                </ul>
+                <WineCategoryFilterLinks />
                 <hr />
                 <table>
                     <tr>
@@ -37,14 +34,6 @@ class AnywayAside extends React.Component<IFilteredWines, {}> {
                 </table>
             </aside>
         );
-    }
-
-    /**
-     * Event handler for onclick event of the link
-     */
-    private onLinkClick = (event: React.MouseEvent<HTMLElement>): void => {
-        event.preventDefault();
-        store.dispatch(createCategoryFilterAction('Red'));
     }
 }
 

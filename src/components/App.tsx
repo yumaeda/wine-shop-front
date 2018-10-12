@@ -1,3 +1,8 @@
+/**
+ * Application component, which is included in the root component
+ *
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
+ */
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import AnywayAside from './AnywayAside';
@@ -11,14 +16,12 @@ import { ProducerPage } from './pages/ProducerPage';
 
 /**
  * App component
- *
- * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-export class App extends React.Component<{}, {}> {
+export class App extends React.Component {
     /**
      * Return image JSX to render
      */
-    public render() {
+    public render(): React.ReactElement<App> {
         const iframeDir = `./pages/${defaultContext.code}`;
         const jsx = (
             <React.StrictMode>

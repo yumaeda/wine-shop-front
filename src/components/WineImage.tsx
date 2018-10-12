@@ -1,3 +1,8 @@
+/**
+ * Renders wine image
+ *
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
+ */
 import * as React from 'react';
 
 /**
@@ -11,8 +16,6 @@ interface IWineImage {
 
 /**
  * WineImage component
- *
- * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 export class WineImage extends React.Component<IWineImage, { src: string }> {
     /**
@@ -28,7 +31,7 @@ export class WineImage extends React.Component<IWineImage, { src: string }> {
     /**
      * Return image JSX to render
      */
-    public render() {
+    public render(): React.ReactElement<WineImage> {
         return (
             <img src={ this.state.src }
                  className={ this.props.className }

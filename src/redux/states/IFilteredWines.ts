@@ -1,4 +1,10 @@
 /**
+ * Filterd wine state used by Redux
+ *
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
+ */
+
+/**
  * String literal types for filter
  */
 export type FilterType =

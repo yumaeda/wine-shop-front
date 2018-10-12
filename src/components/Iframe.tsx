@@ -1,3 +1,8 @@
+/**
+ * Renders <iframe> element
+ *
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
+ */
 import * as React from 'react';
 
 /**
@@ -9,8 +14,6 @@ interface IIframe {
 
 /**
  * Iframe component
- *
- * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 export class Iframe extends React.Component<IIframe, { height: number }> {
     /**
@@ -24,7 +27,7 @@ export class Iframe extends React.Component<IIframe, { height: number }> {
     /**
      * Return JSX to render
      */
-    public render() {
+    public render(): React.ReactElement<Iframe> {
         return (
             <iframe
                 src={ this.props.src }

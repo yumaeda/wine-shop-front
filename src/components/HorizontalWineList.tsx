@@ -1,3 +1,8 @@
+/**
+ * Renders wines in horizontal direction
+ *
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
+ */
 import * as React from 'react';
 import { IWine } from '../redux/states/IFilteredWines';
 import { WineColumn } from './WineColumn';
@@ -11,14 +16,12 @@ interface IHorizontalWineList {
 
 /**
  * Horizontal wine list component
- *
- * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 export class HorizontalWineList extends React.Component<IHorizontalWineList, {}> {
     /**
      * Return horizontal wine list JSX to render
      */
-    public render() {
+    public render(): React.ReactElement<HorizontalWineList> {
         const wineColumns = this.props.wines.map(
             (wine: IWine) =>
             <WineColumn key={ wine.barcode_number } wine={ wine } />

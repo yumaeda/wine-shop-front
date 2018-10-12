@@ -1,3 +1,8 @@
+/**
+ * Renders search box
+ *
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
+ */
 import * as React from 'react';
 import { IUserContext, UserContext } from './context/UserContext';
 
@@ -10,14 +15,12 @@ interface ISearchBox {
 
 /**
  * SearchBox component
- *
- * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 export class SearchBox extends React.Component<ISearchBox, {}> {
     /**
      * Return image JSX to render
      */
-    public render() {
+    public render(): React.ReactElement<SearchBox> {
         const jsx = (
             <UserContext.Consumer>
                 {

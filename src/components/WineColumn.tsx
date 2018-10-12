@@ -1,3 +1,8 @@
+/**
+ * Renders table column, which contains wine info
+ *
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
+ */
 import * as React from 'react';
 import { IWine } from '../redux/states/IFilteredWines';
 import { IUserContext, UserContext } from './context/UserContext';
@@ -5,8 +10,6 @@ import { WineImage } from './WineImage';
 
 /**
  * WineColumn component
- *
- * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 export class WineColumn extends React.Component<{ wine: IWine }, {}> {
     /**
@@ -17,7 +20,7 @@ export class WineColumn extends React.Component<{ wine: IWine }, {}> {
     /**
      * Return wine column JSX to render
      */
-    public render() {
+    public render(): React.ReactElement<WineColumn> {
         const wineId = this.props.wine.barcode_number;
         const params = `?submenu=wine_detail&id=${wineId}`;
 

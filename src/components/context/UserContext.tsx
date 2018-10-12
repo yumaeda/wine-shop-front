@@ -1,3 +1,8 @@
+/**
+ * Persists user context data
+ *
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
+ */
 import * as React from 'react';
 
 /**
@@ -12,7 +17,7 @@ export interface IUserContext {
 /**
  * Default user context
  */
-export const defaultContext = {
+export const defaultContext: IUserContext = {
     code: 'ja',
     imgDir: 'http://anyway-grapes.jp/images',
     siteUrl: 'http://anyway-grapes.jp'

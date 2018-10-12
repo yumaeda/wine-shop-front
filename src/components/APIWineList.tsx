@@ -1,3 +1,8 @@
+/**
+ * List of wines retrieved from API call
+ *
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
+ */
 import * as React from 'react';
 import { HorizontalWineList } from './HorizontalWineList';
 
@@ -12,8 +17,6 @@ export interface IGetWinesAPI {
 
 /**
  * Component for rendering a wine list, which is retrieved by API call
- *
- * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 export class APIWineList extends React.Component<{ url: string }, IGetWinesAPI> {
     /**
@@ -55,7 +58,7 @@ export class APIWineList extends React.Component<{ url: string }, IGetWinesAPI> 
     /**
      * Return horizontal wine list JSX to render
      */
-    public render() {
+    public render(): React.ReactElement<APIWineList> {
         const { error, loaded, wines } = this.state;
 
         if (error) {
@@ -66,8 +69,6 @@ export class APIWineList extends React.Component<{ url: string }, IGetWinesAPI> 
           return <div>Loading...</div>;
         }
 
-        return (
-            <HorizontalWineList wines={ wines } />
-        );
+        return <HorizontalWineList wines={ wines } />;
     }
 }

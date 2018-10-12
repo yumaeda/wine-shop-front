@@ -1,3 +1,8 @@
+/**
+ * Reducer for wine list used by Redux
+ *
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
+ */
 import * as Clone from 'clone';
 import * as Redux from 'redux';
 import keys from '../actions/ActionTypeKeys';
@@ -6,8 +11,6 @@ import { IFilteredWines, initFilteredWines } from '../states/IFilteredWines';
 
 /**
  * Reducer for wine filter change
- *
- * @return Redux.Reducer<IFilteredWines>;
  */
 export const WineListReducer: Redux.Reducer<IFilteredWines> =
     (state = initFilteredWines, action: Redux.AnyAction) => {
