@@ -4,55 +4,46 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react';
-import { connect } from 'react-redux';
-import { RouteComponentProps, withRouter } from 'react-router-dom';
-import { IFilteredWines, IWine } from '../redux/states/IFilteredWines';
-import { IState } from '../redux/Store';
-import { APIWineList } from './APIWineList';
+import { IWine } from '../redux/states/IFilteredWines';
+import { DefaultContents } from './DefaultContents';
+import { Iframe } from './Iframe';
 import { WineColumn } from './WineColumn';
+
+/**
+ * Interface for AnywayContents
+ */
+interface IAnywayCotents {
+    url?: string;
+    wines: IWine[];
+}
 
 /**
  * AnywayContents component
  */
-class AnywayContents extends React.Component<IFilteredWines, {}> {
+export class AnywayContents extends React.Component<IAnywayCotents, {}> {
     /**
      * Return image JSX to render
      */
     public render(): React.ReactElement<AnywayContents> {
-        let contents = (
-            <>
-                <APIWineList url="//anyway-grapes.jp/laravel5.3/public/api/v1/new-wines" />
-                <APIWineList url="//anyway-grapes.jp/laravel5.3/public/api/v1/ranking-wines" />
-            </>
+        if (this.props.url) {
+            return <Iframe src={ this.props.url } />;
+        } else if (this.props.children) {
+            return <>{ this.props.children }</>;
+        } else if (!this.props.wines || this.props.wines.length === 0) {
+            return <DefaultContents />;
+        }
+
+        const wineColumns = this.props.wines.map(
+            (wine: IWine) =>
+            <WineColumn key={ wine.barcode_number } wine={ wine } />
         );
 
-        if (this.props.wines && this.props.wines.length > 0) {
-            const wineColumns = this.props.wines.map(
-                (wine: IWine) =>
-                <WineColumn key={ wine.barcode_number } wine={ wine } />
-            );
-
-            contents = (
+        return (
+            <div id="page-contents">
                 <table>
                     <tbody><tr>{ wineColumns }</tr></tbody>
                 </table>
-            );
-        }
-
-        return (
-            <div id="page-contents">{ contents }</div>
+            </div>
         );
     }
 }
-
-/**
- * Map Redux state to component.props
- */
-const mapStateToProps = (state: IState, props: RouteComponentProps<{}>) => {
-    return state.filteredWines;
-};
-
-/**
- * Connect Redux state to the component
- */
-export default withRouter(connect(mapStateToProps)(AnywayContents));

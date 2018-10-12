@@ -4,38 +4,37 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import FilteredWinesContainer from '../containers/FilteredWinesContainer';
+import { IFilteredWines } from '../redux/states/IFilteredWines';
 import { AnywayAside } from './AnywayAside';
-import AnywayContents from './AnywayContents';
+import { AnywayContents } from './AnywayContents';
 import { AnywayFooter } from './AnywayFooter';
 import { AnywayHeader } from './AnywayHeader';
-import { defaultContext, IUserContext, UserContext } from './context/UserContext';
-import { Iframe } from './Iframe';
-import { InquiryPage } from './pages/InquiryPage';
-import { ProducerPage } from './pages/ProducerPage';
+
+/**
+ * Interface for Page props
+ */
+interface IPage extends IFilteredWines {
+    url?: string;
+}
 
 /**
  * Page component
  */
-export class Page extends React.Component {
+export class Page extends React.Component<IPage, {}> {
     /**
      * Return image JSX to render
      */
     public render(): React.ReactElement<Page> {
-        const iframeDir = `./pages/${defaultContext.code}`;
-        const jsx = (
+        return (
             <React.StrictMode>
-                <UserContext.Provider value={ defaultContext }>
-                    <AnywayHeader logined={ true } />
-                    <div className="page-container">
-                        <AnywayAside />
-                        { this.props.children }
-                    </div>
-                    <AnywayFooter />
-                </UserContext.Provider>
+                <AnywayHeader logined={ true } />
+                <div className="page-container">
+                    <AnywayAside />
+                    <AnywayContents { ...this.props } />
+                </div>
+                <AnywayFooter />
             </React.StrictMode>
         );
-
-        return jsx;
     }
 }

@@ -9,7 +9,7 @@ import * as React from 'react';
  * Interface for Iframe
  */
 interface IIframe {
-    src: string;
+    src?: string;
 }
 
 /**
@@ -28,9 +28,11 @@ export class Iframe extends React.Component<IIframe, { height: number }> {
      * Return JSX to render
      */
     public render(): React.ReactElement<Iframe> {
+        const srcUrl = this.props.src ? this.props.src : '';
+
         return (
             <iframe
-                src={ this.props.src }
+                src={ srcUrl }
                 onLoad={ this.setContentHeight }
                 width="100%"
                 height={ this.state.height + 'px' }

@@ -7,90 +7,77 @@ import * as React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AnywayContents from './components/AnywayContents';
 import { defaultContext, UserContext } from './components/context/UserContext';
-import { Iframe } from './components/Iframe';
-import { Page } from './components/Page';
 import { InquiryPage } from './components/pages/InquiryPage';
 import { ProducerPage } from './components/pages/ProducerPage';
+import FilteredWinesContainer from './containers/FilteredWinesContainer';
 import store from './redux/Store';
 
 const iframeDir = `./pages/${defaultContext.code}`;
+const jsx = (
+    <Provider store={ store }>
+        <UserContext.Provider value={ defaultContext }>
+            <Router>
+                <Switch>
+                    <Route
+                        exact path="/"
+                        render={ () => <FilteredWinesContainer /> }
+                    />
 
-render(
-    (
-        <Provider store={ store }>
-            <UserContext.Provider value={ defaultContext }>
-                <Router>
-                    <Switch>
-                        <Route exact path="/"
-                            render={
-                                () => <Page><AnywayContents /></Page>
-                            }
-                        />
+                    <Route
+                        path="/cmtransaction"
+                        render={ () => <FilteredWinesContainer url={ `${iframeDir}/cmtransaction.html` } /> }
+                    />
 
-                        <Route path="/cmtransaction"
-                            render={
-                                () => <Page><Iframe src={ `${iframeDir}/cmtransaction.html` } /></Page>
-                            }
-                        />
+                    <Route
+                        path="/company"
+                        render={ () => <FilteredWinesContainer url={ `${iframeDir}/company.html` } /> }
+                    />
 
-                        <Route path="/company"
-                            render={
-                                () => <Page><Iframe src={ `${iframeDir}/company.html` } /></Page>
-                            }
-                        />
+                    <Route
+                        path="/critics"
+                        render={ () => <FilteredWinesContainer url={ `${iframeDir}/critics.html` } /> }
+                    />
 
-                        <Route path="/critics"
-                            render={
-                                () => <Page><Iframe src={ `${iframeDir}/critics.html` } /></Page>
-                            }
-                        />
+                    <Route
+                        path="/faq"
+                        render={ () => <FilteredWinesContainer url={ `${iframeDir}/faq.html` } /> }
+                    />
 
-                        <Route path="/faq"
-                            render={
-                                () => <Page><Iframe src={ `${iframeDir}/faq.html` } /></Page>
-                            }
-                        />
+                    <Route
+                        path="/guide"
+                        render={ () => <FilteredWinesContainer url={ `${iframeDir}/guide.html` } /> }
+                    />
 
-                        <Route path="/guide"
-                            render={
-                                () => <Page><Iframe src={ `${iframeDir}/guide.html` } /></Page>
-                            }
-                        />
+                    <Route
+                        path="/inquiry"
+                        render={ () => <FilteredWinesContainer><InquiryPage /></FilteredWinesContainer> }
+                    />
 
-                        <Route path="/inquiry"
-                            render={
-                                () => <Page><InquiryPage /></Page>
-                            }
-                        />
+                    <Route
+                        path="/privacy"
+                        render={ () => <FilteredWinesContainer url={ `${iframeDir}/privacy.html` } /> }
+                    />
 
-                        <Route path="/privacy"
-                            render={
-                                () => <Page><Iframe src={ `${iframeDir}/privacy.html` } /></Page>
-                            }
-                        />
+                    <Route
+                        path="/producers"
+                        render={
+                            () => <FilteredWinesContainer><ProducerPage /></FilteredWinesContainer>
+                        } />
 
-                        <Route path="/producers"
-                            render={
-                                () => <Page><ProducerPage /></Page>
-                            } />
+                    <Route
+                        path="/quality"
+                        render={ () => <FilteredWinesContainer url={ `${iframeDir}/quality.html` } /> }
+                    />
 
-                        <Route path="/quality"
-                            render={
-                                () => <Page><Iframe src={ `${iframeDir}/quality.html` } /></Page>
-                            }
-                        />
-
-                        <Route path="/vintages"
-                            render={
-                                () => <Page><Iframe src={ `${iframeDir}/vintage.html` } /></Page>
-                            }
-                        />
-                    </Switch>
-                </Router>
-            </UserContext.Provider>
-        </Provider>
-    ),
-    document.getElementById('app')
+                    <Route
+                        path="/vintages"
+                        render={ () => <FilteredWinesContainer url={ `${iframeDir}/vintage.html` } /> }
+                    />
+                </Switch>
+            </Router>
+        </UserContext.Provider>
+    </Provider>
 );
+
+render(jsx, document.getElementById('app'));
