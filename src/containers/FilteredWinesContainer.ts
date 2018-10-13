@@ -6,7 +6,7 @@
 import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { Page } from '../components/Page';
-import { IState } from '../redux/Store';
+import { IState } from '../Store';
 
 /**
  * Map Redux state to component.props

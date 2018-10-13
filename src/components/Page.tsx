@@ -5,11 +5,11 @@
  */
 import * as React from 'react';
 import FilteredWinesContainer from '../containers/FilteredWinesContainer';
-import { IFilteredWines } from '../redux/states/IFilteredWines';
-import { AnywayAside } from './AnywayAside';
-import { AnywayContents } from './AnywayContents';
-import { AnywayFooter } from './AnywayFooter';
-import { AnywayHeader } from './AnywayHeader';
+import { IFilteredWines } from '../states/IFilteredWines';
+import { AnywayContents } from './contents/AnywayContents';
+import { AnywayFooter } from './footer/AnywayFooter';
+import { AnywayHeader } from './header/AnywayHeader';
+import { AnywayAside } from './sidebar/AnywayAside';
 
 /**
  * Interface for Page props

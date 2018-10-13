@@ -4,8 +4,8 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react';
-import { IWine } from '../redux/states/IFilteredWines';
-import { IUserContext, UserContext } from './context/UserContext';
+import { IUserContext, UserContext } from '../../context/UserContext';
+import { IWine } from '../../states/IFilteredWines';
 import { WineImage } from './WineImage';
 
 /**

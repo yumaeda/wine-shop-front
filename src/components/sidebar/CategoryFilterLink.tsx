@@ -4,9 +4,9 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react';
-import { createCategoryFilterAction } from '../redux/actions/FilterActionCreator';
-import { WineCategory } from '../redux/actions/FilterActions';
-import store from '../redux/Store';
+import { createCategoryFilterAction } from '../../actions/FilterActionCreator';
+import { WineCategory } from '../../actions/FilterActions';
+import store from '../../Store';
 
 /**
  * Interface for category filter link

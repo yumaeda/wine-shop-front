@@ -4,8 +4,8 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react';
-import { createVintageFilterAction } from '../redux/actions/FilterActionCreator';
-import store from '../redux/Store';
+import { createVintageFilterAction } from '../../actions/FilterActionCreator';
+import store from '../../Store';
 
 /**
  * Interface for vintage filter link

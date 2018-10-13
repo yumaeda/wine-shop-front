@@ -4,9 +4,9 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react';
-import { IUserContext, UserContext } from './context/UserContext';
+import { IUserContext, UserContext } from '../../context/UserContext';
+import { Iframe } from '../contents/Iframe';
 import { FooterNav, ILink } from './FooterNav';
-import { Iframe } from './Iframe';
 
 /**
  * AnywayFooter component

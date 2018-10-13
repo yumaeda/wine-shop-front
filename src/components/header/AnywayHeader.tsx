@@ -5,7 +5,7 @@
  */
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { IUserContext, UserContext } from './context/UserContext';
+import { IUserContext, UserContext } from '../../context/UserContext';
 import { SearchBox } from './SearchBox';
 
 /**
