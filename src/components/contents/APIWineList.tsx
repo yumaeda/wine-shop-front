@@ -5,70 +5,28 @@
  */
 import * as React from 'react';
 import { HorizontalWineList } from './HorizontalWineList';
-
-/**
- * Interface for AJAX get wines request state
- */
-export interface IGetWinesAPI {
-    error: Error | null;
-    loaded: boolean;
-    wines: any[];
-}
+import { RenderGetResult } from './RenderGetResult';
 
 /**
  * Component for rendering a wine list, which is retrieved by API call
  */
-export class APIWineList extends React.Component<{ url: string }, IGetWinesAPI> {
-    /**
-     * Constructor for APIWineList
-     */
-    public constructor(props: { url: string }) {
-        super(props);
-        this.state = {
-            error: null,
-            loaded: false,
-            wines: []
-        };
-    }
-
-    /**
-     * You should populate data with AJAX calls in the componentDidMount lifecycle method.
-     * This is so you can use setState to update your component when the data is retrieved.
-     */
-    public componentDidMount() {
-        fetch(this.props.url)
-        .then((res) => res.json())
-        .then(
-            (result) => {
-                this.setState({
-                    loaded: true,
-                    wines: result.wines
-                });
-            },
-
-            (error) => {
-                this.setState({
-                    error,
-                    loaded: true
-                });
-            }
-        );
-    }
-
+export class APIWineList extends React.Component<{ url: string }, {}> {
     /**
      * Return horizontal wine list JSX to render
      */
     public render(): React.ReactElement<APIWineList> {
-        const { error, loaded, wines } = this.state;
+        return (
+            <RenderGetResult
+                url={ this.props.url }
+                renderItems={ this.renderWines }
+            />
+        );
+    }
 
-        if (error) {
-          return <div>Error: { error.message }</div>;
-        }
-
-        if (!loaded) {
-          return <div>Loading...</div>;
-        }
-
-        return <HorizontalWineList wines={ wines } />;
+    /**
+     * Event handler for onclick event of the link
+     */
+    private renderWines = (result: any) => {
+        return <HorizontalWineList wines={ result.wines } />;
     }
 }
