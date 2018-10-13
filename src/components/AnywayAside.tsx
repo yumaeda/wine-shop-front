@@ -5,6 +5,7 @@
  */
 import * as React from 'react';
 import { WineCategoryFilterLinks } from './WineCategoryFilterLinks';
+import { WinePriceFilterLinks } from './WinePriceFilterLinks';
 import { WineVintageFilterLinks } from './WineVintageFilterLinks';
 
 /**
@@ -17,6 +18,9 @@ export class AnywayAside extends React.Component {
     public render(): React.ReactElement<AnywayAside> {
         return (
             <aside>
+                <h2>価格</h2>
+                <WinePriceFilterLinks />
+                <hr />
                 <h2>種類</h2>
                 <WineCategoryFilterLinks />
                 <hr />

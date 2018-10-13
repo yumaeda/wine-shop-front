@@ -7,6 +7,7 @@ import * as Redux from 'redux';
 import keys from './ActionTypeKeys';
 import {
     ICategoryFilterAction,
+    IPriceFilterAction,
     IVintageFilterAction,
     WineCategory
 } from './FilterActions';
@@ -32,5 +33,18 @@ export const createVintageFilterAction: Redux.ActionCreator<IVintageFilterAction
         return {
             type: keys.VINTAGE_FILTER,
             vintage
+        };
+    };
+
+/**
+ * Create an action for filtering wines with the specified
+ * price range
+ */
+export const createPriceFilterAction: Redux.ActionCreator<IPriceFilterAction> =
+    (minPrice: number, maxPrice: number) => {
+        return {
+            maxPrice,
+            minPrice,
+            type: keys.PRICE_FILTER
         };
     };

@@ -64,7 +64,30 @@ export const WineListReducer: Redux.Reducer<IFilteredWines> =
                     ];
                 }
                 break;
-
+            case keys.PRICE_FILTER:
+                if (state.filter !== 'price') {
+                    newState = Clone(state);
+                    newState.filter = 'price';
+                    newState.wines = [
+                        {
+                            barcode_number: '11111',
+                            combined_name: 'Vin de France Raisin de  Rou',
+                            combined_name_jpn: 'ヴァン・ド・フランス・レザン・ド・ルー',
+                            producer: 'Domaine de Marc',
+                            producer_jpn: 'ドメーヌ・ド・マルクー',
+                            vintage: '2015'
+                        },
+                        {
+                            barcode_number: '11112',
+                            combined_name: 'Riesling Vindange Tartive Forbourg 1500ml',
+                            combined_name_jpn: 'リースリング・ヴァンダンジュ・タルディヴ・フォルブルグ 1500ml',
+                            producer: 'Domain Mure',
+                            producer_jpn: 'ドメーヌ・ミューレ',
+                            vintage: '1989'
+                        },
+                    ];
+                }
+                break;
             default:
                 break;
         }
