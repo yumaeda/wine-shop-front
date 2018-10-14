@@ -6,7 +6,6 @@
 import * as Clone from 'clone';
 import * as Redux from 'redux';
 import keys from '../actions/ActionTypeKeys';
-import { ICategoryFilterAction } from '../actions/FilterActions';
 import { IFilteredWines, initFilteredWines } from '../states/IFilteredWines';
 
 /**

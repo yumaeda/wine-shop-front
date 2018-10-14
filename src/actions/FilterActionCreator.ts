@@ -4,13 +4,15 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as Redux from 'redux';
+import { WineCategory } from '../constants/WineCategory';
 import keys from './ActionTypeKeys';
-import {
-    ICategoryFilterAction,
-    IPriceFilterAction,
-    IVintageFilterAction,
-    WineCategory
-} from './FilterActions';
+
+/**
+ * Action interface for filtering wines by category
+ */
+interface ICategoryFilterAction extends Redux.Action {
+    category: WineCategory;
+}
 
 /**
  * Create an action for filtering wines with the specified category
@@ -26,6 +28,13 @@ export const createCategoryFilterAction: Redux.ActionCreator<ICategoryFilterActi
     };
 
 /**
+ * Action interface for filtering wines by vintage
+ */
+interface IVintageFilterAction extends Redux.Action {
+    vintage: number;
+}
+
+/**
  * Create an action for filtering wines with the specifiedvintage
  */
 export const createVintageFilterAction: Redux.ActionCreator<IVintageFilterAction> =
@@ -35,6 +44,14 @@ export const createVintageFilterAction: Redux.ActionCreator<IVintageFilterAction
             vintage
         };
     };
+
+/**
+ * Action interface for filtering wines by price
+ */
+interface IPriceFilterAction extends Redux.Action {
+    minPrice: number;
+    maxPrice: number;
+}
 
 /**
  * Create an action for filtering wines with the specified

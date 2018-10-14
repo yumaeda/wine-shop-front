@@ -7,11 +7,13 @@ import * as React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { createStore } from 'redux';
 import { InquiryPage } from './components/pages/InquiryPage';
 import { ProducerPage } from './components/pages/ProducerPage';
 import FilteredWinesContainer from './containers/FilteredWinesContainer';
 import { defaultContext, UserContext } from './context/UserContext';
-import store from './Store';
+import rootReducer from './reducers';
+const store = createStore(rootReducer);
 
 const iframeDir = `./pages/${defaultContext.code}`;
 const jsx = (

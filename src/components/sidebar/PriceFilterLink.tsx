@@ -4,7 +4,6 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react';
-import { createPriceFilterAction } from '../../actions/FilterActionCreator';
 
 /**
  * Interface for vintage filter link

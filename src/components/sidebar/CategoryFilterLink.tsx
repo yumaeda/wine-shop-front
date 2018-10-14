@@ -4,8 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react';
-import { createCategoryFilterAction } from '../../actions/FilterActionCreator';
-import { WineCategory } from '../../actions/FilterActions';
+import { WineCategory } from '../../constants/WineCategory';
 
 /**
  * Interface for category filter link
