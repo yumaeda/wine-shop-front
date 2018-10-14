@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react';
-import { CategoryFilterLink } from './CategoryFilterLink';
+import CategoryFilterContainer from '../../containers/CategoryFilterContainer';
 
 /**
  * WineCategoryFilterLinks component
@@ -17,25 +17,25 @@ export class WineCategoryFilterLinks extends React.Component {
         return (
             <ul className="type-ul">
                 <li>
-                    <CategoryFilterLink text="スパークリング・ワイン" category="Mousseux" />
+                    <CategoryFilterContainer text="スパークリング・ワイン" category="Mousseux" />
                 </li>
                 <li>
-                    <CategoryFilterLink text="シャンパーニュ" category="Champagne" />
+                    <CategoryFilterContainer text="シャンパーニュ" category="Champagne" />
                 </li>
                 <li>
-                    <CategoryFilterLink text="白ワイン" category="Blanc" />
+                    <CategoryFilterContainer text="白ワイン" category="Blanc" />
                 </li>
                 <li>
-                    <CategoryFilterLink text="ロゼ" category="Rosé" />
+                    <CategoryFilterContainer text="ロゼ" category="Rosé" />
                 </li>
                 <li>
-                    <CategoryFilterLink text="赤ワイン" category="Rouge" />
+                    <CategoryFilterContainer text="赤ワイン" category="Rouge" />
                 </li>
                 <li>
-                    <CategoryFilterLink text="デザートワイン" category="Doux" />
+                    <CategoryFilterContainer text="デザートワイン" category="Doux" />
                 </li>
                 <li>
-                    <CategoryFilterLink text="オー・ド・ヴィ" category="Eau de Vie" />
+                    <CategoryFilterContainer text="オー・ド・ヴィ" category="Eau de Vie" />
                 </li>
             </ul>
         );

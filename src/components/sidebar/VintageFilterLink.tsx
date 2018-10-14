@@ -11,6 +11,7 @@ import store from '../../Store';
  * Interface for vintage filter link
  */
 interface IVintageFilterLink {
+    onFilterClick: () => void;
     text: string;
     vintage: number;
 }
@@ -23,14 +24,17 @@ export class VintageFilterLink extends React.Component<IVintageFilterLink, {}> {
      * Return JSX to render
      */
     public render(): React.ReactElement<VintageFilterLink> {
-        return <a href="#" onClick={ this.onLinkClick }>{ this.props.text }</a>;
-    }
-
-    /**
-     * Event handler for onclick event of the link
-     */
-    private onLinkClick = (event: React.MouseEvent<HTMLElement>) => {
-        event.preventDefault();
-        store.dispatch(createVintageFilterAction(this.props.vintage));
+        return (
+            <a
+                href="#"
+                onClick={
+                    (event: React.MouseEvent<HTMLElement>) => {
+                        event.preventDefault();
+                        this.props.onFilterClick();
+                    }
+                }>
+                { this.props.text }
+            </a>
+        );
     }
 }

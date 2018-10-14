@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react';
-import { PriceFilterLink } from './PriceFilterLink';
+import PriceFilterContainer from '../../containers/PriceFilterContainer';
 
 /**
  * WinePriceFilterLinks component
@@ -24,7 +24,7 @@ export class WinePriceFilterLinks extends React.Component {
             const dispMaxPrice = maxPrice.toLocaleString();
             priceRanges.push((
                 <li key={ price }>
-                    <PriceFilterLink
+                    <PriceFilterContainer
                         text={ `${dispMinPrice}〜${dispMaxPrice}円` }
                         minPrice={ price }
                         maxPrice={ maxPrice } />
@@ -34,7 +34,7 @@ export class WinePriceFilterLinks extends React.Component {
 
         priceRanges.push((
             <li key={ upperLimit }>
-                <PriceFilterLink
+                <PriceFilterContainer
                     text={ upperLimit.toLocaleString() + '円〜' }
                     minPrice={ upperLimit }
                     maxPrice={ 999999999 } />

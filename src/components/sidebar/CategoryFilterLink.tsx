@@ -6,12 +6,12 @@
 import * as React from 'react';
 import { createCategoryFilterAction } from '../../actions/FilterActionCreator';
 import { WineCategory } from '../../actions/FilterActions';
-import store from '../../Store';
 
 /**
  * Interface for category filter link
  */
-interface ICategoryFilterLink {
+export interface ICategoryFilterLink {
+    onFilterClick: () => void;
     text: string;
     category: WineCategory;
 }
@@ -24,14 +24,17 @@ export class CategoryFilterLink extends React.Component<ICategoryFilterLink, {}>
      * Return JSX to render
      */
     public render(): React.ReactElement<CategoryFilterLink> {
-        return <a href="#" onClick={ this.onLinkClick }>{ this.props.text }</a>;
-    }
-
-    /**
-     * Event handler for onclick event of the link
-     */
-    private onLinkClick = (event: React.MouseEvent<HTMLElement>) => {
-        event.preventDefault();
-        store.dispatch(createCategoryFilterAction(this.props.category));
+        return (
+            <a
+                href="#"
+                children={ this.props.text }
+                onClick={
+                    (event: React.MouseEvent<HTMLElement>) => {
+                        event.preventDefault();
+                        this.props.onFilterClick();
+                    }
+                }
+            />
+        );
     }
 }

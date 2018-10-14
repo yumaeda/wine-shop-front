@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react';
-import { VintageFilterLink } from './VintageFilterLink';
+import VintageFilterContainer from '../../containers/VintageFilterContainer';
 
 /**
  * WineVintageFilterLinks component
@@ -20,7 +20,7 @@ export class WineVintageFilterLinks extends React.Component {
         for (let year = 1930; year < currentYear; year += 10) {
             vintages.push((
                 <li key={ year }>
-                    <VintageFilterLink text={ `${year}年代` } vintage={ year } />
+                    <VintageFilterContainer text={ `${year}年代` } vintage={ year } />
                 </li>
             ));
         }
