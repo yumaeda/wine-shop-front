@@ -15,7 +15,7 @@ import { AnywayAside } from './sidebar/AnywayAside';
  * Interface for Page props
  */
 interface IPage extends IFilteredWines {
-    url?: string;
+    match: any;
 }
 
 /**

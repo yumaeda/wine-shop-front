@@ -13,7 +13,7 @@ import { WineColumn } from './WineColumn';
  * Interface for AnywayContents
  */
 interface IAnywayCotents {
-    url?: string;
+    match: any;
     wines: IWine[];
 }
 
@@ -23,27 +23,33 @@ interface IAnywayCotents {
 export class AnywayContents extends React.Component<IAnywayCotents, {}> {
     /**
      * Return image JSX to render
+     * <Iframe src={ page } />;
      */
     public render(): React.ReactElement<AnywayContents> {
-        if (this.props.url) {
-            return <Iframe src={ this.props.url } />;
+        const { page } = this.props.match.params;
+
+        let jsx = null;
+        if (page && page.length > 0) {
+            jsx = <Iframe src={ `./pages/ja/${page}.html` } />;
         } else if (this.props.children) {
-            return <>{ this.props.children }</>;
+            jsx = <>{ this.props.children }</>;
         } else if (!this.props.wines || this.props.wines.length === 0) {
-            return <DefaultContents />;
+            jsx = <DefaultContents />;
+        } else {
+            const columns = this.props.wines.map(
+                (wine: IWine) =>
+                <WineColumn key={ wine.barcode_number } wine={ wine } />
+            );
+
+            jsx = (
+                <table>
+                    <tbody>
+                        <tr>{ columns }</tr>
+                    </tbody>
+                </table>
+            );
         }
 
-        const wineColumns = this.props.wines.map(
-            (wine: IWine) =>
-            <WineColumn key={ wine.barcode_number } wine={ wine } />
-        );
-
-        return (
-            <div id="page-contents">
-                <table>
-                    <tbody><tr>{ wineColumns }</tr></tbody>
-                </table>
-            </div>
-        );
+        return <div id="page-contents">{ jsx }</div>;
     }
 }

@@ -4,36 +4,36 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { WineCategory } from '../../constants/WineCategory';
 
 /**
- * Interface for category filter link
+ * Interface for filter link
  */
-export interface ICategoryFilterLink {
+export interface IFilterLink {
+    category?: WineCategory;
     onFilterClick: () => void;
+    minPrice?: number;
+    maxPrice?: number;
     text: string;
-    category: WineCategory;
+    vintage?: number;
 }
 
 /**
  * CategoryFilterLink component
  */
-export class CategoryFilterLink extends React.Component<ICategoryFilterLink, {}> {
+export class FilterLink extends React.Component<IFilterLink, {}> {
     /**
      * Return JSX to render
      */
-    public render(): React.ReactElement<CategoryFilterLink> {
+    public render(): React.ReactElement<FilterLink> {
         return (
-            <a
-                href="#"
+            <Link to="/"
                 children={ this.props.text }
                 onClick={
                     (event: React.MouseEvent<HTMLElement>) => {
-                        event.preventDefault();
                         this.props.onFilterClick();
                     }
-                }
-            />
-        );
-    }
+                } />
+        ); }
 }

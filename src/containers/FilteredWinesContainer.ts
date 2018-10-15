@@ -11,7 +11,7 @@ import { IState } from '../reducers';
 /**
  * Map Redux state to component.props
  */
-const mapStateToProps = (state: IState, props: RouteComponentProps<{}>) => {
+const mapStateToProps = (state: IState, props: RouteComponentProps<{ page: string }>) => {
     return state.filteredWines;
 };
 

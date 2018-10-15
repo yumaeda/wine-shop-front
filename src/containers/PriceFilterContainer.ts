@@ -6,7 +6,7 @@
 import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { createPriceFilterAction } from '../actions/FilterActionCreator';
-import { PriceFilterLink } from '../components/sidebar/PriceFilterLink';
+import { FilterLink } from '../components/sidebar/FilterLink';
 import { IState } from '../reducers';
 
 /**
@@ -27,4 +27,4 @@ const mapDispatchToProps = (dispatch: any, props: any) => ({
  * Connect Redux state to the component
  */
 export default withRouter(
-    connect(mapStateToProps, mapDispatchToProps)(PriceFilterLink));
+    connect(mapStateToProps, mapDispatchToProps)(FilterLink));

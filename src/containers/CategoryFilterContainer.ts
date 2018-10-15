@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import * as Redux from 'redux';
 import { createCategoryFilterAction } from '../actions/FilterActionCreator';
-import { CategoryFilterLink, ICategoryFilterLink } from '../components/sidebar/CategoryFilterLink';
+import { FilterLink, IFilterLink } from '../components/sidebar/FilterLink';
 import { IState } from '../reducers';
 
 /**
@@ -28,4 +28,4 @@ const mapDispatchToProps = (dispatch: Redux.Dispatch<Redux.Action<any>>, props: 
  * Connect Redux state to the component
  */
 export default withRouter(
-    connect(mapStateToProps, mapDispatchToProps)(CategoryFilterLink));
+    connect(mapStateToProps, mapDispatchToProps)(FilterLink));
