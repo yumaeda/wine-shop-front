@@ -1,7 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const TSLintPlugin = require('tslint-webpack-plugin');
-const MODE = 'development';
+const MODE = 'production';
 
 module.exports = [
 {
@@ -38,9 +38,6 @@ module.exports = [
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
-    },
-    devServer: {
-        historyApiFallback: true
     }
 },
 {

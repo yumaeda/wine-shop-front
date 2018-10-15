@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack",
-    "start": "webpack-dev-server"
+    "build": "webpack --env dev --progress --profile --colors",
+    "build:prod": "webpack --env prod --progress --profile --colors",
+    "start": "webpack-dev-server --inline --hot --no-info --env dev"
   },
   "repository": {
     "type": "git",
