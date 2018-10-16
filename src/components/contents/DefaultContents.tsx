@@ -16,8 +16,8 @@ export class DefaultContents extends React.Component {
     public render(): React.ReactElement<DefaultContents> {
         return (
             <div id="page-contents">
-                <APIWineList url="//anyway-grapes.jp/laravel5.3/public/api/v1/new-wines" />
-                <APIWineList url="//anyway-grapes.jp/laravel5.3/public/api/v1/ranking-wines" />
+                <APIWineList url="api/v1/new-wines" />
+                <APIWineList url="api/v1/ranking-wines" />
             </div>
         );
     }

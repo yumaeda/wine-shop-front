@@ -40,7 +40,13 @@ module.exports = [
         path: path.resolve(__dirname, 'dist')
     },
     devServer: {
-        historyApiFallback: true
+        historyApiFallback: true,
+        proxy: {
+            '/api/v1': {
+                target: 'http://localhost:3000/api/v1',
+                secure: false
+            }
+        }
     }
 },
 {
