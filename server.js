@@ -4,7 +4,7 @@ var jsonServer = require('json-server'),
     middleWares = jsonServer.defaults();
 
 server.use(middleWares);
-server.use('/api/v1', router);
+server.use('/', router);
 server.listen(3000, function() {
     console.log('JSON Server is running');
 });
