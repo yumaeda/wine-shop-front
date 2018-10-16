@@ -38,7 +38,7 @@ export class APIInfoList extends React.Component<{ url: string }, {}> {
             (info: IInfo) => (
                 <tr>
                     <td className={ this.getDateClassName(info) }>
-                        { `${info.year}.${info.month}.${info.date}` }
+                        { this.getDateText(info) }
                     </td>
                     <td dangerouslySetInnerHTML={{ __html: info.description }} />
                 </tr>
@@ -66,5 +66,18 @@ export class APIInfoList extends React.Component<{ url: string }, {}> {
         return isSunday ?
             'sunday-color' :
             (isSaturday ? 'saturday-color' : '');
+    }
+
+    /**
+     * Get date text
+     */
+    private getDateText(info: IInfo): string {
+        const tokens = [
+            info.year,
+            DateTimeUtility.prependZeros(info.month, 2),
+            DateTimeUtility.prependZeros(info.date, 2)
+        ];
+
+        return tokens.join('.');
     }
 }
