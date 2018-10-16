@@ -31,8 +31,7 @@ export class WineColumn extends React.Component<{ wine: IWine }, {}> {
                         <td className="wine-column">
                             <a
                                 href={ `${ctx.siteUrl}/store/index.php${params}&lang=${ctx.code}` }
-                                target="wine_detail"
-                                className="wine-link">
+                                target="wine_detail">
 
                                 <WineImage
                                     id={ wineId }
