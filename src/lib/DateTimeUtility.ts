@@ -16,8 +16,8 @@ const WEEK_NAMES = [
     'Wed',
     'Thu',
     'Fri',
-    'Sat',
-];
+    'Sat'
+]
 
 /**
  * Get week names
@@ -25,7 +25,7 @@ const WEEK_NAMES = [
  * @return string[]
  */
 export function getWeekNames(): string[] {
-    return WEEK_NAMES;
+    return WEEK_NAMES
 }
 
 /**
@@ -36,7 +36,7 @@ export function getWeekNames(): string[] {
  * @return number Last date of the month
  */
 export function getLastDateOfMonth(year: number, month: number): number {
-    return (new Date(year, month, 0)).getDate();
+    return (new Date(year, month, 0)).getDate()
 }
 
 /**
@@ -48,9 +48,9 @@ export function getLastDateOfMonth(year: number, month: number): number {
  * @return string Day of week of the date
  */
 export function getDayOfWeek(year: number, month: number, date: number): string {
-    const dayOfWeek = (new Date(year, month - 1, date)).getDay();
+    const dayOfWeek = (new Date(year, month - 1, date)).getDay()
 
-    return WEEK_NAMES[dayOfWeek];
+    return WEEK_NAMES[dayOfWeek]
 }
 
 /**
@@ -61,10 +61,10 @@ export function getDayOfWeek(year: number, month: number, date: number): string 
  * @return string Number as string, which is prepended by zeros
  */
 export function prependZeros(digits: number, length: number): string {
-    const currentLength = String(digits).length;
+    const currentLength = String(digits).length
     if (currentLength >= length) {
-        return String(digits);
+        return String(digits)
     }
 
-    return '0' + prependZeros(digits, length - 1);
+    return '0' + prependZeros(digits, length - 1)
 }

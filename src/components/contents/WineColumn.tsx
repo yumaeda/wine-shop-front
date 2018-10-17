@@ -3,10 +3,10 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as React from 'react';
-import { IUserContext, UserContext } from '../../context/UserContext';
-import { IWine } from '../../states/IFilteredWines';
-import { WineImage } from './WineImage';
+import * as React from 'react'
+import { IUserContext, UserContext } from '../../context/UserContext'
+import { IWine } from '../../states/IFilteredWines'
+import { WineImage } from './WineImage'
 
 /**
  * WineColumn component
@@ -15,14 +15,14 @@ export class WineColumn extends React.Component<{ wine: IWine }, {}> {
     /**
      * Maximum number of display text to render
      */
-    private maxDisplayTextLength: number = 40;
+    private maxDisplayTextLength: number = 40
 
     /**
      * Return wine column JSX to render
      */
     public render(): React.ReactElement<WineColumn> {
-        const wineId = this.props.wine.barcode_number;
-        const params = `?submenu=wine_detail&id=${wineId}`;
+        const wineId = this.props.wine.barcode_number
+        const params = `?submenu=wine_detail&id=${wineId}`
 
         return (
             <UserContext.Consumer>
@@ -44,7 +44,7 @@ export class WineColumn extends React.Component<{ wine: IWine }, {}> {
                     )
                 }
             </UserContext.Consumer>
-        );
+        )
     }
 
     /**
@@ -58,7 +58,7 @@ export class WineColumn extends React.Component<{ wine: IWine }, {}> {
     private getDisplayText(name: string): string {
         return (name.length > this.maxDisplayTextLength) ?
             name.substr(0, this.maxDisplayTextLength - 3) + '...' :
-            name;
+            name
     }
 
     /**
@@ -68,10 +68,10 @@ export class WineColumn extends React.Component<{ wine: IWine }, {}> {
      * @param string lang Language code
      */
     private getWineName(wine: IWine, lang: string): string {
-        const vintage = wine.vintage;
-        const name = (lang === 'ja') ? wine.combined_name_jpn : wine.combined_name;
-        const producer = (lang === 'ja') ? wine.producer_jpn : wine.producer;
+        const vintage = wine.vintage
+        const name = (lang === 'ja') ? wine.combined_name_jpn : wine.combined_name
+        const producer = (lang === 'ja') ? wine.producer_jpn : wine.producer
 
-        return `${vintage} ${name} / ${producer}`;
+        return `${vintage} ${name} / ${producer}`
     }
 }

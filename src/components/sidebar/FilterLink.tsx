@@ -3,20 +3,20 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as React from 'react';
-import { Link } from 'react-router-dom';
-import { WineCategory } from '../../constants/WineCategory';
+import * as React from 'react'
+import { Link } from 'react-router-dom'
+import { WineCategory } from '../../constants/WineCategory'
 
 /**
  * Interface for filter link
  */
 export interface IFilterLink {
-    category?: WineCategory;
-    onFilterClick: () => void;
-    minPrice?: number;
-    maxPrice?: number;
-    text: string;
-    vintage?: number;
+    category?: WineCategory
+    onFilterClick: () => void
+    minPrice?: number
+    maxPrice?: number
+    text: string
+    vintage?: number
 }
 
 /**
@@ -32,8 +32,9 @@ export class FilterLink extends React.Component<IFilterLink, {}> {
                 children={ this.props.text }
                 onClick={
                     (event: React.MouseEvent<HTMLElement>) => {
-                        this.props.onFilterClick();
+                        this.props.onFilterClick()
                     }
                 } />
-        ); }
+        )
+    }
 }

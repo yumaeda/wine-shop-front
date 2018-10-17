@@ -9,4 +9,4 @@ enum ActionTypeKeys {
     VINTAGE_FILTER  = 'VINTAGE_FILTER'
 }
 
-export default ActionTypeKeys;
+export default ActionTypeKeys

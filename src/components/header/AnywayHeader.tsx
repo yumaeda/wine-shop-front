@@ -3,16 +3,16 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as React from 'react';
-import { Link } from 'react-router-dom';
-import { IUserContext, UserContext } from '../../context/UserContext';
-import { SearchBox } from './SearchBox';
+import * as React from 'react'
+import { Link } from 'react-router-dom'
+import { IUserContext, UserContext } from '../../context/UserContext'
+import { SearchBox } from './SearchBox'
 
 /**
  * Interface for AnywayHeader
  */
 interface IAnywayHeader {
-    logined: boolean;
+    logined: boolean
 }
 
 /**
@@ -60,16 +60,16 @@ export class AnywayHeader extends React.Component<IAnywayHeader, {}> {
                     )
                 }
             </UserContext.Consumer>
-        );
+        )
 
-        return jsx;
+        return jsx
     }
 
     /**
      * Event handler for onclick event
      */
     private showRegistrationForm = (event: React.MouseEvent<HTMLElement>): void => {
-        event.preventDefault();
-        alert('HO');
+        event.preventDefault()
+        alert('HO')
     }
 }

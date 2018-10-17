@@ -3,8 +3,8 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as React from 'react';
-import PriceFilterContainer from '../../containers/PriceFilterContainer';
+import * as React from 'react'
+import PriceFilterContainer from '../../containers/PriceFilterContainer'
 
 /**
  * WinePriceFilterLinks component
@@ -14,14 +14,14 @@ export class WinePriceFilterLinks extends React.Component {
      * Return JSX to render
      */
     public render(): React.ReactElement<WinePriceFilterLinks> {
-        const basePrice = 1000;
-        const upperLimit = 10000;
-        const priceRanges = [];
+        const basePrice = 1000
+        const upperLimit = 10000
+        const priceRanges = []
 
         for (let price = basePrice; price < upperLimit; price += basePrice) {
-            const maxPrice = price + basePrice - 1;
-            const dispMinPrice = price.toLocaleString();
-            const dispMaxPrice = maxPrice.toLocaleString();
+            const maxPrice = price + basePrice - 1
+            const dispMinPrice = price.toLocaleString()
+            const dispMaxPrice = maxPrice.toLocaleString()
             priceRanges.push((
                 <li key={ price }>
                     <PriceFilterContainer
@@ -29,7 +29,7 @@ export class WinePriceFilterLinks extends React.Component {
                         minPrice={ price }
                         maxPrice={ maxPrice } />
                 </li>
-            ));
+            ))
         }
 
         priceRanges.push((
@@ -38,8 +38,8 @@ export class WinePriceFilterLinks extends React.Component {
                     text={ upperLimit.toLocaleString() + '円〜' }
                     minPrice={ upperLimit }
                     maxPrice={ 999999999 } />
-            </li>));
+            </li>))
 
-        return <ul className="price-range-ul">{ priceRanges }</ul>;
+        return <ul className="price-range-ul">{ priceRanges }</ul>
     }
 }

@@ -1,7 +1,7 @@
-const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const TSLintPlugin = require('tslint-webpack-plugin');
-const MODE = 'production';
+const path = require('path')
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const TSLintPlugin = require('tslint-webpack-plugin')
+const MODE = 'production'
 
 module.exports = [
 {
@@ -63,4 +63,4 @@ module.exports = [
     plugins: [
         new ExtractTextPlugin('index.css'),
     ],
-}];
+}]

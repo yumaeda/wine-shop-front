@@ -3,14 +3,14 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as React from 'react';
-import { IUserContext, UserContext } from '../../context/UserContext';
+import * as React from 'react'
+import { IUserContext, UserContext } from '../../context/UserContext'
 
 /**
  * Interface for SearchBox
  */
 interface ISearchBox {
-    placeholder: string;
+    placeholder: string
 }
 
 /**
@@ -35,16 +35,16 @@ export class SearchBox extends React.Component<ISearchBox, {}> {
                     )
                 }
             </UserContext.Consumer>
-        );
+        )
 
-        return jsx;
+        return jsx
     }
 
     /**
      * Event handler for onclick event for the search button
      */
     private onSearch = (event: React.MouseEvent<HTMLElement>): void => {
-        event.preventDefault();
-        alert('Search');
+        event.preventDefault()
+        alert('Search')
     }
 }

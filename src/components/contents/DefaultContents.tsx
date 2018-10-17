@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as React from 'react';
-import { APIInfoList } from './APIInfoList';
-import { APIWineList } from './APIWineList';
+import * as React from 'react'
+import { APIInfoList } from './APIInfoList'
+import { APIWineList } from './APIWineList'
 
 /**
  * DefaultContents component
@@ -30,6 +30,6 @@ export class DefaultContents extends React.Component {
                     <APIWineList url="api/v1/ranking-wines" />
                 </div>
             </div>
-        );
+        )
     }
 }

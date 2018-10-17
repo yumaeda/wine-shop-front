@@ -8,29 +8,29 @@
  * String literal types for filter
  */
 export type FilterType =
-    'none' |
+    'none'     |
     'category' |
-    'price' |
-    'vintage';
+    'price'    |
+    'vintage'
 
 /**
  * Interface for Wine
  */
 export interface IWine {
-    barcode_number: string;
-    combined_name: string;
-    combined_name_jpn: string;
-    producer: string;
-    producer_jpn: string;
-    vintage: string;
+    barcode_number: string
+    combined_name: string
+    combined_name_jpn: string
+    producer: string
+    producer_jpn: string
+    vintage: string
 }
 
 /**
  * Interface for filtered wines
  */
 export interface IFilteredWines {
-    filter: FilterType;
-    wines: IWine[];
+    filter: FilterType
+    wines: IWine[]
 }
 
 /**
@@ -39,4 +39,4 @@ export interface IFilteredWines {
 export const initFilteredWines: IFilteredWines = {
     filter: 'none',
     wines: []
-};
+}

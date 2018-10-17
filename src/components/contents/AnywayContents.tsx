@@ -3,18 +3,18 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as React from 'react';
-import { IWine } from '../../states/IFilteredWines';
-import { DefaultContents } from './DefaultContents';
-import { Iframe } from './Iframe';
-import { WineColumn } from './WineColumn';
+import * as React from 'react'
+import { IWine } from '../../states/IFilteredWines'
+import { DefaultContents } from './DefaultContents'
+import { Iframe } from './Iframe'
+import { WineColumn } from './WineColumn'
 
 /**
  * Interface for AnywayContents
  */
 interface IAnywayCotents {
-    match: any;
-    wines: IWine[];
+    match: any
+    wines: IWine[]
 }
 
 /**
@@ -23,23 +23,22 @@ interface IAnywayCotents {
 export class AnywayContents extends React.Component<IAnywayCotents, {}> {
     /**
      * Return image JSX to render
-     * <Iframe src={ page } />;
      */
     public render(): React.ReactElement<AnywayContents> {
-        const { page } = this.props.match.params;
+        const { page } = this.props.match.params
 
-        let jsx = null;
+        let jsx = null
         if (page && page.length > 0) {
-            jsx = <Iframe src={ `./pages/ja/${page}.html` } />;
+            jsx = <Iframe src={ `./pages/ja/${page}.html` } />
         } else if (this.props.children) {
-            jsx = <>{ this.props.children }</>;
+            jsx = <>{ this.props.children }</>
         } else if (!this.props.wines || this.props.wines.length === 0) {
-            jsx = <DefaultContents />;
+            jsx = <DefaultContents />
         } else {
             const columns = this.props.wines.map(
                 (wine: IWine) =>
                 <WineColumn key={ wine.barcode_number } wine={ wine } />
-            );
+            )
 
             jsx = (
                 <table>
@@ -47,9 +46,9 @@ export class AnywayContents extends React.Component<IAnywayCotents, {}> {
                         <tr>{ columns }</tr>
                     </tbody>
                 </table>
-            );
+            )
         }
 
-        return <div id="page-contents">{ jsx }</div>;
+        return <div id="page-contents">{ jsx }</div>
     }
 }

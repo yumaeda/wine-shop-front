@@ -3,15 +3,15 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as React from 'react';
+import * as React from 'react'
 
 /**
  * Interface for the user context
  */
 export interface IUserContext {
-    code: string;
-    imgDir: string;
-    siteUrl: string;
+    code: string
+    imgDir: string
+    siteUrl: string
 }
 
 /**
@@ -21,9 +21,9 @@ export const defaultContext: IUserContext = {
     code: 'ja',
     imgDir: 'http://anyway-grapes.jp/images',
     siteUrl: 'http://anyway-grapes.jp'
-};
+}
 
 /**
  * UserContext component
  */
-export const UserContext = React.createContext(defaultContext);
+export const UserContext = React.createContext(defaultContext)

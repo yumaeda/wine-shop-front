@@ -3,13 +3,13 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as React from 'react';
+import * as React from 'react'
 
 /**
  * Interface for Iframe
  */
 interface IIframe {
-    src?: string;
+    src?: string
 }
 
 /**
@@ -20,15 +20,15 @@ export class Iframe extends React.Component<IIframe, { height: number }> {
      * Constructor for Iframe
      */
     public constructor(props: any) {
-        super(props);
-        this.state = { height: 0 };
+        super(props)
+        this.state = { height: 0 }
     }
 
     /**
      * Return JSX to render
      */
     public render(): React.ReactElement<Iframe> {
-        const srcUrl = this.props.src ? this.props.src : '';
+        const srcUrl = this.props.src ? this.props.src : ''
 
         return (
             <iframe
@@ -39,7 +39,7 @@ export class Iframe extends React.Component<IIframe, { height: number }> {
                 scrolling="no"
                 frameBorder="0"
             />
-        );
+        )
     }
 
     /**
@@ -48,6 +48,6 @@ export class Iframe extends React.Component<IIframe, { height: number }> {
     private setContentHeight = (e: any): void => {
         this.setState({
             height: e.target.contentWindow.document.body.scrollHeight
-        });
+        })
     }
 }

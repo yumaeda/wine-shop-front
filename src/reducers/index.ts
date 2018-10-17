@@ -3,15 +3,15 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import { combineReducers } from 'redux';
-import { IFilteredWines } from '../states/IFilteredWines';
-import { WineListReducer } from './WineListReducer';
+import { combineReducers } from 'redux'
+import { IFilteredWines } from '../states/IFilteredWines'
+import { WineListReducer } from './WineListReducer'
 
 /**
  * Declare data type of the parent state
  */
 export interface IState {
-    filteredWines: IFilteredWines;
+    filteredWines: IFilteredWines
 }
 
 /**
@@ -19,6 +19,6 @@ export interface IState {
  */
 const rootReducer = combineReducers<IState>({
     filteredWines: WineListReducer
-});
+})
 
-export default rootReducer;
+export default rootReducer

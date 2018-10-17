@@ -3,8 +3,8 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as React from 'react';
-import CategoryFilterContainer from '../../containers/CategoryFilterContainer';
+import * as React from 'react'
+import CategoryFilterContainer from '../../containers/CategoryFilterContainer'
 
 /**
  * WineCategoryFilterLinks component
@@ -38,6 +38,6 @@ export class WineCategoryFilterLinks extends React.Component {
                     <CategoryFilterContainer text="オー・ド・ヴィ" category="Eau de Vie" />
                 </li>
             </ul>
-        );
+        )
     }
 }

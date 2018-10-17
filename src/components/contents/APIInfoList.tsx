@@ -3,15 +3,15 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as React from 'react';
-import * as DateTimeUtility from '../../lib/DateTimeUtility';
-import { RenderGetResult } from './RenderGetResult';
+import * as React from 'react'
+import * as DateTimeUtility from '../../lib/DateTimeUtility'
+import { RenderGetResult } from './RenderGetResult'
 
 interface IInfo {
-    date: number;
-    description: string;
-    month: number;
-    year: number;
+    date: number
+    description: string
+    month: number
+    year: number
 }
 
 /**
@@ -27,7 +27,7 @@ export class APIInfoList extends React.Component<{ url: string }, {}> {
                 url={ this.props.url }
                 renderItems={ this.renderInfo }
             />
-        );
+        )
     }
 
     /**
@@ -43,29 +43,29 @@ export class APIInfoList extends React.Component<{ url: string }, {}> {
                     <td dangerouslySetInnerHTML={{ __html: info.description }} />
                 </tr>
             )
-        );
+        )
 
         return (
             <table>
                 <tbody>{ infoRows }</tbody>
             </table>
-        );
+        )
     }
 
     /**
      * Get class name for the date column
      */
     private getDateClassName(info: IInfo): string {
-        const weeks = DateTimeUtility.getWeekNames();
+        const weeks = DateTimeUtility.getWeekNames()
         const dayOfWeek =
-            DateTimeUtility.getDayOfWeek(info.year, info.month, info.date);
+            DateTimeUtility.getDayOfWeek(info.year, info.month, info.date)
 
-        const isSunday = (dayOfWeek === weeks[0]);
-        const isSaturday = (dayOfWeek === weeks[6]);
+        const isSunday = (dayOfWeek === weeks[0])
+        const isSaturday = (dayOfWeek === weeks[6])
 
         return isSunday ?
             'sunday-color' :
-            (isSaturday ? 'saturday-color' : '');
+            (isSaturday ? 'saturday-color' : '')
     }
 
     /**
@@ -76,8 +76,8 @@ export class APIInfoList extends React.Component<{ url: string }, {}> {
             info.year,
             DateTimeUtility.prependZeros(info.month, 2),
             DateTimeUtility.prependZeros(info.date, 2)
-        ];
+        ]
 
-        return tokens.join('.');
+        return tokens.join('.')
     }
 }

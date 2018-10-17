@@ -3,15 +3,15 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as React from 'react';
-import { IWine } from '../../states/IFilteredWines';
-import { WineColumn } from './WineColumn';
+import * as React from 'react'
+import { IWine } from '../../states/IFilteredWines'
+import { WineColumn } from './WineColumn'
 
 /**
  * Interface for HorizontalWineList
  */
 interface IHorizontalWineList {
-    wines: IWine[];
+    wines: IWine[]
 }
 
 /**
@@ -25,7 +25,7 @@ export class HorizontalWineList extends React.Component<IHorizontalWineList, {}>
         const wineColumns = this.props.wines.map(
             (wine: IWine) =>
             <WineColumn key={ wine.barcode_number } wine={ wine } />
-        );
+        )
 
         return (
             <table>
@@ -33,6 +33,6 @@ export class HorizontalWineList extends React.Component<IHorizontalWineList, {}>
                     <tr>{ wineColumns }</tr>
                 </tbody>
             </table>
-        );
+        )
     }
 }

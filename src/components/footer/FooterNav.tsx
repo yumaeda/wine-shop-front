@@ -3,22 +3,22 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as React from 'react';
-import { Link } from 'react-router-dom';
+import * as React from 'react'
+import { Link } from 'react-router-dom'
 
 /**
  * Interface for Link
  */
 export interface ILink {
-    path: string;
-    text: string;
+    path: string
+    text: string
 }
 
 /**
  * Interface for FooterNav
  */
 interface IFooterNav {
-    links: ILink[];
+    links: ILink[]
 }
 
 /**
@@ -33,8 +33,8 @@ export class FooterNav extends React.Component<IFooterNav, {}> {
             <li key={ index }>
                 <Link to={ link.path }>{ link.text }</Link>
             </li>
-        );
+        )
 
-        return <ul className="nav-links">{ jsx }</ul>;
+        return <ul className="nav-links">{ jsx }</ul>
     }
 }

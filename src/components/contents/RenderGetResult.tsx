@@ -3,12 +3,12 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as React from 'react';
-import { IAjaxGet } from '../IAjaxGet';
+import * as React from 'react'
+import { IAjaxGet } from '../IAjaxGet'
 
 interface IRenderGetResult {
-    url: string;
-    renderItems: (result: any) => any;
+    url: string
+    renderItems: (result: any) => any
 }
 
 /**
@@ -19,12 +19,12 @@ export class RenderGetResult extends React.Component<IRenderGetResult, IAjaxGet>
      * Constructor for IRenderGetResult
      */
     public constructor(props: IRenderGetResult) {
-        super(props);
+        super(props)
         this.state = {
             error: null,
             loaded: false,
             result: null
-        };
+        }
     }
 
     /**
@@ -39,32 +39,32 @@ export class RenderGetResult extends React.Component<IRenderGetResult, IAjaxGet>
                 this.setState({
                     loaded: true,
                     result
-                });
+                })
             },
 
             (error) => {
                 this.setState({
                     error,
                     loaded: true
-                });
+                })
             }
-        );
+        )
     }
 
     /**
      * Return JSX, which is rendered by renderItems render prop
      */
     public render(): React.ReactElement<IRenderGetResult> {
-        const { error, loaded, result } = this.state;
+        const { error, loaded, result } = this.state
 
         if (error) {
-            return <div>Error: { error.message }</div>;
+            return <div>Error: { error.message }</div>
         }
 
         if (!loaded) {
-            return <div>Loading...</div>;
+            return <div>Loading...</div>
         }
 
-        return this.props.renderItems(result);
+        return this.props.renderItems(result)
     }
 }

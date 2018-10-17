@@ -3,12 +3,12 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as React from 'react';
-import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import * as Redux from 'redux';
-import FilteredWinesContainer from '../containers/FilteredWinesContainer';
-import { defaultContext, UserContext } from '../context/UserContext';
+import * as React from 'react'
+import { Provider } from 'react-redux'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import * as Redux from 'redux'
+import FilteredWinesContainer from '../containers/FilteredWinesContainer'
+import { defaultContext, UserContext } from '../context/UserContext'
 
 /**
  * Root component
@@ -26,6 +26,6 @@ export class Root extends React.Component<{ store: Redux.Store }, {}> {
                     </Router>
                 </UserContext.Provider>
             </Provider>
-        );
+        )
     }
 }

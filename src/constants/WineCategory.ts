@@ -10,4 +10,4 @@ export type WineCategory =
     'Rosé'     |
     'Rouge'     |
     'Doux'      |
-    'Eau de Vie';
+    'Eau de Vie'

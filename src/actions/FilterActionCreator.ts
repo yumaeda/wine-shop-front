@@ -3,15 +3,15 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as Redux from 'redux';
-import { WineCategory } from '../constants/WineCategory';
-import keys from './ActionTypeKeys';
+import * as Redux from 'redux'
+import { WineCategory } from '../constants/WineCategory'
+import keys from './ActionTypeKeys'
 
 /**
  * Action interface for filtering wines by category
  */
 interface ICategoryFilterAction extends Redux.Action {
-    category: WineCategory;
+    category: WineCategory
 }
 
 /**
@@ -24,14 +24,14 @@ export const createCategoryFilterAction: Redux.ActionCreator<ICategoryFilterActi
         return {
             category,
             type: keys.CATEGORY_FILTER
-        };
-    };
+        }
+    }
 
 /**
  * Action interface for filtering wines by vintage
  */
 interface IVintageFilterAction extends Redux.Action {
-    vintage: number;
+    vintage: number
 }
 
 /**
@@ -42,15 +42,15 @@ export const createVintageFilterAction: Redux.ActionCreator<IVintageFilterAction
         return {
             type: keys.VINTAGE_FILTER,
             vintage
-        };
-    };
+        }
+    }
 
 /**
  * Action interface for filtering wines by price
  */
 interface IPriceFilterAction extends Redux.Action {
-    minPrice: number;
-    maxPrice: number;
+    minPrice: number
+    maxPrice: number
 }
 
 /**
@@ -63,5 +63,5 @@ export const createPriceFilterAction: Redux.ActionCreator<IPriceFilterAction> =
             maxPrice,
             minPrice,
             type: keys.PRICE_FILTER
-        };
-    };
+        }
+    }

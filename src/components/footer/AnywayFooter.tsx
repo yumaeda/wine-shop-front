@@ -3,10 +3,10 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as React from 'react';
-import { IUserContext, UserContext } from '../../context/UserContext';
-import { Iframe } from '../contents/Iframe';
-import { FooterNav, ILink } from './FooterNav';
+import * as React from 'react'
+import { IUserContext, UserContext } from '../../context/UserContext'
+import { Iframe } from '../contents/Iframe'
+import { FooterNav, ILink } from './FooterNav'
 
 /**
  * AnywayFooter component
@@ -22,14 +22,14 @@ export class AnywayFooter extends React.Component {
         { path: '/privacy', text: '個人情報' },
         { path: '/cmtransaction', text: '特定商取引法' },
         { path: '/inquiry', text: 'お問い合わせ' },
-        { path: '/faq', text: 'よくあるご質問' },
-    ];
+        { path: '/faq', text: 'よくあるご質問' }
+    ]
 
     /**
      * Return image JSX to render
      */
     public render(): React.ReactElement<AnywayFooter> {
-        const noticeText = '!! 未成年の方には酒類の販売を行いません。!!';
+        const noticeText = '!! 未成年の方には酒類の販売を行いません。!!'
         const jsx = (
             <UserContext.Consumer>
                 {
@@ -46,8 +46,8 @@ export class AnywayFooter extends React.Component {
                     )
                 }
             </UserContext.Consumer>
-        );
+        )
 
-        return jsx;
+        return jsx
     }
 }

@@ -3,15 +3,15 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as React from 'react';
+import * as React from 'react'
 
 /**
  * Interface for WineImage
  */
 interface IWineImage {
-    id: string;
-    baseUrl: string;
-    className: string;
+    id: string
+    baseUrl: string
+    className: string
 }
 
 /**
@@ -22,10 +22,10 @@ export class WineImage extends React.Component<IWineImage, { src: string }> {
      * Constructor for WineImage
      */
     public constructor(props: IWineImage) {
-        super(props);
+        super(props)
         this.state = {
             src: `${this.props.baseUrl}/${this.props.id}.png`
-        };
+        }
     }
 
     /**
@@ -38,7 +38,7 @@ export class WineImage extends React.Component<IWineImage, { src: string }> {
                  alt={ this.props.id }
                  onError={ this.setDefaultImage }
             />
-        );
+        )
     }
 
     /**
@@ -47,6 +47,6 @@ export class WineImage extends React.Component<IWineImage, { src: string }> {
     private setDefaultImage = (e: any): void => {
         this.setState({
             src: `${this.props.baseUrl}/no_wine_photo.png`
-        });
+        })
     }
 }

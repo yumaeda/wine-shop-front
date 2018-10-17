@@ -3,22 +3,22 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as Clone from 'clone';
-import * as Redux from 'redux';
-import keys from '../actions/ActionTypeKeys';
-import { IFilteredWines, initFilteredWines } from '../states/IFilteredWines';
+import * as Clone from 'clone'
+import * as Redux from 'redux'
+import keys from '../actions/ActionTypeKeys'
+import { IFilteredWines, initFilteredWines } from '../states/IFilteredWines'
 
 /**
  * Reducer for wine filter change
  */
 export const WineListReducer: Redux.Reducer<IFilteredWines> =
     (state = initFilteredWines, action: Redux.AnyAction) => {
-        let newState = state;
+        let newState = state
         switch (action.type) {
             case keys.CATEGORY_FILTER:
                 if (state.filter !== 'category') {
-                    newState = Clone(state);
-                    newState.filter = 'category';
+                    newState = Clone(state)
+                    newState.filter = 'category'
                     newState.wines = [
                         {
                             barcode_number: '11111',
@@ -36,13 +36,13 @@ export const WineListReducer: Redux.Reducer<IFilteredWines> =
                             producer_jpn: 'ペゴー',
                             vintage: '2000'
                         },
-                    ];
+                    ]
                 }
-                break;
+                break
             case keys.VINTAGE_FILTER:
                 if (state.filter !== 'vintage') {
-                    newState = Clone(state);
-                    newState.filter = 'vintage';
+                    newState = Clone(state)
+                    newState.filter = 'vintage'
                     newState.wines = [
                         {
                             barcode_number: '11111',
@@ -60,13 +60,13 @@ export const WineListReducer: Redux.Reducer<IFilteredWines> =
                             producer_jpn: 'シャト・マルゴー',
                             vintage: '2005'
                         },
-                    ];
+                    ]
                 }
-                break;
+                break
             case keys.PRICE_FILTER:
                 if (state.filter !== 'price') {
-                    newState = Clone(state);
-                    newState.filter = 'price';
+                    newState = Clone(state)
+                    newState.filter = 'price'
                     newState.wines = [
                         {
                             barcode_number: '11111',
@@ -84,12 +84,12 @@ export const WineListReducer: Redux.Reducer<IFilteredWines> =
                             producer_jpn: 'ドメーヌ・ミューレ',
                             vintage: '1989'
                         },
-                    ];
+                    ]
                 }
-                break;
+                break
             default:
-                break;
+                break
         }
 
-        return newState;
-    };
+        return newState
+    }
