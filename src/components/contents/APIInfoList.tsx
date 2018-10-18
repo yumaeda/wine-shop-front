@@ -55,10 +55,10 @@ export class APIInfoList extends React.Component<{ url: string }, {}> {
     /**
      * Get class name for the date column
      */
-    private getDateClassName(info: IInfo): string {
+    private getDateClassName = ({ year, month, date }: IInfo): string => {
         const weeks = DateTimeUtility.getWeekNames()
         const dayOfWeek =
-            DateTimeUtility.getDayOfWeek(info.year, info.month, info.date)
+            DateTimeUtility.getDayOfWeek(year, month, date)
 
         const isSunday = (dayOfWeek === weeks[0])
         const isSaturday = (dayOfWeek === weeks[6])
@@ -71,11 +71,11 @@ export class APIInfoList extends React.Component<{ url: string }, {}> {
     /**
      * Get date text
      */
-    private getDateText(info: IInfo): string {
+    private getDateText = ({ year, month, date }: IInfo): string => {
         const tokens = [
-            info.year,
-            DateTimeUtility.prependZeros(info.month, 2),
-            DateTimeUtility.prependZeros(info.date, 2)
+            year,
+            DateTimeUtility.prependZeros(month, 2),
+            DateTimeUtility.prependZeros(date, 2)
         ]
 
         return tokens.join('.')
