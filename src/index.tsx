@@ -4,13 +4,22 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
-import { render } from 'react-dom'
-import { createStore } from 'redux'
+import * as ReactDOM from 'react-dom'
+import { applyMiddleware, createStore } from 'redux'
+import createSagaMiddleware from 'redux-saga'
 import { Root } from './components/Root'
 import rootReducer from './reducers'
+import rootSaga from './sagas'
 
-const store = createStore(rootReducer)
-render(
-    <Root store={ store } />,
-    document.getElementById('app')
-)
+const sagaMiddleware = createSagaMiddleware()
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware))
+sagaMiddleware.run(rootSaga)
+function render() {
+    ReactDOM.render(
+        <Root store={ store } />,
+        document.getElementById('app')
+    )
+}
+
+render()
+store.subscribe(render)

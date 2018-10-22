@@ -23,7 +23,7 @@ export const createCategoryFilterAction: Redux.ActionCreator<ICategoryFilterActi
     (category: WineCategory) => {
         return {
             category,
-            type: keys.CATEGORY_FILTER
+            type: keys.CATEGORY_FILTER_ASYNC
         }
     }
 
@@ -40,7 +40,7 @@ interface IVintageFilterAction extends Redux.Action {
 export const createVintageFilterAction: Redux.ActionCreator<IVintageFilterAction> =
     (vintage: number) => {
         return {
-            type: keys.VINTAGE_FILTER,
+            type: keys.VINTAGE_FILTER_ASYNC,
             vintage
         }
     }
@@ -62,6 +62,6 @@ export const createPriceFilterAction: Redux.ActionCreator<IPriceFilterAction> =
         return {
             maxPrice,
             minPrice,
-            type: keys.PRICE_FILTER
+            type: keys.PRICE_FILTER_ASYNC
         }
     }
