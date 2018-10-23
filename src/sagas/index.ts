@@ -29,12 +29,34 @@ function* watchPriceFilter(): SagaIterator {
     yield takeEvery(keys.PRICE_FILTER_ASYNC, priceFilter)
 }
 
+function* fetchWines(): SagaIterator {
+    try {
+        const response = yield call(fetch, 'api/v1/wines')
+        const responseBody = response.json()
+        yield put({
+            type: keys.FETCH_SUCCESS,
+            wines: responseBody
+        })
+    } catch (error) {
+        yield put({ type: keys.FETCH_FAILURE, error })
+    }
+}
+
+/**
+ * Saga for calling fetchWines() whenever 'FETCH_START'
+ * action is dispatched
+ */
+function* watchFetchWines(): SagaIterator {
+    yield takeEvery(keys.FETCH_START, fetchWines)
+}
+
 // notice how we now only export the rootSaga
 // single entry point to start all Sagas at once
 export default function* rootSaga() {
     yield all([
         watchCategoryFilter(),
         watchVintageFilter(),
-        watchPriceFilter()
+        watchPriceFilter(),
+        watchFetchWines()
     ])
 }

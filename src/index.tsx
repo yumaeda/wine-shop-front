@@ -7,7 +7,7 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { applyMiddleware, createStore } from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import { Root } from './components/Root'
+import FetchWinesContainer from './containers/FetchWinesContainer'
 import rootReducer from './reducers'
 import rootSaga from './sagas'
 
@@ -16,7 +16,7 @@ const store = createStore(rootReducer, applyMiddleware(sagaMiddleware))
 sagaMiddleware.run(rootSaga)
 function render() {
     ReactDOM.render(
-        <Root store={ store } />,
+        <FetchWinesContainer store={ store } />,
         document.getElementById('app')
     )
 }

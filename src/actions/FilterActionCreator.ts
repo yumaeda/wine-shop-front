@@ -8,6 +8,13 @@ import { WineCategory } from '../constants/WineCategory'
 import keys from './ActionTypeKeys'
 
 /**
+ * Create an action for fetching all the wines
+ */
+export const createFetchWinesAction: Redux.ActionCreator<Redux.Action> = () => {
+    return { type: keys.FETCH_START }
+}
+
+/**
  * Action interface for filtering wines by category
  */
 interface ICategoryFilterAction extends Redux.Action {
