@@ -29,9 +29,9 @@ function* watchPriceFilter(): SagaIterator {
     yield takeEvery(keys.PRICE_FILTER_ASYNC, priceFilter)
 }
 
-function* fetchWines(): SagaIterator {
+function* fetchWines(action: { type: string, url: string }): SagaIterator {
     try {
-        const response = yield call(fetch, 'api/v1/wines')
+        const response = yield call(fetch, action.url)
         const responseBody = response.json()
         yield put({
             type: keys.FETCH_SUCCESS,

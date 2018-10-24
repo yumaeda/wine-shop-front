@@ -16,6 +16,7 @@ import { defaultContext, UserContext } from '../context/UserContext'
 export interface IRoot {
     store: Redux.Store
     onMount: () => void
+    url: string
 }
 
 /**

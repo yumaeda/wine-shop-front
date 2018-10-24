@@ -14,12 +14,8 @@ import rootSaga from './sagas'
 const sagaMiddleware = createSagaMiddleware()
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware))
 sagaMiddleware.run(rootSaga)
-function render() {
-    ReactDOM.render(
-        <FetchWinesContainer store={ store } />,
-        document.getElementById('app')
-    )
-}
 
-render()
-store.subscribe(render)
+ReactDOM.render(
+    <FetchWinesContainer store={ store } url="api/v1/wines" />,
+    document.getElementById('app')
+)
