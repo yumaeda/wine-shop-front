@@ -6,7 +6,7 @@
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import * as Redux from 'redux'
-import { createCategoryFilterAction } from '../actions/FilterActionCreator'
+import { createCategoryFilterAction } from '../actions'
 import { FilterLink } from '../components/sidebar/FilterLink'
 
 /**

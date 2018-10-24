@@ -5,7 +5,7 @@
  */
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { createPriceFilterAction } from '../actions/FilterActionCreator'
+import { createPriceFilterAction } from '../actions'
 import { FilterLink } from '../components/sidebar/FilterLink'
 
 /**

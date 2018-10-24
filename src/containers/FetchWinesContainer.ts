@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import { connect } from 'react-redux'
-import { createFetchWinesAction } from '../actions/FilterActionCreator'
+import { createFetchWinesAction } from '../actions'
 import { Root } from '../components/Root'
 
 /**
