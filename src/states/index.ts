@@ -34,6 +34,13 @@ export interface IFilteredWines {
 }
 
 /**
+ * Declare data type of the parent state
+ */
+export interface IState {
+    filteredWines: IFilteredWines
+}
+
+/**
  * Default value for the filtered wines
  */
 export const initFilteredWines: IFilteredWines = {

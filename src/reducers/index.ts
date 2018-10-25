@@ -1,18 +1,11 @@
 /**
- * Root reducer used by Redux
+ * Define a root reducer for Redux
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import { combineReducers } from 'redux'
-import { IFilteredWines } from '../states/IFilteredWines'
+import { IState } from '../states'
 import { WineListReducer } from './WineListReducer'
-
-/**
- * Declare data type of the parent state
- */
-export interface IState {
-    filteredWines: IFilteredWines
-}
 
 /**
  * Root reducer

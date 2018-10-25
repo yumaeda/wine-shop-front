@@ -5,7 +5,7 @@
  */
 import * as React from 'react'
 import { IUserContext, UserContext } from '../../context/UserContext'
-import { IWine } from '../../states/IFilteredWines'
+import { IWine } from '../../states'
 import { WineImage } from './WineImage'
 
 /**

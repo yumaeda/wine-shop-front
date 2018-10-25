@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
-import { IWine } from '../../states/IFilteredWines'
+import { IWine } from '../../states'
 import { DefaultContents } from './DefaultContents'
 import { Iframe } from './Iframe'
 import { WineColumn } from './WineColumn'

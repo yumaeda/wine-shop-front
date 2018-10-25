@@ -5,7 +5,7 @@
  */
 import * as React from 'react'
 import FilteredWinesContainer from '../containers/FilteredWinesContainer'
-import { IFilteredWines } from '../states/IFilteredWines'
+import { IFilteredWines } from '../states'
 import { AnywayContents } from './contents/AnywayContents'
 import { AnywayFooter } from './footer/AnywayFooter'
 import { AnywayHeader } from './header/AnywayHeader'
