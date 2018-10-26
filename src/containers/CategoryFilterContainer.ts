@@ -6,14 +6,18 @@
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import * as Redux from 'redux'
-import { createCategoryFilterAction } from '../actions'
+import keys from '../actions/ActionTypeKeys'
 import { FilterLink } from '../components/sidebar/FilterLink'
 
 /**
  * Map dispatch to component.props
  */
 const mapDispatchToProps = (dispatch: Redux.Dispatch<Redux.Action<any>>, props: any) => ({
-    onFilterClick: () => dispatch(createCategoryFilterAction(props.category))
+    onFilterClick: () => dispatch({
+        success: keys.FETCH_SUCCESS,
+        type: keys.FETCH_START,
+        url: props.url
+    })
 })
 
 /**

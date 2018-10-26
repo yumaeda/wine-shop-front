@@ -2,11 +2,6 @@ import { delay, SagaIterator } from 'redux-saga'
 import { all, call, put, takeEvery } from 'redux-saga/effects'
 import keys from '../actions/ActionTypeKeys'
 
-function* categoryFilter(): SagaIterator {
-    yield call(delay, 2000)
-    yield put({ type: keys.CATEGORY_FILTER })
-}
-
 function* vintageFilter(): SagaIterator {
     yield call(delay, 2000)
     yield put({ type: keys.VINTAGE_FILTER })
@@ -15,10 +10,6 @@ function* vintageFilter(): SagaIterator {
 function* priceFilter(): SagaIterator {
     yield call(delay, 2000)
     yield put({ type: keys.PRICE_FILTER })
-}
-
-function* watchCategoryFilter(): SagaIterator {
-    yield takeEvery(keys.CATEGORY_FILTER_ASYNC, categoryFilter)
 }
 
 function* watchVintageFilter(): SagaIterator {
@@ -40,7 +31,8 @@ function* fetchWines(action: { type: string, url: string, success: string }): Sa
     try {
         const response = yield call(fetch, action.url)
         const data = yield call([ response, response.json ])
-        yield put({ type: action.success, wines: data.wines })
+        const wines = data.wines ? data.wines : data;
+        yield put({ type: action.success, wines })
     } catch (error) {
         yield put({ type: keys.FETCH_FAILURE, error })
     }
@@ -58,7 +50,6 @@ function* watchFetchWines(): SagaIterator {
 // single entry point to start all Sagas at once
 export default function* rootSaga() {
     yield all([
-        watchCategoryFilter(),
         watchVintageFilter(),
         watchPriceFilter(),
         watchFetchWines()

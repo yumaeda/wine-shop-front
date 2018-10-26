@@ -8,26 +8,6 @@ import { WineCategory } from '../constants/WineCategory'
 import keys from './ActionTypeKeys'
 
 /**
- * Action interface for filtering wines by category
- */
-interface ICategoryFilterAction extends Redux.Action {
-    category: WineCategory
-}
-
-/**
- * Create an action for filtering wines with the specified category
- *
- * @param WineCategory Category of wine
- */
-export const createCategoryFilterAction: Redux.ActionCreator<ICategoryFilterAction> =
-    (category: WineCategory) => {
-        return {
-            category,
-            type: keys.CATEGORY_FILTER_ASYNC
-        }
-    }
-
-/**
  * Action interface for filtering wines by vintage
  */
 interface IVintageFilterAction extends Redux.Action {
