@@ -30,11 +30,11 @@ export class FooterNav extends React.Component<IFooterNav, {}> {
      */
     public render(): React.ReactElement<FooterNav> {
         const jsx = this.props.links.map((link: ILink, index: number) =>
-            <li key={ index }>
-                <Link to={ link.path }>{ link.text }</Link>
+            <li className="footer__list-item" key={ index }>
+                <Link className="footer__link" to={ link.path }>{ link.text }</Link>
             </li>
         )
 
-        return <ul className="nav-links">{ jsx }</ul>
+        return <ul>{ jsx }</ul>
     }
 }

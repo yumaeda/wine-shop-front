@@ -15,26 +15,26 @@ export class WineCategoryFilterLinks extends React.Component {
      */
     public render(): React.ReactElement<WineCategoryFilterLinks> {
         return (
-            <ul className="type-ul">
-                <li>
+            <ul>
+                <li className="sidebar__list-item">
                     <CategoryFilterContainer text="スパークリング・ワイン" category="Mousseux" />
                 </li>
-                <li>
+                <li className="sidebar__list-item">
                     <CategoryFilterContainer text="シャンパーニュ" category="Champagne" />
                 </li>
-                <li>
+                <li className="sidebar__list-item">
                     <CategoryFilterContainer text="白ワイン" category="Blanc" />
                 </li>
-                <li>
+                <li className="sidebar__list-item">
                     <CategoryFilterContainer text="ロゼ" category="Rosé" />
                 </li>
-                <li>
+                <li className="sidebar__list-item">
                     <CategoryFilterContainer text="赤ワイン" category="Rouge" />
                 </li>
-                <li>
+                <li className="sidebar__list-item">
                     <CategoryFilterContainer text="デザートワイン" category="Doux" />
                 </li>
-                <li>
+                <li className="sidebar__list-item">
                     <CategoryFilterContainer text="オー・ド・ヴィ" category="Eau de Vie" />
                 </li>
             </ul>

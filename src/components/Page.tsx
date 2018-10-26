@@ -29,7 +29,7 @@ export class Page extends React.Component<IPage, {}> {
         return (
             <React.StrictMode>
                 <AnywayHeader logined={ true } />
-                <div className="page-container">
+                <div className="container">
                     <AnywayAside />
                     <AnywayContents { ...this.props } />
                 </div>

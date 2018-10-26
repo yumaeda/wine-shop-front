@@ -1,9 +1,16 @@
-aside {
+.sidebar {
     opacity: 0.8;
     width: 200px;
     float: left;
 
-    li {
+    &__list-item {
         list-style: none;
+    }
+
+    &__link {
+        color: #505050;
+        text-decoration: none;
+        line-height: 20px;
+        font-size: 14px;
     }
 }

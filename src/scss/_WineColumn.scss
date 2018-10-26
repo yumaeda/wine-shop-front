@@ -2,9 +2,16 @@
     vertical-align: top;
     padding: 0 20px 0 0;
 
-    .wine-img {
+    &__image {
         border: 1px solid #e0e0e0;
         vertical-align: middle;
         height: 175px;
+    }
+
+    &__link {
+        color: #505050;
+        text-decoration: none;
+        line-height: 20px;
+        font-size: 14px;
     }
 }

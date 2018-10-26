@@ -29,6 +29,7 @@ export class FilterLink extends React.Component<IFilterLink, {}> {
     public render(): React.ReactElement<FilterLink> {
         return (
             <Link to="/"
+                className="sidebar__link"
                 children={ this.props.text }
                 onClick={
                     (event: React.MouseEvent<HTMLElement>) => {

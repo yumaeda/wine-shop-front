@@ -1,17 +1,22 @@
-footer {
+.footer {
     text-align: center;
 
-    .notice-text {
+    &__text--notice {
         color: darkred;
     }
 
-    .nav-links {
-        li {
-            display: inline;
+    &__list-item {
+        display: inline;
 
-            &::after {
-                content: "\00a0\00a0|\00a0\00a0"
-            }
+        &::after {
+            content: "\00a0\00a0|\00a0\00a0"
         }
+    }
+
+    &__link {
+        color: #505050;
+        text-decoration: none;
+        line-height: 20px;
+        font-size: 14px;
     }
 }

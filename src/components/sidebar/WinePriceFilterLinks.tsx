@@ -40,6 +40,6 @@ export class WinePriceFilterLinks extends React.Component {
                     maxPrice={ 999999999 } />
             </li>))
 
-        return <ul className="price-range-ul">{ priceRanges }</ul>
+        return <ul>{ priceRanges }</ul>
     }
 }

@@ -1,18 +1,7 @@
-body {
-    color: #505050;
-    font-family: "メイリオ","ヒラギノ角ゴ Pro W3","MS PGothic","MS UI Gothic",Helvetica,Arial,sans-serif;
-    font-size: 15px;
-
-    a {
-        color: #505050;
-        text-decoration: none;
-        line-height: 20px;
-        font-size: 14px;
-    }
-
-    @import '_AnywayHeader';
-    @import '_AnywayContents';
-    @import '_AnywayAside';
-    @import '_AnywayFooter';
-    @import '_WineColumn';
-}
+@import '_Body';
+@import '_AnywayHeader';
+@import '_SearchBox';
+@import '_AnywayContents';
+@import '_AnywayAside';
+@import '_AnywayFooter';
+@import '_WineColumn';

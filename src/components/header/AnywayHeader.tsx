@@ -27,31 +27,37 @@ export class AnywayHeader extends React.Component<IAnywayHeader, {}> {
             <UserContext.Consumer>
                 {
                     (ctx: IUserContext) => (
-                        <header>
+                        <header className="header">
                             <a href={ `${ctx.siteUrl}/index.php` }><img src={ `${ctx.imgDir}/_logo.png` } /></a>
                             <br />
-                            <Link to={ '/vintages' } className="page-links">Vintages</Link>
-                            <Link to={ '/producers' } className="page-links">Producers</Link>
-                            <Link to={ '/critics' } className="page-links">Critics</Link>
+                            <Link to={ '/vintages' } className="header__link">Vintages</Link>
+                            <Link to={ '/producers' } className="header__link">Producers</Link>
+                            <Link to={ '/critics' } className="header__link">Critics</Link>
                             <SearchBox placeholder="ワイン検索" />
                             <div id="signup-fld">
-                                <a href={ `${ctx.siteUrl}/cart.php` } className="cmd-links">カート</a>
+                                <a href={ `${ctx.siteUrl}/cart.php` } className="header__command">カート</a>
                                 {
                                     this.props.logined ? (
                                         <>
-                                            <a href={ `${ctx.siteUrl}/login.php` } className="cmd-links">ログイン</a>
+                                            <a
+                                                href={ `${ctx.siteUrl}/login.php` }
+                                                className="header__command">ログイン</a>
+
                                             <a
                                                 href="#"
                                                 id="register-link"
                                                 onClick={ this.showRegistrationForm }
-                                                className="cmd-links">会員登録</a>
+                                                className="header__command">会員登録</a>
                                         </>
                                     ) : (
                                         <>
-                                            <a href={ `${ctx.siteUrl}/logout.php` } className="cmd-links">ログアウト</a>
+                                            <a
+                                                href={ `${ctx.siteUrl}/logout.php` }
+                                                className="header__command">ログアウト</a>
+
                                             <a
                                                 href={ `${ctx.siteUrl}/customer_info.php` }
-                                                className="cmd-links">会員ページ</a>
+                                                className="header__command">会員ページ</a>
                                         </>
                                     )
                                 }
@@ -70,6 +76,6 @@ export class AnywayHeader extends React.Component<IAnywayHeader, {}> {
      */
     private showRegistrationForm = (event: React.MouseEvent<HTMLElement>): void => {
         event.preventDefault()
-        alert('HO')
+        alert('Register')
     }
 }

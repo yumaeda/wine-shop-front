@@ -25,6 +25,6 @@ export class WineVintageFilterLinks extends React.Component {
             ))
         }
 
-        return <ul className="vintage-ul">{ vintages }</ul>
+        return <ul>{ vintages }</ul>
     }
 }

@@ -19,15 +19,15 @@ export class DefaultContents extends React.Component {
         return (
             <div id="page-contents">
                 <h2>新着情報</h2>
-                <div className="new-info-pane">
+                <div className="new-info">
                     <APIInfoList url="api/v1/new-infos" />
                 </div>
                 <h2>入荷ワイン</h2>
-                <div className="arrival-pane">
+                <div className="new-arrival">
                     <NewWinesContainer url="api/v1/new-wines" />
                 </div>
                 <h2>ランキング</h2>
-                <div className="ranking-pane">
+                <div className="ranking">
                     <RankingWinesContainer url="api/v1/ranking-wines" />
                 </div>
             </div>

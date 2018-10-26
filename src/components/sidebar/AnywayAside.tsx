@@ -17,7 +17,7 @@ export class AnywayAside extends React.Component {
      */
     public render(): React.ReactElement<AnywayAside> {
         return (
-            <aside>
+            <aside className="sidebar">
                 <h2>価格</h2>
                 <WinePriceFilterLinks />
                 <hr />

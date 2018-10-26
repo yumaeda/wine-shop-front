@@ -37,19 +37,19 @@ export class APIInfoList extends React.Component<{ url: string }, {}> {
         const infoRows = result.infos.map(
             (info: IInfo) => (
                 <tr>
-                    <td className={ this.getDateClassName(info) }>
+                    <td className={ `new-info__column ${this.getDateClassName(info)}` }>
                         { this.getDateText(info) }
                     </td>
-                    <td dangerouslySetInnerHTML={{ __html: info.description }} />
+                    <td
+                        className="new-info__column"
+                        dangerouslySetInnerHTML={
+                            { __html: info.description }
+                        } />
                 </tr>
             )
         )
 
-        return (
-            <table>
-                <tbody>{ infoRows }</tbody>
-            </table>
-        )
+        return <table><tbody>{ infoRows }</tbody></table>
     }
 
     /**
@@ -64,8 +64,8 @@ export class APIInfoList extends React.Component<{ url: string }, {}> {
         const isSaturday = (dayOfWeek === weeks[6])
 
         return isSunday ?
-            'sunday-color' :
-            (isSaturday ? 'saturday-color' : '')
+            'new-info--sunday' :
+            (isSaturday ? 'new-info--saturday' : '')
     }
 
     /**

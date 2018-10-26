@@ -1,4 +1,4 @@
-header {
+.header {
     width: 100%;
     min-width: 500px;
     height: 145px;
@@ -10,7 +10,7 @@ header {
     text-align: center;
     background-color: snow;
 
-    .page-links {
+    &__link {
         color: cadetblue;
         text-decoration: none;
         line-height: 20px;
@@ -19,22 +19,12 @@ header {
         margin: 10px;
     }
 
-    .cmd-links {
+    &__command {
         color: white;
         text-decoration: none;
         background-color: darkgray;
         font-size: 14px;
         border-style: none;
         padding: 6px 15px;
-    }
-
-    .search-input {
-        width: 250px;
-        height: 30px;
-    }
-
-    .search-button {
-        height: 33px;
-        vertical-align: middle;
     }
 }

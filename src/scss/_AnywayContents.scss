@@ -1,37 +1,38 @@
-.page-container {
+.container {
     width: 80%;
     min-width: 900px;
     height: 100%;
     margin: 145px auto 30px auto;
+}
 
-    .new-info-pane {
-        max-height: 200px;
-        overflow: auto;
-        overflow-x: hidden;
+.new-info {
+    max-height: 200px;
+    overflow: auto;
+    overflow-x: hidden;
 
-        .saturday-color {
-            color: #8282ff;
-        }
+    &__column {
+        padding: 6px;
+        border-bottom: 1px dashed #e0e0e0;
 
-        .sunday-color {
-            color: #e49cae;
-        }
-
-        td {
-            padding: 6px;
-            border-bottom: 1px dashed #e0e0e0;
-
-            &:first-child {
-                width: 80px;
-            }
+        &:first-child {
+            width: 80px;
         }
     }
 
-    .arrival-pane {
-        overflow-x: auto;
+    &--saturday {
+        color: #8282ff;
     }
 
-    .ranking-pane {
-        overflow-x: auto;
+    &--sunday {
+        color: #e49cae;
     }
 }
+
+.new-arrival {
+    overflow-x: auto;
+}
+
+.ranking {
+    overflow-x: auto;
+}
+

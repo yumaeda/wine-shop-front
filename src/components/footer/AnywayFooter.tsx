@@ -34,9 +34,9 @@ export class AnywayFooter extends React.Component {
             <UserContext.Consumer>
                 {
                     (ctx: IUserContext) => (
-                        <footer>
+                        <footer className="footer">
                             <div>
-                                <span className="notice-text">{ noticeText }</span>
+                                <span className="footer__text--notice">{ noticeText }</span>
                                 <br /><br />
                                 <FooterNav links={ this.links } />
                             </div>

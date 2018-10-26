@@ -25,11 +25,11 @@ export class SearchBox extends React.Component<ISearchBox, {}> {
             <UserContext.Consumer>
                 {
                     (ctx: IUserContext) => (
-                        <div id="simple-search-fld">
-                            <input type="text" placeholder={ this.props.placeholder } className="search-input" />
+                        <div className="search-box">
+                            <input type="text" placeholder={ this.props.placeholder } className="search-box__input" />
                             <img
                                 src={ `${ctx.imgDir}/search_wine.png` }
-                                className="search-button"
+                                className="search-box__button"
                                 onClick={ this.onSearch } />
                         </div>
                     )
