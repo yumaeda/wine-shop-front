@@ -1,4 +1,9 @@
 .search-box {
+    white-space: nowrap;
+    position: absolute;
+    top: 100px;
+    left: 20px;
+
     &__input {
         width: 250px;
         height: 30px;

@@ -1,8 +1,14 @@
 .container {
+    background-color: white;
     width: 80%;
     min-width: 900px;
     height: 100%;
     margin: 145px auto 30px auto;
+
+    &__title {
+        padding: 30px 0 15px 15px;
+        font-size: 20px;
+    }
 }
 
 .new-info {

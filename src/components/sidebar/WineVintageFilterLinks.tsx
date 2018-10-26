@@ -19,7 +19,7 @@ export class WineVintageFilterLinks extends React.Component {
 
         for (let year = 1930; year < currentYear; year += 10) {
             vintages.push((
-                <li key={ year }>
+                <li className="sidebar__list-item" key={ year }>
                     <VintageFilterContainer text={ `${year}年代` } vintage={ year } />
                 </li>
             ))

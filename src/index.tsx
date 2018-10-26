@@ -17,5 +17,5 @@ sagaMiddleware.run(rootSaga)
 
 ReactDOM.render(
     <Root store={ store } />,
-    document.getElementById('app')
+    document.getElementById('root')
 )

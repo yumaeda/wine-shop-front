@@ -18,13 +18,14 @@ export class AnywayAside extends React.Component {
     public render(): React.ReactElement<AnywayAside> {
         return (
             <aside className="sidebar">
-                <h2>価格</h2>
+                <hr className="sidebar__separator" />
+                <h2 className="sidebar__title">価格</h2>
                 <WinePriceFilterLinks />
-                <hr />
-                <h2>種類</h2>
+                <hr className="sidebar__separator" />
+                <h2 className="sidebar__title">種類</h2>
                 <WineCategoryFilterLinks />
-                <hr />
-                <h2>年代</h2>
+                <hr className="sidebar__separator" />
+                <h2 className="sidebar__title">年代</h2>
                 <WineVintageFilterLinks />
             </aside>
         )

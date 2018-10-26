@@ -23,7 +23,7 @@ export class WinePriceFilterLinks extends React.Component {
             const dispMinPrice = price.toLocaleString()
             const dispMaxPrice = maxPrice.toLocaleString()
             priceRanges.push((
-                <li key={ price }>
+                <li className="sidebar__list-item" key={ price }>
                     <PriceFilterContainer
                         text={ `${dispMinPrice}〜${dispMaxPrice}円` }
                         minPrice={ price }
@@ -33,7 +33,7 @@ export class WinePriceFilterLinks extends React.Component {
         }
 
         priceRanges.push((
-            <li key={ upperLimit }>
+            <li className="sidebar__list-item" key={ upperLimit }>
                 <PriceFilterContainer
                     text={ upperLimit.toLocaleString() + '円〜' }
                     minPrice={ upperLimit }

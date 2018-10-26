@@ -43,7 +43,7 @@ module.exports = [
 {
     mode: MODE,
     entry: {
-        style: './src/scss/index.scss'
+        style: './scss/index.scss'
     },
     output: {
         filename: 'index.css',

@@ -17,20 +17,20 @@ export class DefaultContents extends React.Component {
      */
     public render(): React.ReactElement<DefaultContents> {
         return (
-            <div id="page-contents">
-                <h2>新着情報</h2>
+            <>
+                <h2 className="container__title">新着情報</h2>
                 <div className="new-info">
                     <APIInfoList url="api/v1/new-infos" />
                 </div>
-                <h2>入荷ワイン</h2>
+                <h2 className="container__title">入荷ワイン</h2>
                 <div className="new-arrival">
                     <NewWinesContainer url="api/v1/new-wines" />
                 </div>
-                <h2>ランキング</h2>
+                <h2 className="container__title">ランキング</h2>
                 <div className="ranking">
                     <RankingWinesContainer url="api/v1/ranking-wines" />
                 </div>
-            </div>
+            </>
         )
     }
 }
