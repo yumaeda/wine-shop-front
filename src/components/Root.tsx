@@ -11,18 +11,9 @@ import FilteredWinesContainer from '../containers/FilteredWinesContainer'
 import { defaultContext, UserContext } from '../context/UserContext'
 
 /**
- * Interface for Root component
- */
-export interface IRoot {
-    store: Redux.Store
-    onMount: () => void
-    url: string
-}
-
-/**
  * Root component
  */
-export class Root extends React.Component<IRoot, {}> {
+export class Root extends React.Component<{ store: Redux.Store }, {}> {
     /**
      * Return image JSX to render
      */
@@ -36,12 +27,5 @@ export class Root extends React.Component<IRoot, {}> {
                 </UserContext.Provider>
             </Provider>
         )
-    }
-
-    /**
-     * Dispatch FETCH_START action
-     */
-    public componentDidMount() {
-        this.props.onMount();
     }
 }

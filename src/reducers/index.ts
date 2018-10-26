@@ -5,13 +5,17 @@
  */
 import { combineReducers } from 'redux'
 import { IState } from '../states'
+import { FetchNewWinesReducer } from './FetchNewWinesReducer'
+import { FetchRankingWinesReducer } from './FetchRankingWinesReducer'
 import { WineListReducer } from './WineListReducer'
 
 /**
  * Root reducer
  */
 const rootReducer = combineReducers<IState>({
-    filteredWines: WineListReducer
+    filteredWines: WineListReducer,
+    newWines: FetchNewWinesReducer,
+    rankingWines: FetchRankingWinesReducer
 })
 
 export default rootReducer

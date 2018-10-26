@@ -34,10 +34,26 @@ export interface IFilteredWines {
 }
 
 /**
+ * Interface for new wines
+ */
+export interface INewWines {
+    wines: IWine[]
+}
+
+/**
+ * Interface for ranking wines
+ */
+export interface IRankingWines {
+    wines: IWine[]
+}
+
+/**
  * Declare data type of the parent state
  */
 export interface IState {
     filteredWines: IFilteredWines
+    newWines: INewWines
+    rankingWines: IRankingWines
 }
 
 /**
@@ -45,5 +61,19 @@ export interface IState {
  */
 export const initFilteredWines: IFilteredWines = {
     filter: 'none',
+    wines: []
+}
+
+/**
+ * Default value for the new wines
+ */
+export const initNewWines: INewWines = {
+    wines: []
+}
+
+/**
+ * Default value for the ranking wines
+ */
+export const initRankingWines: IRankingWines = {
     wines: []
 }

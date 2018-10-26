@@ -33,14 +33,14 @@ function* watchPriceFilter(): SagaIterator {
  * Saga for fetching wine and send 'FETCH_SUCCESS' or 'FETCH_FAILURE'
  * based on the result
  */
-function* fetchWines(action: { type: string, url: string }): SagaIterator {
+function* fetchWines(action: { type: string, url: string, success: string }): SagaIterator {
     // Wait 5 seconds for demonstration purpose
     yield call(delay, 5000)
 
     try {
         const response = yield call(fetch, action.url)
         const data = yield call([ response, response.json ])
-        yield put({ type: keys.FETCH_SUCCESS, wines: data.wines })
+        yield put({ type: action.success, wines: data.wines })
     } catch (error) {
         yield put({ type: keys.FETCH_FAILURE, error })
     }

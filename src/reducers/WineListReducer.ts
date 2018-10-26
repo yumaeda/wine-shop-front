@@ -15,16 +15,6 @@ export const WineListReducer: Redux.Reducer<IFilteredWines> =
     (state = initFilteredWines, action: Redux.AnyAction) => {
         let newState = state
         switch (action.type) {
-            case keys.FETCH_SUCCESS:
-                newState = Clone(state)
-                newState.wines = action.wines
-                newState.filter = 'none'
-                break
-            case keys.FETCH_FAILURE:
-                newState = Clone(state)
-                newState.filter = 'none'
-                newState.wines = []
-                break
             case keys.CATEGORY_FILTER:
                 if (state.filter !== 'category') {
                     newState = Clone(state)

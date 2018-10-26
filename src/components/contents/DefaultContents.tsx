@@ -4,8 +4,9 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
+import NewWinesContainer from '../../containers/NewWinesContainer'
+import RankingWinesContainer from '../../containers/RankingWinesContainer'
 import { APIInfoList } from './APIInfoList'
-import { APIWineList } from './APIWineList'
 
 /**
  * DefaultContents component
@@ -23,11 +24,11 @@ export class DefaultContents extends React.Component {
                 </div>
                 <h2>入荷ワイン</h2>
                 <div className="arrival-pane">
-                    <APIWineList url="api/v1/new-wines" />
+                    <NewWinesContainer url="api/v1/new-wines" />
                 </div>
                 <h2>ランキング</h2>
                 <div className="ranking-pane">
-                    <APIWineList url="api/v1/ranking-wines" />
+                    <RankingWinesContainer url="api/v1/ranking-wines" />
                 </div>
             </div>
         )
