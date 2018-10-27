@@ -38,6 +38,6 @@ export class AnywayContents extends React.Component<IAnywayCotents, {}> {
             jsx = <FilteredContents wines={ this.props.wines } />
         }
 
-        return <div id="page-contents">{ jsx }</div>
+        return <div className="contents">{ jsx }</div>
     }
 }
