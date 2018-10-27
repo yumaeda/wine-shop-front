@@ -6,8 +6,8 @@
 import * as React from 'react'
 import { IWine } from '../../states'
 import { DefaultContents } from './DefaultContents'
+import FilteredContents from './FilteredContents'
 import { Iframe } from './Iframe'
-import { WineColumn } from './WineColumn'
 
 /**
  * Interface for AnywayContents
@@ -35,18 +35,7 @@ export class AnywayContents extends React.Component<IAnywayCotents, {}> {
         } else if (!this.props.wines || this.props.wines.length === 0) {
             jsx = <DefaultContents />
         } else {
-            const columns = this.props.wines.map(
-                (wine: IWine) =>
-                <WineColumn key={ wine.barcode_number } wine={ wine } />
-            )
-
-            jsx = (
-                <table>
-                    <tbody>
-                        <tr>{ columns }</tr>
-                    </tbody>
-                </table>
-            )
+            jsx = <FilteredContents wines={ this.props.wines } />
         }
 
         return <div id="page-contents">{ jsx }</div>
