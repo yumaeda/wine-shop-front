@@ -1,5 +1,5 @@
 /**
- * Renders default page contents for Anyway
+ * Renders page contents for Anyway
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
@@ -20,7 +20,7 @@ interface IAnywayCotents {
 /**
  * AnywayContents component
  */
-export class AnywayContents extends React.Component<IAnywayCotents, {}> {
+export default class AnywayContents extends React.Component<IAnywayCotents, {}> {
     /**
      * Return image JSX to render
      */

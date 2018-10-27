@@ -19,7 +19,7 @@ interface IAnywayHeader {
 /**
  * AnywayHeader component
  */
-export class AnywayHeader extends React.Component<IAnywayHeader, {}> {
+export default class AnywayHeader extends React.Component<IAnywayHeader, {}> {
     /**
      * Set the current context
      */

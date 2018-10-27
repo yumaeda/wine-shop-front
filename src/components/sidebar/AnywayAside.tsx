@@ -11,7 +11,7 @@ import { WineVintageFilterLinks } from './WineVintageFilterLinks'
 /**
  * AnywayAside component
  */
-export const AnywayAside: React.SFC = () => (
+const AnywayAside: React.SFC = () => (
     <aside className="sidebar">
         <hr className="sidebar__separator" />
         <h2 className="sidebar__title">価格</h2>
@@ -24,3 +24,5 @@ export const AnywayAside: React.SFC = () => (
         <WineVintageFilterLinks />
     </aside>
 )
+
+export default AnywayAside
