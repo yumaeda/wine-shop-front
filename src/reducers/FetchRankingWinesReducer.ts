@@ -1,24 +1,27 @@
 /**
- * Reducer for fetching ranking wines
+ * Define a reducer for fetching ranking wines
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as Clone from 'clone'
 import * as Redux from 'redux'
-import keys from '../actions/ActionTypeKeys'
-import { initRankingWines, IRankingWines } from '../states'
+import { ActionTypes } from '../actions'
+import { initWines, IWines } from '../states'
 
 /**
  * Reducer for fetching ranking wines
  */
-export const FetchRankingWinesReducer: Redux.Reducer<IRankingWines> =
-    (state = initRankingWines, action: Redux.AnyAction) => {
+const FetchRankingWinesReducer: Redux.Reducer<IWines> =
+    (state = initWines, action: Redux.AnyAction) => {
         switch (action.type) {
-            case keys.FETCH_RANKING_WINES_SUCCESS:
-                const newState = Clone(state)
-                newState.wines = action.wines
-                return newState
+            case ActionTypes.FETCH_RANKING_WINES_SUCCESS:
+                return {
+                    ...state,
+                    wines: action.wines
+                }
+            case ActionTypes.FETCH_FAILURE:
             default:
                 return state
         }
     }
+
+export default FetchRankingWinesReducer

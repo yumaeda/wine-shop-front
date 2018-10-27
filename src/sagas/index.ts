@@ -1,6 +1,6 @@
 import { SagaIterator } from 'redux-saga'
 import { all, call, put, takeEvery } from 'redux-saga/effects'
-import keys from '../actions/ActionTypeKeys'
+import { ActionTypes } from '../actions'
 
 /**
  * Saga for fetching wine and send the specified action
@@ -13,7 +13,7 @@ function* fetchWines(action: { type: string, url: string, success: string }): Sa
         const wines = data.wines ? data.wines : data;
         yield put({ type: action.success, wines })
     } catch (error) {
-        yield put({ type: keys.FETCH_FAILURE, error })
+        yield put({ type: ActionTypes.FETCH_FAILURE, error })
     }
 }
 
@@ -22,7 +22,7 @@ function* fetchWines(action: { type: string, url: string, success: string }): Sa
  * action is dispatched
  */
 function* watchFetchWines(): SagaIterator {
-    yield takeEvery(keys.FETCH_START, fetchWines)
+    yield takeEvery(ActionTypes.FETCH_START, fetchWines)
 }
 
 /**

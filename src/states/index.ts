@@ -1,5 +1,5 @@
 /**
- * Filterd wine state used by Redux
+ * Define states mutated by Redux
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
@@ -14,7 +14,7 @@ export type FilterType =
     'vintage'
 
 /**
- * Interface for Wine
+ * Interface for wine
  */
 export interface IWine {
     barcode_number: string
@@ -26,25 +26,17 @@ export interface IWine {
 }
 
 /**
+ * Interface for array of wines
+ */
+export interface IWines {
+    wines: IWine[]
+}
+
+/**
  * Interface for filtered wines
  */
-export interface IFilteredWines {
+export interface IFilteredWines extends IWines {
     filter: FilterType
-    wines: IWine[]
-}
-
-/**
- * Interface for new wines
- */
-export interface INewWines {
-    wines: IWine[]
-}
-
-/**
- * Interface for ranking wines
- */
-export interface IRankingWines {
-    wines: IWine[]
 }
 
 /**
@@ -52,28 +44,21 @@ export interface IRankingWines {
  */
 export interface IState {
     filteredWines: IFilteredWines
-    newWines: INewWines
-    rankingWines: IRankingWines
+    newWines: IWines
+    rankingWines: IWines
 }
 
 /**
- * Default value for the filtered wines
+ * Initial value for wines
+ */
+export const initWines: IWines = {
+    wines: []
+}
+
+/**
+ * Initial value for filtered wines
  */
 export const initFilteredWines: IFilteredWines = {
     filter: 'none',
-    wines: []
-}
-
-/**
- * Default value for the new wines
- */
-export const initNewWines: INewWines = {
-    wines: []
-}
-
-/**
- * Default value for the ranking wines
- */
-export const initRankingWines: IRankingWines = {
     wines: []
 }

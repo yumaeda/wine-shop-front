@@ -1,24 +1,27 @@
 /**
- * Reducer for fetching new wines
+ * Define a reducer for fetching new wines
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import * as Clone from 'clone'
 import * as Redux from 'redux'
-import keys from '../actions/ActionTypeKeys'
-import { INewWines, initNewWines } from '../states'
+import { ActionTypes } from '../actions'
+import { initWines, IWines } from '../states'
 
 /**
  * Reducer for fetching new wines
  */
-export const FetchNewWinesReducer: Redux.Reducer<INewWines> =
-    (state = initNewWines, action: Redux.AnyAction) => {
+const FetchNewWinesReducer: Redux.Reducer<IWines> =
+    (state = initWines, action: Redux.AnyAction) => {
         switch (action.type) {
-            case keys.FETCH_NEW_WINES_SUCCESS:
-                const newState = Clone(state)
-                newState.wines = action.wines
-                return newState
+            case ActionTypes.FETCH_NEW_WINES_SUCCESS:
+                return {
+                    ...state,
+                    wines: action.wines
+                }
+            case ActionTypes.FETCH_FAILURE:
             default:
                 return state
         }
     }
+
+export default FetchNewWinesReducer

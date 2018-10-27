@@ -37,7 +37,7 @@ export class WinePriceFilterLinks extends React.Component {
             <li className="sidebar__list-item" key={ upperLimit }>
                 <FilterLinkContainer
                     text={ upperLimit.toLocaleString() + '円〜' }
-                    url={ `${api}?price_gte=${upperLimit}&price_lte=999999999` }
+                    url={ `${api}?price_gte=${upperLimit}` }
                 />
             </li>))
 
