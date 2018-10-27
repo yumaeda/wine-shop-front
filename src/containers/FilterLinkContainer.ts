@@ -1,5 +1,5 @@
 /**
- * Container for filtering wines
+ * Container for link, which filte wines
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
@@ -10,7 +10,7 @@ import keys from '../actions/ActionTypeKeys'
 import { FilterLink } from '../components/sidebar/FilterLink'
 
 /**
- * Map dispatch to component.props
+ * Map dispatch to Component.props
  */
 const mapDispatchToProps = (dispatch: Redux.Dispatch<Redux.Action<any>>, props: any) => ({
     onFilterClick: () => dispatch({

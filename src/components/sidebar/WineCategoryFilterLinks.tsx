@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
-import CategoryFilterContainer from '../../containers/CategoryFilterContainer'
+import FilterLinkContainer from '../../containers/FilterLinkContainer'
 
 /**
  * WineCategoryFilterLinks component
@@ -19,25 +19,25 @@ export class WineCategoryFilterLinks extends React.Component {
         return (
             <ul>
                 <li className="sidebar__list-item">
-                    <CategoryFilterContainer text="スパークリング・ワイン" url={ `${api}?type=Mousseux` } />
+                    <FilterLinkContainer text="スパークリング・ワイン" url={ `${api}?type=Mousseux` } />
                 </li>
                 <li className="sidebar__list-item">
-                    <CategoryFilterContainer text="シャンパーニュ" url={ `${api}?type=Champagne` } />
+                    <FilterLinkContainer text="シャンパーニュ" url={ `${api}?type=Champagne` } />
                 </li>
                 <li className="sidebar__list-item">
-                    <CategoryFilterContainer text="白ワイン" url={ `${api}?type=Blanc` } />
+                    <FilterLinkContainer text="白ワイン" url={ `${api}?type=Blanc` } />
                 </li>
                 <li className="sidebar__list-item">
-                    <CategoryFilterContainer text="ロゼ" url={ `${api}?type=Rosé` } />
+                    <FilterLinkContainer text="ロゼ" url={ `${api}?type=Rosé` } />
                 </li>
                 <li className="sidebar__list-item">
-                    <CategoryFilterContainer text="赤ワイン" url={ `${api}?type=Rouge` } />
+                    <FilterLinkContainer text="赤ワイン" url={ `${api}?type=Rouge` } />
                 </li>
                 <li className="sidebar__list-item">
-                    <CategoryFilterContainer text="デザートワイン" url={ `${api}?type=Doux` } />
+                    <FilterLinkContainer text="デザートワイン" url={ `${api}?type=Doux` } />
                 </li>
                 <li className="sidebar__list-item">
-                    <CategoryFilterContainer text="オー・ド・ヴィ" url={ `${api}?type=Eau de Vie` } />
+                    <FilterLinkContainer text="オー・ド・ヴィ" url={ `${api}?type=Eau de Vie` } />
                 </li>
             </ul>
         )
