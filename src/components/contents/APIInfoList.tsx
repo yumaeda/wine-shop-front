@@ -35,8 +35,8 @@ export class APIInfoList extends React.Component<{ url: string }, {}> {
      */
     private renderInfo = (result: any) => {
         const infoRows = result.infos.map(
-            (info: IInfo) => (
-                <tr>
+            (info: IInfo, index: number) => (
+                <tr key={ index }>
                     <td className={ `new-info__column ${this.getDateClassName(info)}` }>
                         { this.getDateText(info) }
                     </td>

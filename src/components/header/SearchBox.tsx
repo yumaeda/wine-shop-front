@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
-import { IUserContext, UserContext } from '../../context/UserContext'
+import { UserContext } from '../../context/UserContext'
 
 /**
  * Interface for SearchBox
@@ -18,26 +18,23 @@ interface ISearchBox {
  */
 export class SearchBox extends React.Component<ISearchBox, {}> {
     /**
+     * Set the current context
+     */
+    public static contextType = UserContext
+
+    /**
      * Return image JSX to render
      */
     public render(): React.ReactElement<SearchBox> {
-        const jsx = (
-            <UserContext.Consumer>
-                {
-                    (ctx: IUserContext) => (
-                        <div className="search-box">
-                            <input type="text" placeholder={ this.props.placeholder } className="search-box__input" />
-                            <img
-                                src={ `${ctx.imgDir}/search_wine.png` }
-                                className="search-box__button"
-                                onClick={ this.onSearch } />
-                        </div>
-                    )
-                }
-            </UserContext.Consumer>
+        return (
+            <div className="search-box">
+                <input type="text" placeholder={ this.props.placeholder } className="search-box__input" />
+                <img
+                    src={ `${this.context.imgDir}/search_wine.png` }
+                    className="search-box__button"
+                    onClick={ this.onSearch } />
+            </div>
         )
-
-        return jsx
     }
 
     /**

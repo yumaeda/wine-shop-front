@@ -5,7 +5,7 @@
  */
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import { IUserContext, UserContext } from '../../context/UserContext'
+import { UserContext } from '../../context/UserContext'
 import { Menu } from './Menu'
 import { SearchBox } from './SearchBox'
 
@@ -21,32 +21,29 @@ interface IAnywayHeader {
  */
 export class AnywayHeader extends React.Component<IAnywayHeader, {}> {
     /**
+     * Set the current context
+     */
+    public static contextType = UserContext
+
+    /**
      * Return image JSX to render
      */
     public render(): React.ReactElement<AnywayHeader> {
-        const jsx = (
-            <UserContext.Consumer>
-                {
-                    (ctx: IUserContext) => (
-                        <header className="header">
-                            <a href={ `${ctx.siteUrl}/index.php` }>
-                                <img
-                                    className="header__image"
-                                    src={ `${ctx.imgDir}/_logo.png` }
-                                />
-                            </a>
-                            <br />
-                            <Link to={ '/vintages' } className="header__link">Vintages</Link>
-                            <Link to={ '/producers' } className="header__link">Producers</Link>
-                            <Link to={ '/critics' } className="header__link">Critics</Link>
-                            <SearchBox placeholder="ワイン検索" />
-                            <Menu logined={ this.props.logined } siteUrl={ ctx.siteUrl } />
-                        </header>
-                    )
-                }
-            </UserContext.Consumer>
+        return (
+            <header className="header">
+                <a href={ `${this.context.siteUrl}/index.php` }>
+                    <img
+                        className="header__image"
+                        src={ `${this.context.imgDir}/_logo.png` }
+                    />
+                </a>
+                <br />
+                <Link to={ '/vintages' } className="header__link">Vintages</Link>
+                <Link to={ '/producers' } className="header__link">Producers</Link>
+                <Link to={ '/critics' } className="header__link">Critics</Link>
+                <SearchBox placeholder="ワイン検索" />
+                <Menu logined={ this.props.logined } siteUrl={ this.context.siteUrl } />
+            </header>
         )
-
-        return jsx
     }
 }
