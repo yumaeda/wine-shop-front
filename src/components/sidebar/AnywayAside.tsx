@@ -11,23 +11,16 @@ import { WineVintageFilterLinks } from './WineVintageFilterLinks'
 /**
  * AnywayAside component
  */
-export class AnywayAside extends React.Component {
-    /**
-     * Return JSX to render
-     */
-    public render(): React.ReactElement<AnywayAside> {
-        return (
-            <aside className="sidebar">
-                <hr className="sidebar__separator" />
-                <h2 className="sidebar__title">価格</h2>
-                <WinePriceFilterLinks />
-                <hr className="sidebar__separator" />
-                <h2 className="sidebar__title">種類</h2>
-                <WineCategoryFilterLinks />
-                <hr className="sidebar__separator" />
-                <h2 className="sidebar__title">年代</h2>
-                <WineVintageFilterLinks />
-            </aside>
-        )
-    }
-}
+export const AnywayAside: React.SFC = () => (
+    <aside className="sidebar">
+        <hr className="sidebar__separator" />
+        <h2 className="sidebar__title">価格</h2>
+        <WinePriceFilterLinks />
+        <hr className="sidebar__separator" />
+        <h2 className="sidebar__title">種類</h2>
+        <WineCategoryFilterLinks />
+        <hr className="sidebar__separator" />
+        <h2 className="sidebar__title">年代</h2>
+        <WineVintageFilterLinks />
+    </aside>
+)

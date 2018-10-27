@@ -20,22 +20,16 @@ export interface IFilterLink {
 }
 
 /**
- * CategoryFilterLink component
+ * FilterLink component
  */
-export class FilterLink extends React.Component<IFilterLink, {}> {
-    /**
-     * Return JSX to render
-     */
-    public render(): React.ReactElement<FilterLink> {
-        return (
-            <Link to="/"
-                className="sidebar__link"
-                children={ this.props.text }
-                onClick={
-                    (event: React.MouseEvent<HTMLElement>) => {
-                        this.props.onFilterClick()
-                    }
-                } />
-        )
-    }
-}
+export const FilterLink: React.SFC<IFilterLink> = (props) => (
+    <Link to="/"
+        className="sidebar__link"
+        children={ props.text }
+        onClick={
+            (event: React.MouseEvent<HTMLElement>) => {
+                props.onFilterClick()
+            }
+        }
+    />
+)

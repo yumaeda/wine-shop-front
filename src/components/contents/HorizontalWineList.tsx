@@ -8,31 +8,19 @@ import { IWine } from '../../states'
 import { WineColumn } from './WineColumn'
 
 /**
- * Interface for HorizontalWineList
- */
-interface IHorizontalWineList {
-    wines: IWine[]
-}
-
-/**
  * Horizontal wine list component
  */
-export class HorizontalWineList extends React.Component<IHorizontalWineList, {}> {
-    /**
-     * Return horizontal wine list JSX to render
-     */
-    public render(): React.ReactElement<HorizontalWineList> {
-        const wineColumns = this.props.wines.map(
-            (wine: IWine) =>
-            <WineColumn key={ wine.barcode_number } wine={ wine } />
-        )
-
-        return (
-            <table>
-                <tbody>
-                    <tr>{ wineColumns }</tr>
-                </tbody>
-            </table>
-        )
-    }
-}
+export const HorizontalWineList: React.SFC<{ wines: IWine[] }> = (props) => (
+    <table>
+        <tbody>
+            <tr>
+                {
+                    props.wines.map(
+                        (wine: IWine) =>
+                        <WineColumn key={ wine.barcode_number } wine={ wine } />
+                    )
+                }
+            </tr>
+        </tbody>
+    </table>
+)

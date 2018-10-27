@@ -13,19 +13,12 @@ import { defaultContext, UserContext } from '../context/UserContext'
 /**
  * Root component
  */
-export class Root extends React.Component<{ store: Redux.Store }, {}> {
-    /**
-     * Return image JSX to render
-     */
-    public render(): React.ReactElement<Root> {
-        return (
-            <Provider store={ this.props.store }>
-                <UserContext.Provider value={ defaultContext }>
-                    <Router>
-                        <Route path="/:page?" component={ FilteredWinesContainer } />
-                    </Router>
-                </UserContext.Provider>
-            </Provider>
-        )
-    }
-}
+export const Root: React.SFC<{ store: Redux.Store }> = (props) => (
+    <Provider store={ props.store }>
+        <UserContext.Provider value={ defaultContext }>
+            <Router>
+                <Route path="/:page?" component={ FilteredWinesContainer } />
+            </Router>
+        </UserContext.Provider>
+    </Provider>
+)

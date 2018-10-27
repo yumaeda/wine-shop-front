@@ -4,7 +4,6 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
-import FilteredWinesContainer from '../containers/FilteredWinesContainer'
 import { IFilteredWines } from '../states'
 import { AnywayContents } from './contents/AnywayContents'
 import { AnywayFooter } from './footer/AnywayFooter'
@@ -21,20 +20,13 @@ interface IPage extends IFilteredWines {
 /**
  * Page component
  */
-export class Page extends React.Component<IPage, {}> {
-    /**
-     * Return image JSX to render
-     */
-    public render(): React.ReactElement<Page> {
-        return (
-            <React.StrictMode>
-                <AnywayHeader logined={ true } />
-                <div className="container">
-                    <AnywayAside />
-                    <AnywayContents { ...this.props } />
-                </div>
-                <AnywayFooter />
-            </React.StrictMode>
-        )
-    }
-}
+export const Page: React.SFC<IPage> = (props) => (
+    <React.StrictMode>
+        <AnywayHeader logined={ true } />
+        <div className="container">
+            <AnywayAside />
+            <AnywayContents { ...props } />
+        </div>
+        <AnywayFooter />
+    </React.StrictMode>
+)
