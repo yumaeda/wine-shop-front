@@ -29,13 +29,4 @@ test('Valid image', () => {
     expect(td.find('a').prop('target')).toEqual('wine_detail')
     expect(td.find('div').text()).toEqual('2015 リースリング・ヴァンダンジュ・タルディヴ・フォルブルグ 1500...')
     expect(wineColumn).toMatchSnapshot()
-
-/*
-    <td>
-        <a href="./index.php?submenu=wine_detail&amp;id=11235&amp;lang=ja" target="wine_detail">
-        <img class="wine-img" src="//anyway-grapes.jp/images/wines/400px/11235.png" alt="11235" onerror="this.src='//anyway-grapes.jp/images/wines/400px/no_wine_photo.png';">
-        <div>2016 ヴァン・ド・フランス・アルテス / メゾン・プティ・ロワ</div>
-        </a>
-    </td>
-*/
 })
