@@ -5,7 +5,7 @@
  */
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { applyMiddleware, compose, createStore } from 'redux'
+import { applyMiddleware, createStore } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga'
 import { Root } from './components/Root'
