@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { WineImage } from '../../src/components/WineImage';
+import { WineImage } from '../../../src/components/contents/WineImage';
 
 test('Valid image', () => {
     const baseUrl = 'http://anyway-grapes.jp/images/400px';
