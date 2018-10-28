@@ -31,10 +31,6 @@ module.exports = [
             files: [ './src/**/*.ts', './src/**/*.tsx' ]
         })
     ],
-    externals: {
-        'react': 'React',
-        'react-dom': 'ReactDOM'
-    },
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
