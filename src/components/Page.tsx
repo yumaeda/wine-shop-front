@@ -30,14 +30,16 @@ interface IPage extends IFilteredWines {
  * Page component
  */
 export const Page: React.SFC<IPage> = (props) => (
-    <React.StrictMode>
+    <>
+    { /* <React.StrictMode> */ }
         { /* <Suspense fallback={ <div>Loading...</div> }> */ }
-            <AnywayHeader logined={ true } />
-            <div className="container">
-                <AnywayAside />
-                <AnywayContents { ...props } />
-            </div>
-            <AnywayFooter />
+        <AnywayHeader logined={ true } />
+        <div className="container">
+            <AnywayAside />
+            <AnywayContents { ...props } />
+        </div>
+        <AnywayFooter />
         { /* </Suspense> */ }
-    </React.StrictMode>
+    { /* </React.StrictMode> */ }
+    </>
 )
