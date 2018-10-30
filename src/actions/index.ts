@@ -8,6 +8,7 @@ import { IWines } from '../states'
  */
 export enum ActionTypes {
     FETCH_FAILURE               = 'FETCH_FAILURE',
+    FETCH_IMPORTERS_SUCCESS     = 'FETCH_IMPORTERS_SUCCESS',
     FETCH_NEW_WINES_SUCCESS     = 'FETCH_NEW_WINES_SUCCESS',
     FETCH_RANKING_WINES_SUCCESS = 'FETCH_RANKING_WINES_SUCCESS',
     FETCH_START                 = 'FETCH_START',

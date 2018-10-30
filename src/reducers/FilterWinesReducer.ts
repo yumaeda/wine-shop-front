@@ -17,7 +17,7 @@ const FilterWinesReducer: Redux.Reducer<IFilteredWines> =
                 return {
                     ...state,
                     filter: 'none',
-                    wines: action.wines
+                    wines: action.items
                 }
             case ActionTypes.FETCH_FAILURE:
             default:

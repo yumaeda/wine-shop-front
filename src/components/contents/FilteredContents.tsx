@@ -16,7 +16,7 @@ const FilteredContents: React.SFC<{ wines: IWine[] }> = (props) => (
             {
                 props.wines.map(
                     (wine: IWine, index: number) =>
-                    <tr><WineColumn key={ wine.barcode_number } wine={ wine } /></tr>
+                    <tr key={ wine.barcode_number }><WineColumn wine={ wine } /></tr>
                 )
             }
         </tbody>

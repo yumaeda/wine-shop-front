@@ -16,7 +16,7 @@ const FetchNewWinesReducer: Redux.Reducer<IWines> =
             case ActionTypes.FETCH_NEW_WINES_SUCCESS:
                 return {
                     ...state,
-                    wines: action.wines
+                    wines: action.items
                 }
             case ActionTypes.FETCH_FAILURE:
             default:

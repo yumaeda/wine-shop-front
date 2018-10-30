@@ -4,6 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
+import ImportersContainer from '../../containers/ImportersContainer'
 import NewWinesContainer from '../../containers/NewWinesContainer'
 import RankingWinesContainer from '../../containers/RankingWinesContainer'
 import { APIInfoList } from './APIInfoList'
@@ -24,6 +25,10 @@ export const DefaultContents: React.SFC = () => (
         <h2 className="container__title">ランキング</h2>
         <div className="ranking">
             <RankingWinesContainer url="api/v1/ranking-wines" />
+        </div>
+        <h2 className="container__title">輸入元</h2>
+        <div className="importer">
+            <ImportersContainer url="api/v1/importers" />
         </div>
     </>
 )

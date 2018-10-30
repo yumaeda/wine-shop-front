@@ -53,3 +53,20 @@
     overflow-x: auto;
 }
 
+.importer {
+    &__table {
+        width: 100%;
+    }
+
+    &__column {
+        text-align: center;
+        padding-bottom: 15px;
+    }
+
+    &__image {
+        border: 1px solid #e0e0e0;
+        width: 100px;
+        height: 100px;
+        vertical-align: middle;
+    }
+}
