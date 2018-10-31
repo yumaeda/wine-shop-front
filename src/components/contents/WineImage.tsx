@@ -11,7 +11,7 @@ import * as React from 'react'
 interface IWineImage {
     id: string
     baseUrl: string
-    className: string
+    className?: string
 }
 
 /**

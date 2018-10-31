@@ -5,7 +5,7 @@
  */
 import * as React from 'react'
 import { IWine } from '../../states'
-import { WineColumn } from './WineColumn'
+import { WineInfoTable } from './WineInfoTable'
 
 /**
  * FilteredContents component
@@ -15,8 +15,11 @@ const FilteredContents: React.SFC<{ wines: IWine[] }> = (props) => (
         <tbody>
             {
                 props.wines.map(
-                    (wine: IWine, index: number) =>
-                    <tr key={ wine.barcode_number }><WineColumn wine={ wine } /></tr>
+                    (wine: IWine, index: number) => (
+                        <tr key={ wine.barcode_number }>
+                            <WineInfoTable wine={ wine } />
+                        </tr>
+                    )
                 )
             }
         </tbody>
