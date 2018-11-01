@@ -14,13 +14,30 @@ interface ISearchBox {
 }
 
 /**
+ * Interface for SearchBox state
+ */
+interface ISearchBoxState {
+    pressedKey: number
+}
+
+/**
  * SearchBox component
  */
-export class SearchBox extends React.Component<ISearchBox, {}> {
+export class SearchBox extends React.Component<ISearchBox, ISearchBoxState> {
     /**
      * Set the current context
      */
     public static contextType = UserContext
+
+    /**
+     * Constructor for SearchBox
+     */
+    public constructor(props: ISearchBox) {
+        super(props)
+        this.state = {
+            pressedKey: 0
+        }
+    }
 
     /**
      * Return image JSX to render
@@ -28,13 +45,40 @@ export class SearchBox extends React.Component<ISearchBox, {}> {
     public render(): React.ReactElement<SearchBox> {
         return (
             <div className="search-box">
-                <input type="text" placeholder={ this.props.placeholder } className="search-box__input" />
+                <input
+                    type="text"
+                    placeholder={ this.props.placeholder }
+                    className="search-box__input"
+                    onKeyDown={ this.onKeyDown }
+                    onKeyUp={ this.onKeyUp }
+                />
+
                 <img
                     src={ `${this.context.imgDir}/search_wine.png` }
                     className="search-box__button"
                     onClick={ this.onSearch } />
             </div>
         )
+    }
+
+    /**
+     * Event handler for onkeydown event for the search input
+     */
+    private onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>): void => {
+        this.setState({
+            pressedKey: event ? (event.which || event.keyCode) : 0
+        })
+    }
+
+    /**
+     * Event handler for onkeyup event for the search input
+     */
+    private onKeyUp = (event: React.KeyboardEvent<HTMLInputElement>): void => {
+        const keyCode = event ? (event.which || event.keyCode) : 0
+        if ((keyCode === 13) && (this.state.pressedKey !== 229)) {
+            const searchText = event.currentTarget.value
+            alert(searchText)
+        }
     }
 
     /**
