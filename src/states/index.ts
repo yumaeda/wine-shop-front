@@ -30,6 +30,13 @@ export interface IWine {
 }
 
 /**
+ * Interface for Country
+ */
+export interface ICountry {
+    name: string
+}
+
+/**
  * Interface for importer
  */
 export interface IImporter {
@@ -44,6 +51,13 @@ export interface IImporter {
  */
 export interface IWines {
     wines: IWine[]
+}
+
+/**
+ * Interface for the country state
+ */
+export interface ICountryState {
+    countries: ICountry[]
 }
 
 /**
@@ -64,10 +78,18 @@ export interface IImporters {
  * Declare data type of the parent state
  */
 export interface IState {
+    countries: ICountryState
     filteredWines: IFilteredWines
     importers: IImporters
     newWines: IWines
     rankingWines: IWines
+}
+
+/**
+ * Initial value for the country state
+ */
+export const initCountryState: ICountryState = {
+    countries: []
 }
 
 /**

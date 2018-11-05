@@ -27,4 +27,11 @@
         background-color: #e0e0e0;
         color: #e0e0e0;
     }
+
+    &__image {
+        width: 28px;
+        height: 16px;
+        vertical-align: top;
+        background-size: 28px 16px;
+    }
 }

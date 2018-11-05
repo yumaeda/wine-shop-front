@@ -85,21 +85,21 @@
 
     "countries": {
         "error": false,
-        "countries": [
-            { "country": "Australia" },
-            { "country": "Austria" },
-            { "country": "Chile" },
-            { "country": "France" },
-            { "country": "Georgia" },
-            { "country": "Germany" },
-            { "country": "Italy" },
-            { "country": "New Zealand" },
-            { "country": "Portugal" },
-            { "country": "Rumania" },
-            { "country": "South Africa" },
-            { "country": "Spain" },
-            { "country": "Switzerland" },
-            { "country": "United States" }
+        "items": [
+            { "name": "Australia" },
+            { "name": "Austria" },
+            { "name": "Chile" },
+            { "name": "France" },
+            { "name": "Georgia" },
+            { "name": "Germany" },
+            { "name": "Italy" },
+            { "name": "New Zealand" },
+            { "name": "Portugal" },
+            { "name": "Rumania" },
+            { "name": "South Africa" },
+            { "name": "Spain" },
+            { "name": "Switzerland" },
+            { "name": "United States" }
         ]
     },
 

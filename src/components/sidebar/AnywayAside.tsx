@@ -4,6 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
+import CountriesContainer from '../../containers/CountriesContainer'
 import { WineCategoryFilterLinks } from './WineCategoryFilterLinks'
 import { WinePriceFilterLinks } from './WinePriceFilterLinks'
 import { WineVintageFilterLinks } from './WineVintageFilterLinks'
@@ -13,6 +14,8 @@ import { WineVintageFilterLinks } from './WineVintageFilterLinks'
  */
 const AnywayAside: React.SFC = () => (
     <aside className="sidebar">
+        <h2 className="sidebar__title">産地</h2>
+        <CountriesContainer url="api/v1/countries" />
         <hr className="sidebar__separator" />
         <h2 className="sidebar__title">価格</h2>
         <WinePriceFilterLinks />
