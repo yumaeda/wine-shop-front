@@ -7,12 +7,12 @@ import { connect } from 'react-redux'
 import * as Redux from 'redux'
 import { ActionTypes, createFetchAction, IFetchAction } from '../actions'
 import { WineCountryFilterLinks } from '../components/sidebar/WineCountryFilterLinks'
-import { IState } from '../states'
+import { IRootState } from '../states'
 
 /**
  * Map Redux state to component.props
  */
-const mapStateToProps = (state: IState) => {
+const mapStateToProps = (state: IRootState) => {
     return state.countries
 }
 

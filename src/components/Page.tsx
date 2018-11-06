@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
-import { IFilteredWines } from '../states'
+import { IFilteredWineState } from '../states'
 
 /**
  * Workaround code for using lazy and Suspense
@@ -23,7 +23,7 @@ const AnywayHeader   = lazy(() => import('./header/AnywayHeader'))
 /**
  * Interface for Page props
  */
-interface IPage extends IFilteredWines {
+interface IPage extends IFilteredWineState {
     match: any
 }
 

@@ -7,12 +7,12 @@ import { connect } from 'react-redux'
 import * as Redux from 'redux'
 import { ActionTypes, createFetchAction, IFetchAction } from '../actions'
 import ImporterTable from '../components/contents/ImporterTable'
-import { IState } from '../states'
+import { IRootState } from '../states'
 
 /**
  * Map Redux state to component.props
  */
-const mapStateToProps = (state: IState, props: any) => {
+const mapStateToProps = (state: IRootState, props: any) => {
     return state.importers
 }
 

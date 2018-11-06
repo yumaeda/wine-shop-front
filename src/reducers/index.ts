@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import { combineReducers } from 'redux'
-import { IState } from '../states'
+import { IRootState } from '../states'
 import FetchCountriesReducer from './FetchCountriesReducer'
 import FetchImportersReducer from './FetchImportersReducer'
 import FetchNewWinesReducer from './FetchNewWinesReducer'
@@ -14,7 +14,7 @@ import FilterWinesReducer from './FilterWinesReducer'
 /**
  * Root reducer
  */
-const rootReducer = combineReducers<IState>({
+const rootReducer = combineReducers<IRootState>({
     countries: FetchCountriesReducer,
     filteredWines: FilterWinesReducer,
     importers: FetchImportersReducer,

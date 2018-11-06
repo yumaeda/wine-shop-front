@@ -6,12 +6,12 @@
 import { connect } from 'react-redux'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
 import { Page } from '../components/Page'
-import { IState } from '../states'
+import { IRootState } from '../states'
 
 /**
  * Map Redux state to component.props
  */
-const mapStateToProps = (state: IState, props: RouteComponentProps<{ page: string }>) => {
+const mapStateToProps = (state: IRootState, props: RouteComponentProps<{ page: string }>) => {
     return state.filteredWines
 }
 

@@ -5,12 +5,12 @@
  */
 import * as Redux from 'redux'
 import { ActionTypes } from '../actions'
-import { IFilteredWines, initFilteredWines } from '../states'
+import { IFilteredWineState, initFilteredWines } from '../states'
 
 /**
  * Reducer for fetching filtered wines
  */
-const FilterWinesReducer: Redux.Reducer<IFilteredWines> =
+const FilterWinesReducer: Redux.Reducer<IFilteredWineState> =
     (state = initFilteredWines, action: Redux.AnyAction) => {
         switch (action.type) {
             case ActionTypes.FETCH_SUCCESS:

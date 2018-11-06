@@ -49,7 +49,7 @@ export interface IImporter {
 /**
  * Interface for array of wines
  */
-export interface IWines {
+export interface IWineState {
     wines: IWine[]
 }
 
@@ -63,26 +63,26 @@ export interface ICountryState {
 /**
  * Interface for filtered wines
  */
-export interface IFilteredWines extends IWines {
+export interface IFilteredWineState extends IWineState {
     filter: FilterType
 }
 
 /**
  * Interface for importers
  */
-export interface IImporters {
+export interface IImporterState {
     importers: IImporter[]
 }
 
 /**
  * Declare data type of the parent state
  */
-export interface IState {
+export interface IRootState {
     countries: ICountryState
-    filteredWines: IFilteredWines
-    importers: IImporters
-    newWines: IWines
-    rankingWines: IWines
+    filteredWines: IFilteredWineState
+    importers: IImporterState
+    newWines: IWineState
+    rankingWines: IWineState
 }
 
 /**
@@ -95,14 +95,14 @@ export const initCountryState: ICountryState = {
 /**
  * Initial value for wines
  */
-export const initWines: IWines = {
+export const initWines: IWineState = {
     wines: []
 }
 
 /**
  * Initial value for filtered wines
  */
-export const initFilteredWines: IFilteredWines = {
+export const initFilteredWines: IFilteredWineState = {
     filter: 'none',
     wines: []
 }
@@ -110,6 +110,6 @@ export const initFilteredWines: IFilteredWines = {
 /**
  * Initial value for importers
  */
-export const initImporters: IImporters = {
+export const initImporters: IImporterState = {
     importers: []
 }

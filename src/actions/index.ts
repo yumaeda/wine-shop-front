@@ -1,5 +1,4 @@
 import * as Redux from 'redux'
-import { IWines } from '../states'
 
 /**
  * Define action types used by Redux
