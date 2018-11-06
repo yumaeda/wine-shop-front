@@ -5,7 +5,7 @@
  */
 import * as Redux from 'redux'
 import { ActionTypes } from '../actions'
-import { initWines, IWineState } from '../states'
+import { initWines, IWineState } from '../states/WineState'
 
 /**
  * Reducer for fetching ranking wines

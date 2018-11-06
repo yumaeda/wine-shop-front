@@ -5,7 +5,7 @@
  */
 import * as Redux from 'redux'
 import { ActionTypes } from '../actions'
-import { IFilteredWineState, initFilteredWines } from '../states'
+import { IFilteredWineState, initFilteredWines } from '../states/FilteredWineState'
 
 /**
  * Reducer for fetching filtered wines

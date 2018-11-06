@@ -5,9 +5,9 @@
  */
 import * as React from 'react'
 import ImportersContainer from '../../containers/ImportersContainer'
+import NewsContainer from '../../containers/NewsContainer'
 import NewWinesContainer from '../../containers/NewWinesContainer'
 import RankingWinesContainer from '../../containers/RankingWinesContainer'
-import { APIInfoList } from './APIInfoList'
 
 /**
  * DefaultContents component
@@ -16,7 +16,7 @@ export const DefaultContents: React.SFC = () => (
     <>
         <h2 className="container__title">新着情報</h2>
         <div className="new-info">
-            <APIInfoList url="api/v1/new-infos" />
+            <NewsContainer url="api/v1/new-infos" />
         </div>
         <h2 className="container__title">入荷ワイン</h2>
         <div className="new-arrival">

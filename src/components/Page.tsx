@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
-import { IFilteredWineState } from '../states'
+import { IFilteredWineState } from '../states/FilteredWineState'
 
 /**
  * Workaround code for using lazy and Suspense

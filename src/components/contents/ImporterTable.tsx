@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
-import { IImporter } from '../../states'
+import { IImporter } from '../../states/ImporterState'
 import ImporterColumn from './ImporterColumn'
 
 /**

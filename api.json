@@ -105,7 +105,7 @@
 
     "new-infos": {
         "error": false,
-        "infos": [
+        "items": [
             {
                 "id": 323, "sort_order": 505, "year": 2018, "month": 10, "date": 8, "description": "<A Href=\"http:\/\/anyway-grapes.jp\/blog\/\u5317\u30ed\u30fc\u30cc\u306e\u30aa\u30fc\u30eb\u30c9\u30f4\u30a3\u30f3\u30c6\u30fc\u30b8\u4e00\u6319\u3054\u7d39\u4ecb\/\">\u5317\u30ed\u30fc\u30cc\u306e\u30aa\u30fc\u30eb\u30c9\u30f4\u30a3\u30f3\u30c6\u30fc\u30b8\u4e00\u6319\u3054\u7d39\u4ecb<\/A> "
             },

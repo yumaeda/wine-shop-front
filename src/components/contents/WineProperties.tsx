@@ -8,7 +8,6 @@ import { UserContext } from '../../context/UserContext'
 import * as CountryInfo from '../../lib/CountryInfo'
 import * as UrlUtility from '../../lib/UrlUtility'
 import * as WineUtility from '../../lib/WineUtility'
-import { IWine } from '../../states'
 
 /**
  * Interface fro WineProperties

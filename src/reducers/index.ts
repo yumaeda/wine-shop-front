@@ -7,6 +7,7 @@ import { combineReducers } from 'redux'
 import { IRootState } from '../states'
 import FetchCountriesReducer from './FetchCountriesReducer'
 import FetchImportersReducer from './FetchImportersReducer'
+import FetchNewsReducer from './FetchNewsReducer'
 import FetchNewWinesReducer from './FetchNewWinesReducer'
 import FetchRankingWinesReducer from './FetchRankingWinesReducer'
 import FilterWinesReducer from './FilterWinesReducer'
@@ -19,6 +20,7 @@ const rootReducer = combineReducers<IRootState>({
     filteredWines: FilterWinesReducer,
     importers: FetchImportersReducer,
     newWines: FetchNewWinesReducer,
+    news: FetchNewsReducer,
     rankingWines: FetchRankingWinesReducer
 })
 

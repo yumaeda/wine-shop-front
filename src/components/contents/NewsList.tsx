@@ -1,41 +1,31 @@
 /**
- * List of wines retrieved from API call
+ * Renders List of news
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
 import * as DateTimeUtility from '../../lib/DateTimeUtility'
-import { RenderGetResult } from './RenderGetResult'
+import { INews } from '../../states/NewsState'
 
-interface IInfo {
-    date: number
-    description: string
-    month: number
-    year: number
+/**
+ * Interface for rendering news
+ */
+export interface INewsList {
+    onMount: () => void
+    url: string
+    news: INews[]
 }
 
 /**
  * Component for rendering a info list, which is retrieved by API call
  */
-export class APIInfoList extends React.Component<{ url: string }, {}> {
+export class NewsList extends React.Component<INewsList> {
     /**
-     * Return info list JSX to render
+     * Return JSX to render
      */
-    public render(): React.ReactElement<APIInfoList> {
-        return (
-            <RenderGetResult
-                url={ this.props.url }
-                renderItems={ this.renderInfo }
-            />
-        )
-    }
-
-    /**
-     * Event handler for onclick event of the link
-     */
-    private renderInfo = (result: any) => {
-        const infoRows = result.infos.map(
-            (info: IInfo, index: number) => (
+    public render(): React.ReactElement<NewsList> {
+        const newsRows = this.props.news.map(
+            (info: INews, index: number) => (
                 <tr key={ index }>
                     <td className={ `new-info__column ${this.getDateClassName(info)}` }>
                         { this.getDateText(info) }
@@ -49,13 +39,20 @@ export class APIInfoList extends React.Component<{ url: string }, {}> {
             )
         )
 
-        return <table><tbody>{ infoRows }</tbody></table>
+        return <table><tbody>{ newsRows }</tbody></table>
+    }
+
+    /**
+     * Dispatch FETCH_START action
+     */
+    public componentDidMount() {
+        this.props.onMount();
     }
 
     /**
      * Get class name for the date column
      */
-    private getDateClassName = ({ year, month, date }: IInfo): string => {
+    private getDateClassName = ({ year, month, date }: INews): string => {
         const weeks = DateTimeUtility.getWeekNames()
         const dayOfWeek =
             DateTimeUtility.getDayOfWeek(year, month, date)
@@ -71,7 +68,7 @@ export class APIInfoList extends React.Component<{ url: string }, {}> {
     /**
      * Get date text
      */
-    private getDateText = ({ year, month, date }: IInfo): string => {
+    private getDateText = ({ year, month, date }: INews): string => {
         const tokens = [
             year,
             DateTimeUtility.prependZeros(month, 2),

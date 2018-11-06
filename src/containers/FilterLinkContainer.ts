@@ -4,7 +4,6 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
 import * as Redux from 'redux'
 import { ActionTypes, createFetchAction, IFetchAction } from '../actions'
 import { FilterLink } from '../components/sidebar/FilterLink'
@@ -23,6 +22,4 @@ const mapDispatchToProps = (dispatch: Redux.Dispatch<IFetchAction>, props: any) 
 /**
  * Connect Redux state to the component
  */
-export default withRouter(
-    connect(null, mapDispatchToProps)(FilterLink)
-)
+export default connect(null, mapDispatchToProps)(FilterLink)

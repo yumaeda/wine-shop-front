@@ -5,7 +5,7 @@
  */
 import * as React from 'react'
 import { UserContext } from '../../context/UserContext'
-import { IImporter } from '../../states'
+import { IImporter } from '../../states/ImporterState'
 
 /**
  * Importer table column component

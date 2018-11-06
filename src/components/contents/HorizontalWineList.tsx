@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
-import { IWine } from '../../states'
+import { IWine } from '../../states/WineState'
 import { WineColumn } from './WineColumn'
 
 /**
