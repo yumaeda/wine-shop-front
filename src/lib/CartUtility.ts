@@ -7,10 +7,11 @@
 /**
  * Interface for CartItem
  */
-interface ICartItem {
+export interface ICartItem {
     apply: string
     availability: string
     etc: string
+    member_price: number
     price: number
     stock: number
 }

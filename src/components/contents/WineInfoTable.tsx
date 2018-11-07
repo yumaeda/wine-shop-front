@@ -6,6 +6,7 @@
 import * as React from 'react'
 import { UserContext } from '../../context/UserContext'
 import { IWine } from '../../states/WineState'
+import { AddToCart } from './AddToCart'
 import { WineImage } from './WineImage'
 import WineProperties from './WineProperties'
 
@@ -58,6 +59,9 @@ export class WineInfoTable extends React.Component<{ wine: IWine }> {
                                 country={ wine.country }
                                 region_jpn={ wine.region_jpn }
                                 type={ wine.type } />
+                        </td>
+                        <td>
+                            <AddToCart {...wine } />
                         </td>
                     </tr>
                 </tbody>

@@ -4,10 +4,12 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 
+import { ICartItem } from '../lib/CartUtility'
+
 /**
  * Interface for wine
  */
-export interface IWine {
+export interface IWine extends ICartItem {
     barcode_number: string
     capacity: number
     combined_name: string

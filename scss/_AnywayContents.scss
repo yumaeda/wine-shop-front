@@ -109,4 +109,10 @@
         line-height: 20px;
         font-size: 14px;
     }
+
+    &__soldout {
+        color: darkred;
+        font-size: 30px;
+        font-family: sans-serif;
+    }
 }
