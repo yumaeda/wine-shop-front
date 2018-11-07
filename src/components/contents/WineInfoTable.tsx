@@ -60,7 +60,7 @@ export class WineInfoTable extends React.Component<{ wine: IWine }> {
                                 region_jpn={ wine.region_jpn }
                                 type={ wine.type } />
                         </td>
-                        <td>
+                        <td className="wine-info__cart-column">
                             <AddToCart {...wine } />
                         </td>
                     </tr>

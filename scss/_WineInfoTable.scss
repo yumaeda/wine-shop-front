@@ -1,0 +1,74 @@
+.wine-info {
+    &__properties {
+        border-collapse: collapse;
+        border: 1px solid #e0e0e0;
+        width: 100%;
+    }
+
+    &__label-column {
+        width: 60px;
+        color: slategrey;
+        background-color: snow;
+    }
+
+    &__column {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    &__image-column {
+        width: 150px;
+    }
+
+    &__image {
+        height: 175px;
+        border: 1px solid #e0e0e0;
+        vertical-align: middle;
+    }
+
+    &__title {
+        font-size: 16px;
+    }
+
+    &__producer-link {
+        color: #505050;
+        text-decoration: none;
+        line-height: 20px;
+        font-size: 14px;
+    }
+
+    &__soldout {
+        color: darkred;
+        font-size: 30px;
+        font-family: sans-serif;
+    }
+
+    &__price {
+        font-family: sans-serif;
+        font-size: 25px;
+    }
+
+    &__member-price {
+        margin-top: 5px;
+        color: cadetblue;
+        white-space: nowrap;
+    }
+
+    &__qty-input {
+        text-align: right;
+        vertical-align: middle;
+        width: 30px;
+        height: 25px;
+    }
+
+    &__cart-image {
+        width: 40px;
+        padding: 10px;
+    }
+
+    &__cart-column {
+        width: 250px;
+        text-align: right;
+        padding-right: 20px;
+    }
+}

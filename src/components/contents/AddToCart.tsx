@@ -28,13 +28,14 @@ export class AddToCart extends React.Component<IWine> {
             return <span className="wine-info__soldout">Sold Out</span>
         }
 
-        const memberPrice =
-            (this.props.member_price > 0) ? this.props.member_price : this.props.price
+        const price = +this.props.price
+        const memberPrice = (this.props.member_price > 0) ? +this.props.member_price : price
 
         const cartJsx = (
             <tr>
                 <td>
-                    <span className="wine-info__price">{ this.props.price.toLocaleString() }</span>円 (税抜)
+                    <span className="wine-info__price">{ price.toLocaleString() }
+                    </span>円 (税抜)
                     <br />
                     <span className="wine-info__member-price">
                         会員価格：<span>{ memberPrice.toLocaleString() }</span>円 (税抜)
