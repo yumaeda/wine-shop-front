@@ -6,6 +6,7 @@ import * as Redux from 'redux'
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 export enum ActionTypes {
+    FETCH_BANNERS_SUCCESS       = 'FETCH_BANNERS_SUCCESS',
     FETCH_COUNTRIES_SUCCESS     = 'FETCH_COUNTRIES_SUCCESS',
     FETCH_FAILURE               = 'FETCH_FAILURE',
     FETCH_IMPORTERS_SUCCESS     = 'FETCH_IMPORTERS_SUCCESS',

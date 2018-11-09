@@ -70,3 +70,11 @@
         vertical-align: middle;
     }
 }
+
+.banner {
+    &__image {
+        width: 228px;
+        border: 1px solid #e0e0e0;
+        vertical-align: middle;
+    }
+}

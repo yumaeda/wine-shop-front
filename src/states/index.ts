@@ -4,6 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 
+import { IBannerState } from './BannerState'
 import { ICountryState } from './CountryState'
 import { IFilteredWineState } from './FilteredWineState'
 import { IImporterState } from './ImporterState'
@@ -14,6 +15,7 @@ import { IWineState } from './WineState'
  * Declare data type of the parent state
  */
 export interface IRootState {
+    banners: IBannerState
     countries: ICountryState
     filteredWines: IFilteredWineState
     importers: IImporterState
