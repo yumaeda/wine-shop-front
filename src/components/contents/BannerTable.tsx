@@ -36,7 +36,7 @@ export class BannerTable extends React.Component<IBannerTable> {
                                         key={ index }
                                         pageUrl={ banner.pageUrl }
                                         image={ banner.image }
-                                            />
+                                    />
                                 </td>
                             )
                         }
@@ -50,8 +50,6 @@ export class BannerTable extends React.Component<IBannerTable> {
      * Dispatch FETCH_START action
      */
     public componentDidMount() {
-        if (this.props.banners.length === 0) {
-            this.props.onMount()
-        }
+        this.props.onMount()
     }
 }
