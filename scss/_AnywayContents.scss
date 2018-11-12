@@ -72,6 +72,9 @@
 }
 
 .banner {
+    overflow: auto;
+    overflow-x: hidden;
+
     &__image {
         width: 228px;
         border: 1px solid #e0e0e0;

@@ -13,7 +13,9 @@ import { IRootState } from '../states'
  * Map Redux state to component.props
  */
 const mapStateToProps = (state: IRootState, props: any) => {
-    return state.banners
+    return {
+        banners: state.banners.banners.saleBanners
+    }
 }
 
 /**
@@ -22,7 +24,10 @@ const mapStateToProps = (state: IRootState, props: any) => {
 const mapDispatchToProps = (dispatch: Redux.Dispatch<IFetchAction>, props: any) => (
     {
         onMount: () => dispatch(
-            createFetchAction(ActionTypes.FETCH_BANNERS_SUCCESS, props.url)
+            createFetchAction(
+                ActionTypes.FETCH_SALE_BANNERS_SUCCESS,
+                `${props.url}?category=Sales`
+            )
         )
     }
 )

@@ -13,10 +13,29 @@ import { IBannerState, initBanners } from '../states/BannerState'
 const FetchBannersReducer: Redux.Reducer<IBannerState> =
     (state = initBanners, action: Redux.AnyAction) => {
         switch (action.type) {
-            case ActionTypes.FETCH_BANNERS_SUCCESS:
+            case ActionTypes.FETCH_FEATURE_BANNERS_SUCCESS:
                 return {
                     ...state,
-                    banners: action.items
+                    banners: {
+                        ...state.banners,
+                        featureBanners: action.items
+                    }
+                }
+            case ActionTypes.FETCH_SALE_BANNERS_SUCCESS:
+                return {
+                    ...state,
+                    banners: {
+                        ...state.banners,
+                        saleBanners: action.items
+                    }
+                }
+            case ActionTypes.FETCH_OTHER_DRINK_BANNERS_SUCCESS:
+                return {
+                    ...state,
+                    banners: {
+                        ...state.banners,
+                        otherDrinkBanners: action.items
+                    }
                 }
             case ActionTypes.FETCH_FAILURE:
             default:

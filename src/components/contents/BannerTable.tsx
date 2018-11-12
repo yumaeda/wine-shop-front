@@ -31,11 +31,13 @@ export class BannerTable extends React.Component<IBannerTable> {
                         {
                             this.props.banners.map(
                                 (banner: IBanner, index: number) =>
-                                <Banner
-                                    key={ index }
-                                    pageUrl={ banner.pageUrl }
-                                    image={ banner.image }
-                                />
+                                <td>
+                                    <Banner
+                                        key={ index }
+                                        pageUrl={ banner.pageUrl }
+                                        image={ banner.image }
+                                            />
+                                </td>
                             )
                         }
                     </tr>
@@ -48,6 +50,8 @@ export class BannerTable extends React.Component<IBannerTable> {
      * Dispatch FETCH_START action
      */
     public componentDidMount() {
-        this.props.onMount();
+        if (this.props.banners.length === 0) {
+            this.props.onMount()
+        }
     }
 }

@@ -4,11 +4,13 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
-import BannersContainer from '../../containers/BannersContainer'
+import FeatureBannersContainer from '../../containers/FeatureBannersContainer'
 import ImportersContainer from '../../containers/ImportersContainer'
 import NewsContainer from '../../containers/NewsContainer'
 import NewWinesContainer from '../../containers/NewWinesContainer'
+import OtherDrinkBannersContainer from '../../containers/OtherDrinkBannersContainer'
 import RankingWinesContainer from '../../containers/RankingWinesContainer'
+import SaleBannersContainer from '../../containers/SaleBannersContainer'
 
 /**
  * DefaultContents component
@@ -25,11 +27,11 @@ export const DefaultContents: React.SFC = () => (
         </div>
         <h2 className="container__title">特集</h2>
         <div className="banner">
-            <BannersContainer url="api/v1/banners?category=Features" />
+            <FeatureBannersContainer url="api/v1/banners" />
         </div>
         <h2 className="container__title">セール</h2>
         <div className="banner">
-            <BannersContainer url="api/v1/banners?category=Sales" />
+            <SaleBannersContainer url="api/v1/banners" />
         </div>
         <h2 className="container__title">ランキング</h2>
         <div className="ranking">
@@ -41,7 +43,7 @@ export const DefaultContents: React.SFC = () => (
         </div>
         <h2 className="container__title">その他のドリンク</h2>
         <div className="banner">
-            <BannersContainer url="api/v1/banners?category=Other Drinks" />
+            <OtherDrinkBannersContainer url="api/v1/banners" />
         </div>
     </>
 )

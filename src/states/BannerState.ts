@@ -22,15 +22,23 @@ export interface IBanner {
 }
 
 /**
- * Interface for banner state
+ * Interface for feature banner state
  */
 export interface IBannerState {
-    banners: IBanner[]
+    banners: {
+        featureBanners: IBanner[],
+        otherDrinkBanners: IBanner[],
+        saleBanners: IBanner[]
+    }
 }
 
 /**
  * Initial value for banner
  */
 export const initBanners: IBannerState = {
-    banners: []
+    banners: {
+        featureBanners: [],
+        otherDrinkBanners: [],
+        saleBanners: []
+    }
 }
