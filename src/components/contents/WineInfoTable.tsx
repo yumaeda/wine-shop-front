@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
-import { UserContext } from '../../context/UserContext'
+import { IUserContext, UserContext } from '../../context/UserContext'
 import { IWine } from '../../interfaces/IWine'
 import { AddToCart } from './AddToCart'
 import { WineImage } from './WineImage'
@@ -15,27 +15,23 @@ import WineProperties from './WineProperties'
  */
 export class WineInfoTable extends React.Component<{ wine: IWine }> {
     /**
-     * Set the current context
-     */
-    public static contextType = UserContext
-
-    /**
      * Return wine column JSX to render
      */
     public render(): React.ReactElement<WineInfoTable> {
         const wine = this.props.wine
-        const wineUrl =
-            `${this.context.siteUrl}/store/index.php?submenu=wine_detail&id=${wine.barcode_number}`
+        const detailUrl =
+            `store/index.php?submenu=wine_detail&id=${wine.barcode_number}`
 
-        return (
-            <table>
-                <tbody>
-                    <tr>
+        const jsx = (
+            <UserContext.Consumer>
+                {
+                    (ctx: IUserContext) =>
+                    <>
                         <td className="wine-info__column">
-                            <a href={ wineUrl }>
+                            <a href={ `${ctx.siteUrl}/${detailUrl}` }>
                                 <WineImage
                                     id={ wine.barcode_number }
-                                    baseUrl={ `${this.context.imgDir}/wines/400px` }
+                                    baseUrl={ `${ctx.imgDir}/wines/400px` }
                                     className="wine-info__image-column"
                                 />
                             </a>
@@ -58,14 +54,17 @@ export class WineInfoTable extends React.Component<{ wine: IWine }> {
                                 capacity={ wine.capacity }
                                 country={ wine.country }
                                 region_jpn={ wine.region_jpn }
+                                siteUrl={ ctx.siteUrl }
                                 type={ wine.type } />
                         </td>
                         <td className="wine-info__cart-column">
                             <AddToCart {...wine } />
                         </td>
-                    </tr>
-                </tbody>
-            </table>
+                    </>
+                }
+            </UserContext.Consumer>
         )
+
+        return <table><tbody><tr>{ jsx }</tr></tbody></table>
     }
 }

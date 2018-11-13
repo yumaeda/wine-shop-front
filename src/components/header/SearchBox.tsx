@@ -4,12 +4,12 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
-import { UserContext } from '../../context/UserContext'
 
 /**
  * Interface for SearchBox
  */
 interface ISearchBox {
+    imgDir: string
     placeholder: string
 }
 
@@ -24,11 +24,6 @@ interface ISearchBoxState {
  * SearchBox component
  */
 export class SearchBox extends React.Component<ISearchBox, ISearchBoxState> {
-    /**
-     * Set the current context
-     */
-    public static contextType = UserContext
-
     /**
      * Constructor for SearchBox
      */
@@ -54,9 +49,10 @@ export class SearchBox extends React.Component<ISearchBox, ISearchBoxState> {
                 />
 
                 <img
-                    src={ `${this.context.imgDir}/search_wine.png` }
+                    src={ `${this.props.imgDir}/search_wine.png` }
                     className="search-box__button"
-                    onClick={ this.onSearch } />
+                    onClick={ this.onSearch }
+                />
             </div>
         )
     }

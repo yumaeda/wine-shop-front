@@ -4,7 +4,6 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
-import { UserContext } from '../../context/UserContext'
 import * as CountryInfo from '../../lib/CountryInfo'
 import * as UrlUtility from '../../lib/UrlUtility'
 import * as WineUtility from '../../lib/WineUtility'
@@ -16,6 +15,7 @@ interface IWineProperties {
     capacity: number
     country: string
     region_jpn: string
+    siteUrl: string
     type: string
 }
 
@@ -24,16 +24,11 @@ interface IWineProperties {
  */
 export default class WineProperties extends React.Component<IWineProperties> {
     /**
-     * Set the current context
-     */
-    public static contextType = UserContext
-
-    /**
      * Return wine column JSX to render
      */
     public render(): React.ReactElement<WineProperties> {
         const country = UrlUtility.urlify(this.props.country)
-        const countryUrl = `${this.context.siteUrl}/producers/${country}`
+        const countryUrl = `${this.props.siteUrl}/producers/${country}`
 
         return (
             <table className="wine-info__properties">

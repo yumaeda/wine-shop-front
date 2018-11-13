@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
-import { UserContext } from '../../context/UserContext'
+import { IUserContext, UserContext } from '../../context/UserContext'
 import { IWine } from '../../interfaces/IWine'
 import * as CartUtility from '../../lib/CartUtility'
 
@@ -13,17 +13,10 @@ import * as CartUtility from '../../lib/CartUtility'
  */
 export class AddToCart extends React.Component<IWine> {
     /**
-     * Set the current context
-     */
-    public static contextType = UserContext
-
-    /**
      * Return JSX to render
      */
     public render(): React.ReactElement<AddToCart> {
         const item: CartUtility.ICartItem = this.props
-        const cartImageUrl = `${this.context.siteUrl}/campaign/add_to_cart.png`
-
         if (!CartUtility.isPurchasable(item)) {
             return <span className="wine-info__soldout">Sold Out</span>
         }
@@ -52,12 +45,17 @@ export class AddToCart extends React.Component<IWine> {
                                 max={ this.props.stock }
                                 className="wine-info__qty-input"
                             />
-                            <img
-                                id={ this.props.barcode_number }
-                                className="wine-info__cart-image"
-                                src={ cartImageUrl }
-                                onClick={ this.onAddToCart }
-                            />
+                            <UserContext.Consumer>
+                                {
+                                    (ctx: IUserContext) =>
+                                    <img
+                                        id={ this.props.barcode_number }
+                                        className="wine-info__cart-image"
+                                        src={ `${ctx.siteUrl}/campaign/add_to_cart.png` }
+                                        onClick={ this.onAddToCart }
+                                    />
+                                }
+                            </UserContext.Consumer>
                         </td>
                         : null
                 }

@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
-import { UserContext } from '../../context/UserContext'
+import { IUserContext, UserContext } from '../../context/UserContext'
 import { Iframe } from '../contents/Iframe'
 import { FooterNav, ILink } from './FooterNav'
 
@@ -12,11 +12,6 @@ import { FooterNav, ILink } from './FooterNav'
  * AnywayFooter component
  */
 export default class AnywayFooter extends React.Component {
-    /**
-     * Set the current context
-     */
-    public static contextType = UserContext
-
     /**
      * Information of the footer links
      */
@@ -35,7 +30,6 @@ export default class AnywayFooter extends React.Component {
      */
     public render(): React.ReactElement<AnywayFooter> {
         const noticeText = '!! 未成年の方には酒類の販売を行いません。!!'
-        const lang = this.context.code
 
         return (
             <footer className="footer">
@@ -44,8 +38,15 @@ export default class AnywayFooter extends React.Component {
                     <br /><br />
                     <FooterNav links={ this.links } />
                 </div>
-                <Iframe src={ `./pages/${lang}/payment.html` } />
-                <Iframe src={ `./pages/${lang}/shipping_fee.html` } />
+                <UserContext.Consumer>
+                    {
+                        (ctx: IUserContext) =>
+                        <>
+                            <Iframe src={ `./pages/${ctx.code}/payment.html` } />
+                            <Iframe src={ `./pages/${ctx.code}/shipping_fee.html` } />
+                        </>
+                    }
+                </UserContext.Consumer>
             </footer>
         )
     }
