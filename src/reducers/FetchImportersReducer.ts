@@ -5,19 +5,16 @@
  */
 import * as Redux from 'redux'
 import { ActionTypes } from '../actions'
-import { IImporterState, initImporters } from '../states/ImporterState'
+import { IImporter } from '../states/ImporterState'
 
 /**
  * Reducer for fetching importers
  */
-const FetchImportersReducer: Redux.Reducer<IImporterState> =
-    (state = initImporters, action: Redux.AnyAction) => {
+const FetchImportersReducer: Redux.Reducer<IImporter[]> =
+    (state = [], action: Redux.AnyAction) => {
         switch (action.type) {
             case ActionTypes.FETCH_IMPORTERS_SUCCESS:
-                return {
-                    ...state,
-                    importers: action.items
-                }
+                return action.items
             case ActionTypes.FETCH_FAILURE:
             default:
                 return state

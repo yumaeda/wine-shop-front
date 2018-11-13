@@ -5,19 +5,16 @@
  */
 import * as Redux from 'redux'
 import { ActionTypes } from '../actions'
-import { ICountryState, initCountryState } from '../states/CountryState'
+import { ICountry } from '../states/CountryState'
 
 /**
  * Reducer for fetching countries
  */
-const FetchCountriesReducer: Redux.Reducer<ICountryState> =
-    (state = initCountryState, action: Redux.AnyAction) => {
+const FetchCountriesReducer: Redux.Reducer<ICountry[]> =
+    (state = [], action: Redux.AnyAction) => {
         switch (action.type) {
             case ActionTypes.FETCH_COUNTRIES_SUCCESS:
-                return {
-                    ...state,
-                    countries: action.items
-                }
+                return action.items
             case ActionTypes.FETCH_FAILURE:
             default:
                 return state

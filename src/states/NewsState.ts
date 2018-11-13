@@ -13,17 +13,3 @@ export interface INews {
     month: number
     year: number
 }
-
-/**
- * Interface for the news state
- */
-export interface INewsState {
-    news: INews[]
-}
-
-/**
- * Initial value for news
- */
-export const initNews: INewsState = {
-    news: []
-}

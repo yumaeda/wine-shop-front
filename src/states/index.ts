@@ -5,10 +5,10 @@
  */
 
 import { IBannerState } from './BannerState'
-import { ICountryState } from './CountryState'
+import { ICountry } from './CountryState'
 import { IFilteredWineState } from './FilteredWineState'
-import { IImporterState } from './ImporterState'
-import { INewsState } from './NewsState'
+import { IImporter } from './ImporterState'
+import { INews } from './NewsState'
 import { IWineState } from './WineState'
 
 /**
@@ -16,10 +16,10 @@ import { IWineState } from './WineState'
  */
 export interface IRootState {
     banners: IBannerState
-    countries: ICountryState
+    countries: ICountry[]
     filteredWines: IFilteredWineState
-    importers: IImporterState
+    importers: IImporter[]
     newWines: IWineState
-    news: INewsState
+    news: INews[]
     rankingWines: IWineState
 }

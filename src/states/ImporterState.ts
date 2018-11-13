@@ -13,17 +13,3 @@ export interface IImporter {
     name: string
     url: string
 }
-
-/**
- * Interface for importer state
- */
-export interface IImporterState {
-    importers: IImporter[]
-}
-
-/**
- * Initial value for importers
- */
-export const initImporters: IImporterState = {
-    importers: []
-}

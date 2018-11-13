@@ -13,7 +13,7 @@ import { IRootState } from '../states'
  * Map Redux state to component.props
  */
 const mapStateToProps = (state: IRootState) => {
-    return state.countries
+    return { countries: state.countries }
 }
 
 /**
