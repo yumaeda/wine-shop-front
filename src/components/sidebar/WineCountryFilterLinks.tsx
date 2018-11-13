@@ -21,7 +21,7 @@ export interface IWineCountryFilterLinks {
 /**
  * WineCountryFilterLinks component
  */
-export class WineCountryFilterLinks extends React.Component<IWineCountryFilterLinks, {}> {
+export class WineCountryFilterLinks extends React.Component<IWineCountryFilterLinks> {
     /**
      * Return horizontal wine list JSX to render
      */

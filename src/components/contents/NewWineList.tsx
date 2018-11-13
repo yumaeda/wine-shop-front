@@ -19,7 +19,7 @@ export interface INewWineList {
 /**
  * Component for rendering new wines, which is retrieved by API call
  */
-export class NewWineList extends React.Component<INewWineList, {}> {
+export class NewWineList extends React.Component<INewWineList> {
     /**
      * Return horizontal wine list JSX to render
      */

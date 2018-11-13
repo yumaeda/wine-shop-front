@@ -19,7 +19,7 @@ interface IAnywayHeader {
 /**
  * AnywayHeader component
  */
-export default class AnywayHeader extends React.Component<IAnywayHeader, {}> {
+export default class AnywayHeader extends React.Component<IAnywayHeader> {
     /**
      * Return image JSX to render
      */

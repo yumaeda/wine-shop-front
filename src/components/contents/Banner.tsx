@@ -9,15 +9,10 @@ import { IBanner } from '../../interfaces/IBanner'
 /**
  * Banner component
  */
-export class Banner extends React.Component<IBanner> {
-    /**
-     * Return JSX to render
-     */
-    public render(): React.ReactElement<Banner> {
-        return (
-            <a href={ this.props.pageUrl }>
-                <img src={ this.props.image } className="banner__image" />
-            </a>
-        )
-    }
-}
+const SFCComponent: React.SFC<IBanner> = (props) => (
+    <a href={ props.pageUrl }>
+        <img src={ props.image } className="banner__image" />
+    </a>
+)
+
+export const Banner = React.memo(SFCComponent)

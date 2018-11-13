@@ -19,7 +19,7 @@ export interface IRankingWineList {
 /**
  * Component for rendering ranking wines, which is retrieved by API call
  */
-export class RankingWineList extends React.Component<IRankingWineList, {}> {
+export class RankingWineList extends React.Component<IRankingWineList> {
     /**
      * Return horizontal wine list JSX to render
      */

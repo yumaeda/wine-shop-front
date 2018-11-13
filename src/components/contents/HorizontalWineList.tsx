@@ -10,7 +10,7 @@ import { WineColumn } from './WineColumn'
 /**
  * Horizontal wine list component
  */
-export const HorizontalWineList: React.SFC<{ wines: IWine[] }> = (props) => (
+export const SFCComponent: React.SFC<{ wines: IWine[] }> = (props) => (
     <table>
         <tbody>
             <tr>
@@ -24,3 +24,5 @@ export const HorizontalWineList: React.SFC<{ wines: IWine[] }> = (props) => (
         </tbody>
     </table>
 )
+
+export const HorizontalWineList = React.memo(SFCComponent)

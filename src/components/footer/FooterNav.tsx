@@ -15,24 +15,23 @@ export interface ILink {
 }
 
 /**
- * Interface for FooterNav
- */
-interface IFooterNav {
-    links: ILink[]
-}
-
-/**
  * FooterNav component
  */
-export const FooterNav: React.SFC<IFooterNav> = (props) => (
+export const SFCComponent: React.SFC<{ links: ILink[] }> = (props) => (
     <ul>
         {
             props.links.map(
                 (link: ILink, index: number) =>
                 <li className="footer__list-item" key={ index }>
-                    <Link className="footer__link" to={ link.path }>{ link.text }</Link>
+                    <Link
+                        className="footer__link"
+                        to={ link.path }
+                        children={ link.text }
+                    />
                 </li>
             )
         }
     </ul>
 )
+
+export const FooterNav = React.memo(SFCComponent)

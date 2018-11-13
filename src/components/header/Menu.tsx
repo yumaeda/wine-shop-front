@@ -16,7 +16,7 @@ interface IMenu {
 /**
  * Menu component
  */
-export class Menu extends React.Component<IMenu, {}> {
+export class Menu extends React.Component<IMenu> {
     /**
      * Return JSX to render
      */

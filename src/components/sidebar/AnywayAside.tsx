@@ -12,7 +12,7 @@ import { WineVintageFilterLinks } from './WineVintageFilterLinks'
 /**
  * AnywayAside component
  */
-const AnywayAside: React.SFC = () => (
+const SFCComponent: React.SFC = () => (
     <aside className="sidebar">
         <h2 className="sidebar__title">産地</h2>
         <CountriesContainer url="api/v1/countries" />
@@ -28,4 +28,5 @@ const AnywayAside: React.SFC = () => (
     </aside>
 )
 
+const AnywayAside = React.memo(SFCComponent)
 export default AnywayAside

@@ -11,7 +11,7 @@ const api = 'api/v1/wines'
 /**
  * WineCategoryFilterLinks component
  */
-export const WineCategoryFilterLinks: React.SFC = () => (
+export const SFCComponent: React.SFC = () => (
     <ul>
         <li className="sidebar__list-item">
             <FilterLinkContainer text="スパークリング・ワイン" url={ `${api}?type=Mousseux` } />
@@ -36,3 +36,5 @@ export const WineCategoryFilterLinks: React.SFC = () => (
         </li>
     </ul>
 )
+
+export const WineCategoryFilterLinks = React.memo(SFCComponent)

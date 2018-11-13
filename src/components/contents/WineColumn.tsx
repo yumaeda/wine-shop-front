@@ -11,7 +11,7 @@ import { WineImage } from './WineImage'
 /**
  * WineColumn component
  */
-export class WineColumn extends React.Component<{ wine: IWine }, {}> {
+export class WineColumn extends React.Component<{ wine: IWine }> {
     /**
      * Maximum number of display text to render
      */
