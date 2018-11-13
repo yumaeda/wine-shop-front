@@ -14,7 +14,7 @@ import { IRootState } from '../states'
  */
 const mapStateToProps = (state: IRootState, props: any) => {
     return {
-        banners: state.banners.banners.saleBanners
+        banners: state.banners.saleBanners
     }
 }
 

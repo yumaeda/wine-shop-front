@@ -16,26 +16,17 @@ const FetchBannersReducer: Redux.Reducer<IBannerState> =
             case ActionTypes.FETCH_FEATURE_BANNERS_SUCCESS:
                 return {
                     ...state,
-                    banners: {
-                        ...state.banners,
-                        featureBanners: action.items
-                    }
+                    featureBanners: action.items
                 }
             case ActionTypes.FETCH_SALE_BANNERS_SUCCESS:
                 return {
                     ...state,
-                    banners: {
-                        ...state.banners,
-                        saleBanners: action.items
-                    }
+                    saleBanners: action.items
                 }
             case ActionTypes.FETCH_OTHER_DRINK_BANNERS_SUCCESS:
                 return {
                     ...state,
-                    banners: {
-                        ...state.banners,
-                        otherDrinkBanners: action.items
-                    }
+                    otherDrinkBanners: action.items
                 }
             case ActionTypes.FETCH_FAILURE:
             default:
