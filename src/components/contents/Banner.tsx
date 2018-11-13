@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
-import { IBanner } from '../../states/BannerState'
+import { IBanner } from '../../interfaces/IBanner'
 
 /**
  * Banner component

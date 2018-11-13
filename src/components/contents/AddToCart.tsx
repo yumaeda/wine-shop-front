@@ -5,8 +5,8 @@
  */
 import * as React from 'react'
 import { UserContext } from '../../context/UserContext'
+import { IWine } from '../../interfaces/IWine'
 import * as CartUtility from '../../lib/CartUtility'
-import { IWine } from '../../states/WineState'
 
 /**
  * AddToCart component

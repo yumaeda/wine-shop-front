@@ -5,7 +5,7 @@
  */
 import * as Redux from 'redux'
 import { ActionTypes } from '../actions'
-import { IImporter } from '../states/ImporterState'
+import { IImporter } from '../interfaces/IImporter'
 
 /**
  * Reducer for fetching importers

@@ -5,7 +5,7 @@
  */
 import * as Redux from 'redux'
 import { ActionTypes } from '../actions'
-import { ICountry } from '../states/CountryState'
+import { ICountry } from '../interfaces/ICountry'
 
 /**
  * Reducer for fetching countries

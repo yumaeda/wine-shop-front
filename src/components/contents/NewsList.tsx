@@ -4,8 +4,8 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
+import { INews } from '../../interfaces/INews'
 import * as DateTimeUtility from '../../lib/DateTimeUtility'
-import { INews } from '../../states/NewsState'
 
 /**
  * Interface for rendering news

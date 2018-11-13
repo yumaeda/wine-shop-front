@@ -5,7 +5,7 @@
  */
 import * as Redux from 'redux'
 import { ActionTypes } from '../actions'
-import { INews } from '../states/NewsState'
+import { INews } from '../interfaces/INews'
 
 /**
  * Reducer for fetching news

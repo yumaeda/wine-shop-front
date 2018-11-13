@@ -5,7 +5,7 @@
  */
 import * as React from 'react'
 import { UserContext } from '../../context/UserContext'
-import { IWine } from '../../states/WineState'
+import { IWine } from '../../interfaces/IWine'
 import { WineImage } from './WineImage'
 
 /**

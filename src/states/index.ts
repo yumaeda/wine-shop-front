@@ -4,11 +4,11 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 
+import { ICountry } from '../interfaces/ICountry'
+import { IImporter } from '../interfaces/IImporter'
+import { INews } from '../interfaces/INews'
 import { IBannerState } from './BannerState'
-import { ICountry } from './CountryState'
 import { IFilteredWineState } from './FilteredWineState'
-import { IImporter } from './ImporterState'
-import { INews } from './NewsState'
 import { IWineState } from './WineState'
 
 /**

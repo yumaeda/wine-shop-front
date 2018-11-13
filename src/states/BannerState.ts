@@ -4,6 +4,8 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 
+import { IBanner } from '../interfaces/IBanner'
+
 /**
  * Banner category string literals
  */
@@ -12,14 +14,6 @@ type BannerCategory =
     'Sales'        |
     'Other Drinks' |
     'Food'
-
-/**
- * Interface for banner
- */
-export interface IBanner {
-    image: string
-    pageUrl: string
-}
 
 /**
  * Interface for feature banner state
