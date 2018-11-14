@@ -5,7 +5,7 @@
  */
 import { connect } from 'react-redux'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
-import { Page } from '../components/Page'
+import { AnywayContents } from '../components/contents/AnywayContents'
 import { IRootState } from '../states'
 
 /**
@@ -15,7 +15,7 @@ import { IRootState } from '../states'
 const mapStateToProps = (
     state: IRootState,
     // @ts-ignore:6133
-    props: RouteComponentProps<{ page: string }>
+    props: RouteComponentProps<{}>
 ) => {
     return state.filteredWines
 }
@@ -23,6 +23,8 @@ const mapStateToProps = (
 /**
  * Connect Redux state to the component
  */
-const FilteredWinesContainer = withRouter(connect(mapStateToProps)(Page))
+const FilteredWinesContainer = withRouter(
+    connect(mapStateToProps)(AnywayContents)
+)
 
 export default FilteredWinesContainer

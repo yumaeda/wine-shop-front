@@ -24,7 +24,7 @@ export interface IFilterLink {
  */
 export const SFCComponent: React.SFC<IFilterLink> = props => (
     <Link
-        to="/"
+        to="/filter"
         className="sidebar__link"
         children={props.text}
         onClick={() => {
