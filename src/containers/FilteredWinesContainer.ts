@@ -10,7 +10,9 @@ import { IRootState } from '../states'
 
 /**
  * Map Redux state to component.props
+ *
  */
+// @ts-ignore:6133
 const mapStateToProps = (state: IRootState, props: RouteComponentProps<{ page: string }>) => {
     return state.filteredWines
 }

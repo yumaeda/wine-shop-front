@@ -44,7 +44,7 @@ export class WineImage extends React.Component<IWineImage, { src: string }> {
     /**
      * Event handler for onerror event
      */
-    private setDefaultImage = (e: any): void => {
+    private setDefaultImage = (): void => {
         this.setState({
             src: `${this.props.baseUrl}/no_wine_photo.png`
         })

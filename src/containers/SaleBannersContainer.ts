@@ -12,7 +12,7 @@ import { IRootState } from '../states'
 /**
  * Map Redux state to component.props
  */
-const mapStateToProps = (state: IRootState, props: any) => {
+const mapStateToProps = (state: IRootState) => {
     return {
         banners: state.banners.saleBanners
     }

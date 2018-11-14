@@ -26,11 +26,7 @@ export const SFCComponent: React.SFC<IFilterLink> = (props) => (
     <Link to="/"
         className="sidebar__link"
         children={ props.text }
-        onClick={
-            (event: React.MouseEvent<HTMLElement>) => {
-                props.onFilterClick()
-            }
-        }
+        onClick={ () => { props.onFilterClick() } }
     />
 )
 

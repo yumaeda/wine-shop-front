@@ -15,7 +15,7 @@ const SFCComponent: React.SFC<{ wines: IWine[] }> = (props) => (
         <tbody>
             {
                 props.wines.map(
-                    (wine: IWine, index: number) => (
+                    (wine: IWine) => (
                         <tr key={ wine.barcode_number }>
                             <WineInfoTable wine={ wine } />
                         </tr>

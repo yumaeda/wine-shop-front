@@ -7,15 +7,6 @@
 import { IBanner } from '../interfaces/IBanner'
 
 /**
- * Banner category string literals
- */
-type BannerCategory =
-    'Features'     |
-    'Sales'        |
-    'Other Drinks' |
-    'Food'
-
-/**
  * Interface for feature banner state
  */
 export interface IBannerState {
