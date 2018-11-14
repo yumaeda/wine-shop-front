@@ -19,15 +19,23 @@ const mapStateToProps = (state: IRootState) => {
 /**
  * Map dispatch to component.props
  */
-const mapDispatchToProps = (dispatch: Redux.Dispatch<IFetchAction>, props: any) => (
-    {
-        onMount: () => dispatch(
-            createFetchAction(ActionTypes.FETCH_RANKING_WINES_SUCCESS, props.url)
+const mapDispatchToProps = (
+    dispatch: Redux.Dispatch<IFetchAction>,
+    props: any
+) => ({
+    onMount: () =>
+        dispatch(
+            createFetchAction(
+                ActionTypes.FETCH_RANKING_WINES_SUCCESS,
+                props.url
+            )
         )
-    }
-)
+})
 
 /**
  * Connect Redux state to the component
  */
-export default connect(mapStateToProps, mapDispatchToProps)(RankingWineList)
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(RankingWineList)

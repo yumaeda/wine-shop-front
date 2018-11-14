@@ -19,17 +19,22 @@ const mapStateToProps = (state: IRootState) => {
 /**
  * Map dispatch to component.props
  */
-const mapDispatchToProps = (dispatch: Redux.Dispatch<IFetchAction>, props: any) => (
-    {
-        onMount: () => dispatch(
+const mapDispatchToProps = (
+    dispatch: Redux.Dispatch<IFetchAction>,
+    props: any
+) => ({
+    onMount: () =>
+        dispatch(
             createFetchAction(ActionTypes.FETCH_COUNTRIES_SUCCESS, props.url)
         )
-    }
-)
+})
 
 /**
  * Connect Redux state to the component
  */
-const CountriesContainer = connect(mapStateToProps, mapDispatchToProps)(WineCountryFilterLinks)
+const CountriesContainer = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(WineCountryFilterLinks)
 
 export default CountriesContainer

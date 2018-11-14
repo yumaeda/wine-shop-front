@@ -11,15 +11,18 @@ import { FilterLink } from '../components/sidebar/FilterLink'
 /**
  * Map dispatch to Component.props
  */
-const mapDispatchToProps = (dispatch: Redux.Dispatch<IFetchAction>, props: any) => (
-    {
-        onFilterClick: () => dispatch(
-            createFetchAction(ActionTypes.FETCH_SUCCESS, props.url)
-        )
-    }
-)
+const mapDispatchToProps = (
+    dispatch: Redux.Dispatch<IFetchAction>,
+    props: any
+) => ({
+    onFilterClick: () =>
+        dispatch(createFetchAction(ActionTypes.FETCH_SUCCESS, props.url))
+})
 
 /**
  * Connect Redux state to the component
  */
-export default connect(null, mapDispatchToProps)(FilterLink)
+export default connect(
+    null,
+    mapDispatchToProps
+)(FilterLink)

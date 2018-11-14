@@ -19,15 +19,20 @@ const mapStateToProps = (state: IRootState) => {
 /**
  * Map dispatch to component.props
  */
-const mapDispatchToProps = (dispatch: Redux.Dispatch<IFetchAction>, props: any) => (
-    {
-        onMount: () => dispatch(
+const mapDispatchToProps = (
+    dispatch: Redux.Dispatch<IFetchAction>,
+    props: any
+) => ({
+    onMount: () =>
+        dispatch(
             createFetchAction(ActionTypes.FETCH_IMPORTERS_SUCCESS, props.url)
         )
-    }
-)
+})
 
 /**
  * Connect Redux state to the component
  */
-export default connect(mapStateToProps, mapDispatchToProps)(ImporterTable)
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ImporterTable)

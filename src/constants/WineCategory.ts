@@ -4,10 +4,10 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 export type WineCategory =
-    'Mousseux'  |
-    'Champagne' |
-    'Blanc'     |
-    'Rosé'     |
-    'Rouge'     |
-    'Doux'      |
-    'Eau de Vie'
+    | 'Mousseux'
+    | 'Champagne'
+    | 'Blanc'
+    | 'Rosé'
+    | 'Rouge'
+    | 'Doux'
+    | 'Eau de Vie'

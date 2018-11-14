@@ -19,17 +19,20 @@ const mapStateToProps = (state: IRootState) => {
 /**
  * Map dispatch to component.props
  */
-const mapDispatchToProps = (dispatch: Redux.Dispatch<IFetchAction>, props: any) => (
-    {
-        onMount: () => dispatch(
-            createFetchAction(ActionTypes.FETCH_NEWS_SUCCESS, props.url)
-        )
-    }
-)
+const mapDispatchToProps = (
+    dispatch: Redux.Dispatch<IFetchAction>,
+    props: any
+) => ({
+    onMount: () =>
+        dispatch(createFetchAction(ActionTypes.FETCH_NEWS_SUCCESS, props.url))
+})
 
 /**
  * Connect Redux state to the component
  */
-const NewsContainer = connect(mapStateToProps, mapDispatchToProps)(NewsList)
+const NewsContainer = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(NewsList)
 
 export default NewsContainer

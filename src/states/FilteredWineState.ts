@@ -9,11 +9,7 @@ import { IWineState } from './WineState'
 /**
  * String literal types for filter
  */
-export type FilterType =
-    'none'     |
-    'category' |
-    'price'    |
-    'vintage'
+export type FilterType = 'none' | 'category' | 'price' | 'vintage'
 
 /**
  * Interface for filtered wines

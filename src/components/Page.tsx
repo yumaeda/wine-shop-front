@@ -7,10 +7,10 @@ import * as React from 'react'
 import { IFilteredWineState } from '../states/FilteredWineState'
 
 // Code-Splitting
-const AnywayAside    = React.lazy(() => import('./sidebar/AnywayAside'))
+const AnywayAside = React.lazy(() => import('./sidebar/AnywayAside'))
 const AnywayContents = React.lazy(() => import('./contents/AnywayContents'))
-const AnywayFooter   = React.lazy(() => import('./footer/AnywayFooter'))
-const AnywayHeader   = React.lazy(() => import('./header/AnywayHeader'))
+const AnywayFooter = React.lazy(() => import('./footer/AnywayFooter'))
+const AnywayHeader = React.lazy(() => import('./header/AnywayHeader'))
 
 /**
  * Interface for Page props
@@ -22,12 +22,12 @@ interface IPage extends IFilteredWineState {
 /**
  * Page component
  */
-export const Page: React.SFC<IPage> = (props) => (
-    <React.Suspense fallback={ <div>Loading...</div> }>
-        <AnywayHeader logined={ true } />
+export const Page: React.SFC<IPage> = props => (
+    <React.Suspense fallback={<div>Loading...</div>}>
+        <AnywayHeader logined={true} />
         <div className="container">
             <AnywayAside />
-            <AnywayContents { ...props } />
+            <AnywayContents {...props} />
         </div>
         <AnywayFooter />
     </React.Suspense>

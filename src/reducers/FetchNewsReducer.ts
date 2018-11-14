@@ -10,15 +10,17 @@ import { INews } from '../interfaces/INews'
 /**
  * Reducer for fetching news
  */
-const FetchNewsReducer: Redux.Reducer<INews[]> =
-    (state = [], action: Redux.AnyAction) => {
-        switch (action.type) {
-            case ActionTypes.FETCH_NEWS_SUCCESS:
-                return action.items
-            case ActionTypes.FETCH_FAILURE:
-            default:
-                return state
-        }
+const FetchNewsReducer: Redux.Reducer<INews[]> = (
+    state = [],
+    action: Redux.AnyAction
+) => {
+    switch (action.type) {
+        case ActionTypes.FETCH_NEWS_SUCCESS:
+            return action.items
+        case ActionTypes.FETCH_FAILURE:
+        default:
+            return state
     }
+}
 
 export default FetchNewsReducer

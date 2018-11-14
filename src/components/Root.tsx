@@ -13,11 +13,11 @@ import { defaultContext, UserContext } from '../context/UserContext'
 /**
  * Root component
  */
-export const Root: React.SFC<{ store: Redux.Store }> = (props) => (
-    <Provider store={ props.store }>
-        <UserContext.Provider value={ defaultContext }>
+export const Root: React.SFC<{ store: Redux.Store }> = props => (
+    <Provider store={props.store}>
+        <UserContext.Provider value={defaultContext}>
             <Router>
-                <Route path="/:page?" component={ FilteredWinesContainer } />
+                <Route path="/:page?" component={FilteredWinesContainer} />
             </Router>
         </UserContext.Provider>
     </Provider>

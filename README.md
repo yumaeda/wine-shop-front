@@ -16,6 +16,11 @@ npm run build
 npm start
 ```
 
+5. Run Prettier
+```bash
+npx prettier --write src/**/*.*
+```
+
 ## TSX Syntax Highlighting for Vim
 1. Install Vundle
 ```bash

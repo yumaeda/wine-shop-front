@@ -21,18 +21,23 @@ const mapStateToProps = (state: IRootState) => {
 /**
  * Map dispatch to component.props
  */
-const mapDispatchToProps = (dispatch: Redux.Dispatch<IFetchAction>, props: any) => (
-    {
-        onMount: () => dispatch(
+const mapDispatchToProps = (
+    dispatch: Redux.Dispatch<IFetchAction>,
+    props: any
+) => ({
+    onMount: () =>
+        dispatch(
             createFetchAction(
                 ActionTypes.FETCH_OTHER_DRINK_BANNERS_SUCCESS,
                 `${props.url}?category=Other Drinks`
             )
         )
-    }
-)
+})
 
 /**
  * Connect Redux state to the component
  */
-export default connect(mapStateToProps, mapDispatchToProps)(BannerTable)
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(BannerTable)

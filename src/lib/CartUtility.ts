@@ -24,11 +24,11 @@ export interface ICartItem {
  */
 export function isPurchasable(item: ICartItem): boolean {
     return (
-        (item.apply !== 'SO') &&
-        (item.apply !== 'DP') &&
-        (item.availability === 'Online') &&
-        (item.stock > 0) &&
-        (item.price > 0)
+        item.apply !== 'SO' &&
+        item.apply !== 'DP' &&
+        item.availability === 'Online' &&
+        item.stock > 0 &&
+        item.price > 0
     )
 }
 
@@ -46,5 +46,5 @@ export function isComingSoon(item: ICartItem): boolean {
         return false
     }
 
-    return (stock > 0) && (availability === 'Online')
+    return stock > 0 && availability === 'Online'
 }

@@ -9,15 +9,7 @@
  *
  * @var string[]
  */
-const WEEK_NAMES = [
-    'Sun',
-    'Mon',
-    'Tue',
-    'Wed',
-    'Thu',
-    'Fri',
-    'Sat'
-]
+const WEEK_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
 /**
  * Get week names
@@ -36,7 +28,7 @@ export function getWeekNames(): string[] {
  * @return number Last date of the month
  */
 export function getLastDateOfMonth(year: number, month: number): number {
-    return (new Date(year, month, 0)).getDate()
+    return new Date(year, month, 0).getDate()
 }
 
 /**
@@ -47,8 +39,12 @@ export function getLastDateOfMonth(year: number, month: number): number {
  * @param number date
  * @return string Day of week of the date
  */
-export function getDayOfWeek(year: number, month: number, date: number): string {
-    const dayOfWeek = (new Date(year, month - 1, date)).getDay()
+export function getDayOfWeek(
+    year: number,
+    month: number,
+    date: number
+): string {
+    const dayOfWeek = new Date(year, month - 1, date).getDay()
 
     return WEEK_NAMES[dayOfWeek]
 }

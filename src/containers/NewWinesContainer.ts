@@ -19,15 +19,20 @@ const mapStateToProps = (state: IRootState) => {
 /**
  * Map dispatch to component.props
  */
-const mapDispatchToProps = (dispatch: Redux.Dispatch<IFetchAction>, props: any) => (
-    {
-        onMount: () => dispatch(
+const mapDispatchToProps = (
+    dispatch: Redux.Dispatch<IFetchAction>,
+    props: any
+) => ({
+    onMount: () =>
+        dispatch(
             createFetchAction(ActionTypes.FETCH_NEW_WINES_SUCCESS, props.url)
         )
-    }
-)
+})
 
 /**
  * Connect Redux state to the component
  */
-export default connect(mapStateToProps, mapDispatchToProps)(NewWineList)
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(NewWineList)
