@@ -27,23 +27,34 @@ export default class AnywayHeader extends React.Component<IAnywayHeader> {
         return (
             <header className="header">
                 <UserContext.Consumer>
-                    {
-                        (ctx: IUserContext) =>
+                    {(ctx: IUserContext) => (
                         <>
-                            <a href={ `${ctx.siteUrl}/index.php` }>
+                            <a href={`${ctx.siteUrl}/index.php`}>
                                 <img
                                     className="header__image"
-                                    src={ `${ctx.imgDir}/_logo.png` }
+                                    src={`${ctx.imgDir}/_logo.png`}
                                 />
                             </a>
                             <br />
-                            <Link to={ '/vintages' } className="header__link">Vintages</Link>
-                            <Link to={ '/producers' } className="header__link">Producers</Link>
-                            <Link to={ '/critics' } className="header__link">Critics</Link>
-                            <SearchBox placeholder="ワイン検索" imgDir={ ctx.imgDir } />
-                            <Menu logined={ this.props.logined } siteUrl={ ctx.siteUrl } />
+                            <Link to={'/vintages'} className="header__link">
+                                Vintages
+                            </Link>
+                            <Link to={'/producers'} className="header__link">
+                                Producers
+                            </Link>
+                            <Link to={'/critics'} className="header__link">
+                                Critics
+                            </Link>
+                            <SearchBox
+                                placeholder="ワイン検索"
+                                imgDir={ctx.imgDir}
+                            />
+                            <Menu
+                                logined={this.props.logined}
+                                siteUrl={ctx.siteUrl}
+                            />
                         </>
-                    }
+                    )}
                 </UserContext.Consumer>
             </header>
         )

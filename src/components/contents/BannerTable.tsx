@@ -28,17 +28,16 @@ export class BannerTable extends React.Component<IBannerTable> {
             <table>
                 <tbody>
                     <tr>
-                        {
-                            this.props.banners.map(
-                                (banner: IBanner, index: number) =>
-                                <td key={ index }>
+                        {this.props.banners.map(
+                            (banner: IBanner, index: number) => (
+                                <td key={index}>
                                     <Banner
-                                        pageUrl={ banner.pageUrl }
-                                        image={ banner.image }
+                                        pageUrl={banner.pageUrl}
+                                        image={banner.image}
                                     />
                                 </td>
                             )
-                        }
+                        )}
                     </tr>
                 </tbody>
             </table>

@@ -33,10 +33,11 @@ export class WineImage extends React.Component<IWineImage, { src: string }> {
      */
     public render(): React.ReactElement<WineImage> {
         return (
-            <img src={ this.state.src }
-                 className={ this.props.className }
-                 alt={ this.props.id }
-                 onError={ this.setDefaultImage }
+            <img
+                src={this.state.src}
+                className={this.props.className}
+                alt={this.props.id}
+                onError={this.setDefaultImage}
             />
         )
     }

@@ -17,15 +17,16 @@ export default class ImporterColumn extends React.Component<IImporter> {
     public render(): React.ReactElement<ImporterColumn> {
         return (
             <td className="importer__column">
-                <a href={ this.props.url } title={ this.props.name }>
+                <a href={this.props.url} title={this.props.name}>
                     <UserContext.Consumer>
-                        {
-                            (ctx: IUserContext) =>
+                        {(ctx: IUserContext) => (
                             <img
                                 className="importer__image"
-                                src={ `${ctx.siteUrl}/${this.props.dir}${this.props.filename}` }
+                                src={`${ctx.siteUrl}/${this.props.dir}${
+                                    this.props.filename
+                                }`}
                             />
-                        }
+                        )}
                     </UserContext.Consumer>
                 </a>
             </td>

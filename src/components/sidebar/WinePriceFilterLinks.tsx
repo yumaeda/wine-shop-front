@@ -23,24 +23,25 @@ export class WinePriceFilterLinks extends React.Component {
             const maxPrice = price + basePrice - 1
             const dispMinPrice = price.toLocaleString()
             const dispMaxPrice = maxPrice.toLocaleString()
-            priceRanges.push((
-                <li className="sidebar__list-item" key={ price }>
+            priceRanges.push(
+                <li className="sidebar__list-item" key={price}>
                     <FilterLinkContainer
-                        text={ `${dispMinPrice}〜${dispMaxPrice}円` }
-                        url={ `${api}?price_gte=${price}&price_lte=${maxPrice}` }
+                        text={`${dispMinPrice}〜${dispMaxPrice}円`}
+                        url={`${api}?price_gte=${price}&price_lte=${maxPrice}`}
                     />
                 </li>
-            ))
+            )
         }
 
-        priceRanges.push((
-            <li className="sidebar__list-item" key={ upperLimit }>
+        priceRanges.push(
+            <li className="sidebar__list-item" key={upperLimit}>
                 <FilterLinkContainer
-                    text={ upperLimit.toLocaleString() + '円〜' }
-                    url={ `${api}?price_gte=${upperLimit}` }
+                    text={upperLimit.toLocaleString() + '円〜'}
+                    url={`${api}?price_gte=${upperLimit}`}
                 />
-            </li>))
+            </li>
+        )
 
-        return <ul>{ priceRanges }</ul>
+        return <ul>{priceRanges}</ul>
     }
 }

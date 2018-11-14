@@ -22,11 +22,14 @@ export interface IFilterLink {
 /**
  * FilterLink component
  */
-export const SFCComponent: React.SFC<IFilterLink> = (props) => (
-    <Link to="/"
+export const SFCComponent: React.SFC<IFilterLink> = props => (
+    <Link
+        to="/"
         className="sidebar__link"
-        children={ props.text }
-        onClick={ () => { props.onFilterClick() } }
+        children={props.text}
+        onClick={() => {
+            props.onFilterClick()
+        }}
     />
 )
 

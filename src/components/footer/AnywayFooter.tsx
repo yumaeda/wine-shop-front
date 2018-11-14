@@ -34,18 +34,20 @@ export default class AnywayFooter extends React.Component {
         return (
             <footer className="footer">
                 <div>
-                    <span className="footer__text--notice">{ noticeText }</span>
-                    <br /><br />
-                    <FooterNav links={ this.links } />
+                    <span className="footer__text--notice">{noticeText}</span>
+                    <br />
+                    <br />
+                    <FooterNav links={this.links} />
                 </div>
                 <UserContext.Consumer>
-                    {
-                        (ctx: IUserContext) =>
+                    {(ctx: IUserContext) => (
                         <>
-                            <Iframe src={ `./pages/${ctx.code}/payment.html` } />
-                            <Iframe src={ `./pages/${ctx.code}/shipping_fee.html` } />
+                            <Iframe src={`./pages/${ctx.code}/payment.html`} />
+                            <Iframe
+                                src={`./pages/${ctx.code}/shipping_fee.html`}
+                            />
                         </>
-                    }
+                    )}
                 </UserContext.Consumer>
             </footer>
         )

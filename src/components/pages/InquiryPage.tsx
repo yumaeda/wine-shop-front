@@ -13,6 +13,6 @@ const mail = 'mailto:mail@anyway-grapes.jp'
 export const InquiryPage: React.SFC = () => (
     <div>
         <span>Mail to: </span>
-        <a href={ `mailto:${mail}` }>{ mail }</a>
+        <a href={`mailto:${mail}`}>{mail}</a>
     </div>
 )

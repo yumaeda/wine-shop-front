@@ -32,10 +32,10 @@ export class Iframe extends React.Component<IIframe, { height: number }> {
 
         return (
             <iframe
-                src={ srcUrl }
-                onLoad={ this.setContentHeight }
+                src={srcUrl}
+                onLoad={this.setContentHeight}
                 width="100%"
-                height={ this.state.height + 'px' }
+                height={this.state.height + 'px'}
                 scrolling="no"
                 frameBorder="0"
             />

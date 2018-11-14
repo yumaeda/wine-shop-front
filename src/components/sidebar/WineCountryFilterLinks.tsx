@@ -21,35 +21,42 @@ export interface IWineCountryFilterLinks {
 /**
  * WineCountryFilterLinks component
  */
-export class WineCountryFilterLinks extends React.Component<IWineCountryFilterLinks> {
+export class WineCountryFilterLinks extends React.Component<
+    IWineCountryFilterLinks
+> {
     /**
      * Return horizontal wine list JSX to render
      */
     public render(): React.ReactElement<WineCountryFilterLinks> {
         return (
             <UserContext.Consumer>
-                {
-                    (ctx: IUserContext) =>
+                {(ctx: IUserContext) => (
                     <ul>
-                        {
-                            this.props.countries.map(
-                                (country: ICountry, index: number) =>
-                                <li className="sidebar__list-item" key={ index }>
+                        {this.props.countries.map(
+                            (country: ICountry, index: number) => (
+                                <li className="sidebar__list-item" key={index}>
                                     <a href="#" className="sidebar__link">
                                         <img
-                                            src={ `${ctx.imgDir}/flags/flag-overlay.png` }
+                                            src={`${
+                                                ctx.imgDir
+                                            }/flags/flag-overlay.png`}
                                             className="sidebar__image"
                                             style={{
-                                                backgroundImage: `url('${this.getFlagUrl(ctx.imgDir, country.name)}')`
+                                                backgroundImage: `url('${this.getFlagUrl(
+                                                    ctx.imgDir,
+                                                    country.name
+                                                )}')`
                                             }}
                                         />
-                                        { ` ${CountryInfo.getJpnName(country.name)}` }
+                                        {` ${CountryInfo.getJpnName(
+                                            country.name
+                                        )}`}
                                     </a>
                                 </li>
                             )
-                        }
+                        )}
                     </ul>
-                }
+                )}
             </UserContext.Consumer>
         )
     }

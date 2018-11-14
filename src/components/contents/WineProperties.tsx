@@ -34,21 +34,31 @@ export default class WineProperties extends React.Component<IWineProperties> {
             <table className="wine-info__properties">
                 <tbody>
                     <tr>
-                        <td className="wine-info__column wine-info__label-column">タイプ</td>
-                        <td className="wine-info__column">{ WineUtility.getJpnType(this.props.type) }</td>
-                    </tr>
-                    <tr>
-                        <td className="wine-info__column wine-info__label-column">生産地</td>
+                        <td className="wine-info__column wine-info__label-column">
+                            タイプ
+                        </td>
                         <td className="wine-info__column">
-                            <a href={ countryUrl } target="country_window">
-                                { CountryInfo.getJpnName(this.props.country) }
-                            </a>
-                            <span>{ ` > ${this.props.region_jpn}` }</span>
+                            {WineUtility.getJpnType(this.props.type)}
                         </td>
                     </tr>
                     <tr>
-                        <td className="wine-info__column wine-info__label-column">容量</td>
-                        <td className="wine-info__column">{ `${this.props.capacity}ml` }</td>
+                        <td className="wine-info__column wine-info__label-column">
+                            生産地
+                        </td>
+                        <td className="wine-info__column">
+                            <a href={countryUrl} target="country_window">
+                                {CountryInfo.getJpnName(this.props.country)}
+                            </a>
+                            <span>{` > ${this.props.region_jpn}`}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td className="wine-info__column wine-info__label-column">
+                            容量
+                        </td>
+                        <td className="wine-info__column">{`${
+                            this.props.capacity
+                        }ml`}</td>
                     </tr>
                 </tbody>
             </table>

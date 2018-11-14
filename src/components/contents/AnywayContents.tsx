@@ -20,7 +20,10 @@ interface IAnywayCotents {
 /**
  * AnywayContents component
  */
-export default class AnywayContents extends React.Component<IAnywayCotents, {}> {
+export default class AnywayContents extends React.Component<
+    IAnywayCotents,
+    {}
+> {
     /**
      * Return image JSX to render
      */
@@ -29,15 +32,15 @@ export default class AnywayContents extends React.Component<IAnywayCotents, {}> 
 
         let jsx = null
         if (page && page.length > 0) {
-            jsx = <Iframe src={ `./pages/ja/${page}.html` } />
+            jsx = <Iframe src={`./pages/ja/${page}.html`} />
         } else if (this.props.children) {
-            jsx = <>{ this.props.children }</>
+            jsx = <>{this.props.children}</>
         } else if (!this.props.wines || this.props.wines.length === 0) {
             jsx = <DefaultContents />
         } else {
-            jsx = <FilteredContents wines={ this.props.wines } />
+            jsx = <FilteredContents wines={this.props.wines} />
         }
 
-        return <div className="contents">{ jsx }</div>
+        return <div className="contents">{jsx}</div>
     }
 }

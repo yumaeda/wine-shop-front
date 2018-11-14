@@ -17,20 +17,17 @@ export interface ILink {
 /**
  * FooterNav component
  */
-export const SFCComponent: React.SFC<{ links: ILink[] }> = (props) => (
+export const SFCComponent: React.SFC<{ links: ILink[] }> = props => (
     <ul>
-        {
-            props.links.map(
-                (link: ILink, index: number) =>
-                <li className="footer__list-item" key={ index }>
-                    <Link
-                        className="footer__link"
-                        to={ link.path }
-                        children={ link.text }
-                    />
-                </li>
-            )
-        }
+        {props.links.map((link: ILink, index: number) => (
+            <li className="footer__list-item" key={index}>
+                <Link
+                    className="footer__link"
+                    to={link.path}
+                    children={link.text}
+                />
+            </li>
+        ))}
     </ul>
 )
 

@@ -10,18 +10,14 @@ import { WineInfoTable } from './WineInfoTable'
 /**
  * FilteredContents component
  */
-const SFCComponent: React.SFC<{ wines: IWine[] }> = (props) => (
+const SFCComponent: React.SFC<{ wines: IWine[] }> = props => (
     <table>
         <tbody>
-            {
-                props.wines.map(
-                    (wine: IWine) => (
-                        <tr key={ wine.barcode_number }>
-                            <WineInfoTable wine={ wine } />
-                        </tr>
-                    )
-                )
-            }
+            {props.wines.map((wine: IWine) => (
+                <tr key={wine.barcode_number}>
+                    <WineInfoTable wine={wine} />
+                </tr>
+            ))}
         </tbody>
     </table>
 )

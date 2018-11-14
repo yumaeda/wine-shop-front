@@ -42,16 +42,16 @@ export class SearchBox extends React.Component<ISearchBox, ISearchBoxState> {
             <div className="search-box">
                 <input
                     type="text"
-                    placeholder={ this.props.placeholder }
+                    placeholder={this.props.placeholder}
                     className="search-box__input"
-                    onKeyDown={ this.onKeyDown }
-                    onKeyUp={ this.onKeyUp }
+                    onKeyDown={this.onKeyDown}
+                    onKeyUp={this.onKeyUp}
                 />
 
                 <img
-                    src={ `${this.props.imgDir}/search_wine.png` }
+                    src={`${this.props.imgDir}/search_wine.png`}
                     className="search-box__button"
-                    onClick={ this.onSearch }
+                    onClick={this.onSearch}
                 />
             </div>
         )
@@ -60,9 +60,11 @@ export class SearchBox extends React.Component<ISearchBox, ISearchBoxState> {
     /**
      * Event handler for onkeydown event for the search input
      */
-    private onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>): void => {
+    private onKeyDown = (
+        event: React.KeyboardEvent<HTMLInputElement>
+    ): void => {
         this.setState({
-            pressedKey: event ? (event.which || event.keyCode) : 0
+            pressedKey: event ? event.which || event.keyCode : 0
         })
     }
 
@@ -70,8 +72,8 @@ export class SearchBox extends React.Component<ISearchBox, ISearchBoxState> {
      * Event handler for onkeyup event for the search input
      */
     private onKeyUp = (event: React.KeyboardEvent<HTMLInputElement>): void => {
-        const keyCode = event ? (event.which || event.keyCode) : 0
-        if ((keyCode === 13) && (this.state.pressedKey !== 229)) {
+        const keyCode = event ? event.which || event.keyCode : 0
+        if (keyCode === 13 && this.state.pressedKey !== 229) {
             const searchText = event.currentTarget.value
             alert(searchText)
         }

@@ -27,28 +27,27 @@ export class WineColumn extends React.Component<{ wine: IWine }> {
         return (
             <td className="wine-column">
                 <UserContext.Consumer>
-                    {
-                        (ctx: IUserContext) =>
+                    {(ctx: IUserContext) => (
                         <a
                             className="wine-column__link"
-                            href={ `${ctx.siteUrl}/store/index.php${params}&lang=${ctx.code}` }
-                            target="wine_detail">
-
+                            href={`${
+                                ctx.siteUrl
+                            }/store/index.php${params}&lang=${ctx.code}`}
+                            target="wine_detail"
+                        >
                             <WineImage
-                                id={ wineId }
-                                baseUrl={ `${ctx.imgDir}/wines/400px` }
+                                id={wineId}
+                                baseUrl={`${ctx.imgDir}/wines/400px`}
                                 className="wine-column__image"
                             />
 
                             <div>
-                                {
-                                    this.getDisplayText(
-                                        this.getWineName(this.props.wine, ctx.code)
-                                    )
-                                }
+                                {this.getDisplayText(
+                                    this.getWineName(this.props.wine, ctx.code)
+                                )}
                             </div>
                         </a>
-                    }
+                    )}
                 </UserContext.Consumer>
             </td>
         )
@@ -63,9 +62,9 @@ export class WineColumn extends React.Component<{ wine: IWine }> {
      * @return string Name of the wine to be displayed
      */
     private getDisplayText(name: string): string {
-        return (name.length > this.maxDisplayTextLength) ?
-            name.substr(0, this.maxDisplayTextLength - 3) + '...' :
-            name
+        return name.length > this.maxDisplayTextLength
+            ? name.substr(0, this.maxDisplayTextLength - 3) + '...'
+            : name
     }
 
     /**
@@ -76,8 +75,8 @@ export class WineColumn extends React.Component<{ wine: IWine }> {
      */
     private getWineName(wine: IWine, lang: string): string {
         const vintage = wine.vintage
-        const name = (lang === 'ja') ? wine.combined_name_jpn : wine.combined_name
-        const producer = (lang === 'ja') ? wine.producer_jpn : wine.producer
+        const name = lang === 'ja' ? wine.combined_name_jpn : wine.combined_name
+        const producer = lang === 'ja' ? wine.producer_jpn : wine.producer
 
         return `${vintage} ${name} / ${producer}`
     }

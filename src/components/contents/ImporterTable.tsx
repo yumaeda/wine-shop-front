@@ -25,30 +25,23 @@ export default class ImporterTable extends React.Component<IImporterTable> {
      */
     public render(): React.ReactElement<ImporterTable> {
         const rows = this.convertToRows(this.props.importers)
-        const jsx = (
-            rows.map(
-                (row: IImporter[], index: number) => (
-                    <tr key={ `importer_row_${index}`}>
-                        {
-                            row.map(
-                                (importer: IImporter) =>
-                                <ImporterColumn
-                                    key={ importer.name }
-                                    name={ importer.name }
-                                    url={ importer.url }
-                                    dir={ importer.dir }
-                                    filename={ importer.filename }
-                                />
-                            )
-                        }
-                    </tr>
-                )
-            )
-        )
+        const jsx = rows.map((row: IImporter[], index: number) => (
+            <tr key={`importer_row_${index}`}>
+                {row.map((importer: IImporter) => (
+                    <ImporterColumn
+                        key={importer.name}
+                        name={importer.name}
+                        url={importer.url}
+                        dir={importer.dir}
+                        filename={importer.filename}
+                    />
+                ))}
+            </tr>
+        ))
 
         return (
             <table className="importer__table">
-                <tbody>{ jsx }</tbody>
+                <tbody>{jsx}</tbody>
             </table>
         )
     }
@@ -57,7 +50,7 @@ export default class ImporterTable extends React.Component<IImporterTable> {
      * Dispatch FETCH_START action
      */
     public componentDidMount() {
-        this.props.onMount();
+        this.props.onMount()
     }
 
     /**
@@ -66,11 +59,14 @@ export default class ImporterTable extends React.Component<IImporterTable> {
      */
     private convertToRows = (importers: IImporter[]): IImporter[][] => {
         if (importers.length <= 5) {
-            return [ importers ]
+            return [importers]
         }
 
-        const [ first, second, third, forth, fifth, ...rest] = importers
+        const [first, second, third, forth, fifth, ...rest] = importers
 
-        return [[ first, second, third, forth, fifth ], ...this.convertToRows(rest)]
+        return [
+            [first, second, third, forth, fifth],
+            ...this.convertToRows(rest)
+        ]
     }
 }

@@ -24,13 +24,13 @@ export class NewWineList extends React.Component<INewWineList> {
      * Return horizontal wine list JSX to render
      */
     public render(): React.ReactElement<NewWineList> {
-        return <HorizontalWineList wines={ this.props.wines } />
+        return <HorizontalWineList wines={this.props.wines} />
     }
 
     /**
      * Dispatch FETCH_START action
      */
     public componentDidMount() {
-        this.props.onMount();
+        this.props.onMount()
     }
 }

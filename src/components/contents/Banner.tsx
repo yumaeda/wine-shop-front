@@ -9,9 +9,9 @@ import { IBanner } from '../../interfaces/IBanner'
 /**
  * Banner component
  */
-const SFCComponent: React.SFC<IBanner> = (props) => (
-    <a href={ props.pageUrl }>
-        <img src={ props.image } className="banner__image" />
+const SFCComponent: React.SFC<IBanner> = props => (
+    <a href={props.pageUrl}>
+        <img src={props.image} className="banner__image" />
     </a>
 )
 
