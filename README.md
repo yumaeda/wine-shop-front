@@ -16,9 +16,14 @@ npm run build
 npm start
 ```
 
-5. Run Prettier
+5.  Run Prettier
 ```bash
 npx prettier --write src/**/*.*
+```
+In order not to apply Prettier, add `// prettier-ignore`
+```javascript
+// prettier-ignore
+const jsx = `Long long long long long long long long long text with ${text.length} characters.`
 ```
 
 ## TSX Syntax Highlighting for Vim
