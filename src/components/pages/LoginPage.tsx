@@ -17,11 +17,9 @@ const confirmUser = (login: ILogin) =>
  * LoginPage component
  */
 const SFCComponent: React.SFC = () => (
-    <React.Suspense fallback={<div>Loading...</div>}>
-        <div className="contents">
-            <LoginForm onSubmit={confirmUser} />
-        </div>
-    </React.Suspense>
+    <div className="contents">
+        <LoginForm onSubmit={confirmUser} />
+    </div>
 )
 
 const LoginPage = React.memo(SFCComponent)
