@@ -4,6 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import { combineReducers } from 'redux'
+import { reducer as formReducer } from 'redux-form'
 import { IRootState } from '../states'
 import FetchBannersReducer from './FetchBannersReducer'
 import FetchCountriesReducer from './FetchCountriesReducer'
@@ -20,6 +21,7 @@ const rootReducer = combineReducers<IRootState>({
     banners: FetchBannersReducer,
     countries: FetchCountriesReducer,
     filteredWines: FilterWinesReducer,
+    form: formReducer,
     importers: FetchImportersReducer,
     newWines: FetchNewWinesReducer,
     news: FetchNewsReducer,

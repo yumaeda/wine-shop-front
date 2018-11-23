@@ -15,7 +15,7 @@ const AnywayHeader = React.lazy(() => import('../header/AnywayHeader'))
  */
 export const PageTemplate: React.SFC = props => (
     <React.Suspense fallback={<div>Loading...</div>}>
-        <AnywayHeader logined={true} />
+        <AnywayHeader logined={false} />
         <div className="container">
             <AnywayAside />
             {props.children}

@@ -4,6 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 
 /**
  * Interface for Menu
@@ -27,15 +28,12 @@ export class Menu extends React.Component<IMenu> {
                 <a href={`${siteUrl}/cart.php`} className="header__command">
                     カート
                 </a>
-                {this.props.logined ? (
+                {!this.props.logined ? (
                     <>
                         {' '}
-                        <a
-                            href={`${siteUrl}/login.php`}
-                            className="header__command"
-                        >
+                        <Link to="/login" className="header__command">
                             ログイン
-                        </a>{' '}
+                        </Link>{' '}
                         <a
                             href="#"
                             id="register-link"

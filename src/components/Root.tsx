@@ -11,6 +11,7 @@ import { defaultContext, UserContext } from '../context/UserContext'
 import { FilteredWinePage } from './pages/FilteredWinePage'
 import { HomePage } from './pages/HomePage'
 import { IframePage } from './pages/IframePage'
+import LoginPage from './pages/LoginPage'
 
 /**
  * Root component
@@ -22,6 +23,7 @@ export const Root: React.SFC<{ store: Redux.Store }> = props => (
                 <Switch>
                     <Route exact path="/" component={HomePage} />
                     <Route path="/filter" component={FilteredWinePage} />
+                    <Route path="/login" component={LoginPage} />
                     <Route path="/:page?" component={IframePage} />
                 </Switch>
             </Router>

@@ -18,6 +18,7 @@ export interface IRootState {
     banners: IBannerState
     countries: ICountry[]
     filteredWines: IFilteredWineState
+    form: any
     importers: IImporter[]
     newWines: IWineState
     news: INews[]
