@@ -6,6 +6,8 @@
 import * as React from 'react'
 import { Field, InjectedFormProps, reduxForm } from 'redux-form'
 import { ILogin } from '../../interfaces/ILogin'
+import { email, required } from '../../validators'
+import RenderField from './RenderField'
 
 /**
  * LoginForm component
@@ -18,21 +20,23 @@ class LoginForm extends React.Component<InjectedFormProps<ILogin>> {
         return (
             <form onSubmit={this.props.handleSubmit}>
                 <div>
-                    <label>Eメール</label>
                     <Field
+                        label="Eメール"
                         name="email"
-                        component="input"
+                        component={RenderField}
                         type="text"
                         placeholder="Email"
+                        validate={[email, required]}
                     />
                 </div>
                 <div>
-                    <label>パスワード</label>
                     <Field
+                        label="パスワード"
                         name="password"
-                        component="input"
+                        component={RenderField}
                         type="text"
                         placeholder="Password"
+                        validate={[required]}
                     />
                 </div>
                 <div>
