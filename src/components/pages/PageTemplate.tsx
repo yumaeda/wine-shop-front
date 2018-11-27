@@ -13,7 +13,7 @@ const AnywayHeader = React.lazy(() => import('../header/AnywayHeader'))
 /**
  * PageTemplate component
  */
-export const PageTemplate: React.SFC = props => (
+const PageTemplate = React.memo<{ children: React.ReactNode }>(props => (
     <React.Suspense fallback={<div>Loading...</div>}>
         <AnywayHeader logined={false} />
         <div className="container">
@@ -22,4 +22,6 @@ export const PageTemplate: React.SFC = props => (
         </div>
         <AnywayFooter />
     </React.Suspense>
-)
+))
+
+export default PageTemplate

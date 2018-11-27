@@ -5,7 +5,7 @@
  */
 import * as React from 'react'
 import { IBanner } from '../../interfaces/IBanner'
-import { Banner } from './Banner'
+import Banner from './Banner'
 
 /**
  * Interface for banner table

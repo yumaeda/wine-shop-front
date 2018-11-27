@@ -5,7 +5,7 @@
  */
 import * as React from 'react'
 import { IWine } from '../../interfaces/IWine'
-import { HorizontalWineList } from './HorizontalWineList'
+import HorizontalWineList from './HorizontalWineList'
 
 /**
  * Interface for rendering new wines

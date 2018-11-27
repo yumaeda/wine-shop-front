@@ -5,17 +5,17 @@
  */
 import * as React from 'react'
 import FilteredWinesContainer from '../../containers/FilteredWinesContainer'
-import { PageTemplate } from './PageTemplate'
+import PageTemplate from './PageTemplate'
 
 /**
  * FilteredWinePage component
  */
-const SFCComponent: React.SFC = () => (
+const FilteredWinePage = React.memo(() => (
     <PageTemplate>
         <div className="contents">
             <FilteredWinesContainer />
         </div>
     </PageTemplate>
-)
+))
 
-export const FilteredWinePage = React.memo(SFCComponent)
+export default FilteredWinePage

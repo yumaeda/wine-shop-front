@@ -5,14 +5,14 @@
  */
 import * as React from 'react'
 import CountriesContainer from '../../containers/CountriesContainer'
-import { WineCategoryFilterLinks } from './WineCategoryFilterLinks'
+import WineCategoryFilterLinks from './WineCategoryFilterLinks'
 import { WinePriceFilterLinks } from './WinePriceFilterLinks'
 import { WineVintageFilterLinks } from './WineVintageFilterLinks'
 
 /**
  * AnywayAside component
  */
-const SFCComponent: React.SFC = () => (
+const AnywayAside = React.memo(() => (
     <aside className="sidebar">
         <h2 className="sidebar__title">産地</h2>
         <CountriesContainer url="api/v1/countries" />
@@ -26,7 +26,6 @@ const SFCComponent: React.SFC = () => (
         <h2 className="sidebar__title">年代</h2>
         <WineVintageFilterLinks />
     </aside>
-)
+))
 
-const AnywayAside = React.memo(SFCComponent)
 export default AnywayAside

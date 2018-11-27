@@ -17,7 +17,7 @@ export interface ILink {
 /**
  * FooterNav component
  */
-export const SFCComponent: React.SFC<{ links: ILink[] }> = props => (
+const FooterNav = React.memo<{ links: ILink[] }>(props => (
     <ul>
         {props.links.map((link: ILink, index: number) => (
             <li className="footer__list-item" key={index}>
@@ -29,6 +29,6 @@ export const SFCComponent: React.SFC<{ links: ILink[] }> = props => (
             </li>
         ))}
     </ul>
-)
+))
 
-export const FooterNav = React.memo(SFCComponent)
+export default FooterNav

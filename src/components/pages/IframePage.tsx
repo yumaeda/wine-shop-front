@@ -5,17 +5,17 @@
  */
 import * as React from 'react'
 import { Iframe } from '../contents/Iframe'
-import { PageTemplate } from './PageTemplate'
+import PageTemplate from './PageTemplate'
 
 /**
  * IframePage component
  */
-const SFCComponent: React.SFC<{ match: any }> = props => (
+const IframePage = React.memo<{ match: any }>(props => (
     <PageTemplate>
         <div className="contents">
             <Iframe src={`./pages/ja/${props.match.params.page}.html`} />
         </div>
     </PageTemplate>
-)
+))
 
-export const IframePage = React.memo(SFCComponent)
+export default IframePage

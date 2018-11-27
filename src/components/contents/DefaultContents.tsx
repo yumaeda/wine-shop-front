@@ -15,7 +15,7 @@ import SaleBannersContainer from '../../containers/SaleBannersContainer'
 /**
  * DefaultContents component
  */
-const SFCComponent: React.SFC = () => (
+const DefaultContents = React.memo(() => (
     <>
         <h2 className="container__title">新着情報</h2>
         <div className="new-info">
@@ -46,6 +46,6 @@ const SFCComponent: React.SFC = () => (
             <OtherDrinkBannersContainer url="api/v1/banners" />
         </div>
     </>
-)
+))
 
-export const DefaultContents = React.memo(SFCComponent)
+export default DefaultContents

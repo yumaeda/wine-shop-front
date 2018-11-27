@@ -8,15 +8,15 @@ import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import * as Redux from 'redux'
 import { defaultContext, UserContext } from '../context/UserContext'
-import { FilteredWinePage } from './pages/FilteredWinePage'
-import { HomePage } from './pages/HomePage'
-import { IframePage } from './pages/IframePage'
+import FilteredWinePage from './pages/FilteredWinePage'
+import HomePage from './pages/HomePage'
+import IframePage from './pages/IframePage'
 import LoginPage from './pages/LoginPage'
 
 /**
  * Root component
  */
-export const Root: React.SFC<{ store: Redux.Store }> = props => (
+export const Root: React.FC<{ store: Redux.Store }> = props => (
     <Provider store={props.store}>
         <UserContext.Provider value={defaultContext}>
             <Router>

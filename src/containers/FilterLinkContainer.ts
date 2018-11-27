@@ -6,7 +6,7 @@
 import { connect } from 'react-redux'
 import * as Redux from 'redux'
 import { ActionTypes, createFetchAction, IFetchAction } from '../actions'
-import { FilterLink } from '../components/sidebar/FilterLink'
+import FilterLink from '../components/sidebar/FilterLink'
 
 /**
  * Map dispatch to Component.props

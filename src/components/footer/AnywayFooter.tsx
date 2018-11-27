@@ -6,7 +6,7 @@
 import * as React from 'react'
 import { IUserContext, UserContext } from '../../context/UserContext'
 import { Iframe } from '../contents/Iframe'
-import { FooterNav, ILink } from './FooterNav'
+import FooterNav, { ILink } from './FooterNav'
 
 /**
  * AnywayFooter component

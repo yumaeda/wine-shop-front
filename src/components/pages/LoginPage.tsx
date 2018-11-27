@@ -16,11 +16,10 @@ const confirmUser = (login: ILogin) =>
 /**
  * LoginPage component
  */
-const SFCComponent: React.SFC = () => (
+const LoginPage = React.memo(() => (
     <div className="contents">
         <LoginForm onSubmit={confirmUser} />
     </div>
-)
+))
 
-const LoginPage = React.memo(SFCComponent)
 export default LoginPage

@@ -10,7 +10,7 @@ import { WineInfoTable } from './WineInfoTable'
 /**
  * FilteredContents component
  */
-const SFCComponent: React.SFC<{ wines: IWine[] }> = props => (
+const FilteredContents = React.memo<{ wines: IWine[] }>(props => (
     <table>
         <tbody>
             {props.wines.map((wine: IWine) => (
@@ -20,7 +20,6 @@ const SFCComponent: React.SFC<{ wines: IWine[] }> = props => (
             ))}
         </tbody>
     </table>
-)
+))
 
-const FilteredContents = React.memo(SFCComponent)
 export default FilteredContents

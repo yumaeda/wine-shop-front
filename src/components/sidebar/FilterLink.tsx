@@ -22,7 +22,7 @@ export interface IFilterLink {
 /**
  * FilterLink component
  */
-export const SFCComponent: React.SFC<IFilterLink> = props => (
+const FilterLink = React.memo<IFilterLink>(props => (
     <Link
         to="/filter"
         className="sidebar__link"
@@ -31,6 +31,6 @@ export const SFCComponent: React.SFC<IFilterLink> = props => (
             props.onFilterClick()
         }}
     />
-)
+))
 
-export const FilterLink = React.memo(SFCComponent)
+export default FilterLink

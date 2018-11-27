@@ -5,7 +5,7 @@
  */
 import { connect } from 'react-redux'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
-import { AnywayContents } from '../components/contents/AnywayContents'
+import AnywayContents from '../components/contents/AnywayContents'
 import { IRootState } from '../states'
 
 /**

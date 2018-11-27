@@ -18,21 +18,20 @@ interface IRenderField extends WrappedFieldProps {
 /**
  * RenderField component
  */
-const SFCComponent: React.SFC<IRenderField> = props => (
+const RenderField = React.memo<IRenderField>(props => (
     <div>
         <label>{props.label}</label>
         <div>
-            <input {...props.input} placeholder={props.placeholder} type={props.type} />
-            {
-                props.meta.touched &&
-                (
-                    (props.meta.error && <span>{props.meta.error}</span>) ||
-                    (props.meta.warning && <span>{props.meta.warning}</span>)
-                )
-            }
+            <input
+                {...props.input}
+                placeholder={props.placeholder}
+                type={props.type}
+            />
+            {props.meta.touched &&
+                ((props.meta.error && <span>{props.meta.error}</span>) ||
+                    (props.meta.warning && <span>{props.meta.warning}</span>))}
         </div>
     </div>
-)
+))
 
-const RenderField = React.memo(SFCComponent)
 export default RenderField
