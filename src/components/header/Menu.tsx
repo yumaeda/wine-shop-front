@@ -34,14 +34,9 @@ export class Menu extends React.Component<IMenu> {
                         <Link to="/login" className="header__command">
                             ログイン
                         </Link>{' '}
-                        <a
-                            href="#"
-                            id="register-link"
-                            onClick={this.showRegistrationForm}
-                            className="header__command"
-                        >
+                        <Link to="/register" className="header__command">
                             会員登録
-                        </a>
+                        </Link>
                     </>
                 ) : (
                     <>
@@ -64,15 +59,5 @@ export class Menu extends React.Component<IMenu> {
         )
 
         return jsx
-    }
-
-    /**
-     * Event handler for onclick event
-     */
-    private showRegistrationForm = (
-        event: React.MouseEvent<HTMLElement>
-    ): void => {
-        event.preventDefault()
-        alert('Register')
     }
 }
