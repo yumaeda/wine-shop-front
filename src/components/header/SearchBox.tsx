@@ -25,6 +25,11 @@ interface ISearchBoxState {
  */
 export class SearchBox extends React.Component<ISearchBox, ISearchBoxState> {
     /**
+     * Refers search box
+     */
+    private searchBox = React.createRef<HTMLInputElement>()
+
+    /**
      * Constructor for SearchBox
      */
     public constructor(props: ISearchBox) {
@@ -46,6 +51,7 @@ export class SearchBox extends React.Component<ISearchBox, ISearchBoxState> {
                     className="search-box__input"
                     onKeyDown={this.onKeyDown}
                     onKeyUp={this.onKeyUp}
+                    ref={this.searchBox}
                 />
 
                 <img
@@ -74,8 +80,7 @@ export class SearchBox extends React.Component<ISearchBox, ISearchBoxState> {
     private onKeyUp = (event: React.KeyboardEvent<HTMLInputElement>): void => {
         const keyCode = event ? event.which || event.keyCode : 0
         if (keyCode === 13 && this.state.pressedKey !== 229) {
-            const searchText = event.currentTarget.value
-            alert(searchText)
+            this.search(event.currentTarget.value)
         }
     }
 
@@ -84,6 +89,17 @@ export class SearchBox extends React.Component<ISearchBox, ISearchBoxState> {
      */
     private onSearch = (event: React.MouseEvent<HTMLElement>): void => {
         event.preventDefault()
-        alert('Search')
+        if (this.searchBox.current) {
+            this.search(this.searchBox.current.value)
+        }
+    }
+
+    /**
+     * Conduct search
+     *
+     * TODO: Redirect to /search
+     */
+    private search = (keyword: string): void => {
+        window.location.href = `//anyway-grapes.jp/store/index.php?submenu=search&keyword=${keyword}`
     }
 }
