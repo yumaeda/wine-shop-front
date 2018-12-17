@@ -11,6 +11,7 @@ import FetchCountriesReducer from './FetchCountriesReducer'
 import FetchImportersReducer from './FetchImportersReducer'
 import FetchNewsReducer from './FetchNewsReducer'
 import FetchNewWinesReducer from './FetchNewWinesReducer'
+import FetchPhotosReducer from './FetchPhotosReducer'
 import FetchRankingWinesReducer from './FetchRankingWinesReducer'
 import FilterWinesReducer from './FilterWinesReducer'
 
@@ -25,6 +26,7 @@ const rootReducer = combineReducers<IRootState>({
     importers: FetchImportersReducer,
     newWines: FetchNewWinesReducer,
     news: FetchNewsReducer,
+    photos: FetchPhotosReducer,
     rankingWines: FetchRankingWinesReducer
 })
 

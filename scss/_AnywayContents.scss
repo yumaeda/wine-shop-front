@@ -81,3 +81,22 @@
         vertical-align: middle;
     }
 }
+
+.photo {
+    &__table {
+        margin: 50px auto 0 auto;
+        width: 95%;
+        border-collapse: collapse;
+    }
+
+    &__column {
+        text-align: center;
+        padding-bottom: 50px;
+    }
+}
+
+.thumbnail-image {
+    border: 1px solid #e0e0e0;
+    vertical-align: middle;
+    width: 150px;
+}
