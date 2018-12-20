@@ -1,5 +1,5 @@
 /**
- * Renders login page
+ * Renders photo page
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
@@ -8,7 +8,7 @@ import PhotosContainer from '../../containers/PhotosContainer'
 import PageTemplate from './PageTemplate'
 
 /**
- * LoginPage component
+ * PhotoPage component
  */
 const PhotoPage = React.memo(() => (
     <PageTemplate>

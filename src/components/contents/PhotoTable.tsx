@@ -8,7 +8,7 @@ import { IPhoto } from '../../interfaces/IPhoto'
 import PhotoColumn from './PhotoColumn'
 
 /**
- * Interface for rendering importer table
+ * Interface for rendering photo table
  */
 export interface IPhotoTable {
     onMount: () => void

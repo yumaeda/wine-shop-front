@@ -13,6 +13,7 @@ import FetchNewsReducer from './FetchNewsReducer'
 import FetchNewWinesReducer from './FetchNewWinesReducer'
 import FetchPhotosReducer from './FetchPhotosReducer'
 import FetchRankingWinesReducer from './FetchRankingWinesReducer'
+import FetchWinesetsReducer from './FetchWinesetsReducer'
 import FilterWinesReducer from './FilterWinesReducer'
 
 /**
@@ -27,7 +28,8 @@ const rootReducer = combineReducers<IRootState>({
     newWines: FetchNewWinesReducer,
     news: FetchNewsReducer,
     photos: FetchPhotosReducer,
-    rankingWines: FetchRankingWinesReducer
+    rankingWines: FetchRankingWinesReducer,
+    winesets: FetchWinesetsReducer
 })
 
 export default rootReducer

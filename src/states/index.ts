@@ -8,6 +8,7 @@ import { ICountry } from '../interfaces/ICountry'
 import { IImporter } from '../interfaces/IImporter'
 import { INews } from '../interfaces/INews'
 import { IPhoto } from '../interfaces/IPhoto'
+import { IWineset } from '../interfaces/IWineset'
 import { IBannerState } from './BannerState'
 import { IFilteredWineState } from './FilteredWineState'
 import { IWineState } from './WineState'
@@ -25,4 +26,5 @@ export interface IRootState {
     news: INews[]
     photos: IPhoto[]
     rankingWines: IWineState
+    winesets: IWineset[]
 }

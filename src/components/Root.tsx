@@ -14,6 +14,7 @@ import IframePage from './pages/IframePage'
 import LoginPage from './pages/LoginPage'
 import PhotoPage from './pages/PhotoPage'
 import RegistrationPage from './pages/RegistrationPage'
+import WinesetPage from './pages/WinesetPage'
 
 /**
  * Root component
@@ -27,6 +28,7 @@ export const Root: React.FC<{ store: Redux.Store }> = props => (
                     <Route path="/filter" component={FilteredWinePage} />
                     <Route path="/login" component={LoginPage} />
                     <Route path="/photo" component={PhotoPage} />
+                    <Route path="/wineset" component={WinesetPage} />
                     <Route path="/register" component={RegistrationPage} />
                     <Route path="/:page?" component={IframePage} />
                 </Switch>
