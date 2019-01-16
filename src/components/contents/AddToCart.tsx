@@ -4,9 +4,9 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
-import { IUserContext, UserContext } from '../../context/UserContext'
 import { IWine } from '../../interfaces/IWine'
 import * as CartUtility from '../../lib/CartUtility'
+import AddToCartColumn from './AddToCartColumn'
 
 /**
  * AddToCart component
@@ -38,30 +38,10 @@ export class AddToCart extends React.Component<IWine> {
                         (税抜)
                     </span>
                 </td>
-                {this.props.stock > 0 ? (
-                    <td>
-                        {'Qty: '}
-                        <input
-                            type="number"
-                            defaultValue="1"
-                            min="1"
-                            max={this.props.stock}
-                            className="wine-info__qty-input"
-                        />
-                        <UserContext.Consumer>
-                            {(ctx: IUserContext) => (
-                                <img
-                                    id={this.props.barcode_number}
-                                    className="wine-info__cart-image"
-                                    src={`${
-                                        ctx.siteUrl
-                                    }/campaign/add_to_cart.png`}
-                                    onClick={this.onAddToCart}
-                                />
-                            )}
-                        </UserContext.Consumer>
-                    </td>
-                ) : null}
+                <AddToCartColumn
+                    code={this.props.barcode_number}
+                    stock={this.props.stock}
+                />
             </tr>
         )
 
@@ -85,13 +65,5 @@ export class AddToCart extends React.Component<IWine> {
                 </tbody>
             </table>
         )
-    }
-
-    /**
-     * Event handler for onclick event for the cart image
-     */
-    private onAddToCart = (event: React.MouseEvent<HTMLElement>): void => {
-        event.preventDefault()
-        alert('Add to cart!!')
     }
 }
