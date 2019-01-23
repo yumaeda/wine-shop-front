@@ -9,9 +9,16 @@ import { IWine } from '../../interfaces/IWine'
 import { WineImage } from './WineImage'
 
 /**
+ * Props interface for WineColumn
+ */
+interface IProps {
+    wine: IWine
+}
+
+/**
  * WineColumn component
  */
-export class WineColumn extends React.Component<{ wine: IWine }> {
+export class WineColumn extends React.Component<IProps> {
     /**
      * Maximum number of display text to render
      */
@@ -21,7 +28,8 @@ export class WineColumn extends React.Component<{ wine: IWine }> {
      * Return wine column JSX to render
      */
     public render(): React.ReactElement<WineColumn> {
-        const wineId = this.props.wine.barcode_number
+        const { wine } = this.props
+        const wineId = wine.barcode_number
         const params = `?submenu=wine_detail&id=${wineId}`
 
         return (
@@ -43,7 +51,7 @@ export class WineColumn extends React.Component<{ wine: IWine }> {
 
                             <div>
                                 {this.getDisplayText(
-                                    this.getWineName(this.props.wine, ctx.code)
+                                    this.getWineName(wine, ctx.code)
                                 )}
                             </div>
                         </a>

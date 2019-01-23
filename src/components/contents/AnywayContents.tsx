@@ -8,12 +8,23 @@ import { IWine } from '../../interfaces/IWine'
 import FilteredContents from './FilteredContents'
 
 /**
+ * Props interface for AnywayContents
+ */
+interface IProps {
+    wines: IWine[]
+}
+
+/**
  * AnywayContents component
  */
-const AnywayContents = React.memo<{ wines: IWine[] }>(props => (
-    <div className="contents">
-        <FilteredContents wines={props.wines} />
-    </div>
-))
+const AnywayContents: React.FC<IProps> = props => {
+    const { wines } = props
 
-export default AnywayContents
+    return (
+        <div className="contents">
+            <FilteredContents wines={wines} />
+        </div>
+    )
+}
+
+export default React.memo(AnywayContents)

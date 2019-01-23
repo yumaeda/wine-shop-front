@@ -8,18 +8,29 @@ import { IWine } from '../../interfaces/IWine'
 import { WineInfoTable } from './WineInfoTable'
 
 /**
+ * Props interface for FilteredContents
+ */
+interface IProps {
+    wines: IWine[]
+}
+
+/**
  * FilteredContents component
  */
-const FilteredContents = React.memo<{ wines: IWine[] }>(props => (
-    <table>
-        <tbody>
-            {props.wines.map((wine: IWine) => (
-                <tr key={wine.barcode_number}>
-                    <WineInfoTable wine={wine} />
-                </tr>
-            ))}
-        </tbody>
-    </table>
-))
+const FilteredContents: React.FC<IProps> = props => {
+    const { wines } = props
 
-export default FilteredContents
+    return (
+        <table>
+            <tbody>
+                {wines.map((wine: IWine) => (
+                    <tr key={wine.barcode_number}>
+                        <WineInfoTable wine={wine} />
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+    )
+}
+
+export default React.memo(FilteredContents)

@@ -17,19 +17,19 @@ export class AddToCart extends React.Component<IWine> {
      */
     public render(): React.ReactElement<AddToCart> {
         const item: CartUtility.ICartItem = this.props
+        const { barcode_number, member_price, price, stock } = this.props
         if (!CartUtility.isPurchasable(item)) {
             return <span className="wine-info__soldout">Sold Out</span>
         }
 
-        const price = +this.props.price
         const memberPrice =
-            this.props.member_price > 0 ? +this.props.member_price : price
+            member_price > 0 ? Number(member_price) : Number(price)
 
         const cartJsx = (
             <tr>
                 <td>
                     <span className="wine-info__price">
-                        {price.toLocaleString()}
+                        {Number(price).toLocaleString()}
                     </span>
                     円 (税抜)
                     <br />
@@ -38,10 +38,7 @@ export class AddToCart extends React.Component<IWine> {
                         (税抜)
                     </span>
                 </td>
-                <AddToCartColumn
-                    code={this.props.barcode_number}
-                    stock={this.props.stock}
-                />
+                <AddToCartColumn code={barcode_number} stock={stock} />
             </tr>
         )
 

@@ -18,20 +18,20 @@ interface IProps extends WrappedFieldProps {
 /**
  * RenderField component
  */
-const RenderField = React.memo<IProps>(props => (
-    <div>
-        <label>{props.label}</label>
-        <div>
-            <input
-                {...props.input}
-                placeholder={props.placeholder}
-                type={props.type}
-            />
-            {props.meta.touched &&
-                ((props.meta.error && <span>{props.meta.error}</span>) ||
-                    (props.meta.warning && <span>{props.meta.warning}</span>))}
-        </div>
-    </div>
-))
+const RenderField: React.FC<IProps> = props => {
+    const { label, input, meta, placeholder, type } = props
 
-export default RenderField
+    return (
+        <div>
+            <label>{label}</label>
+            <div>
+                <input {...input} placeholder={placeholder} type={type} />
+                {meta.touched &&
+                    ((meta.error && <span>{meta.error}</span>) ||
+                        (meta.warning && <span>{meta.warning}</span>))}
+            </div>
+        </div>
+    )
+}
+
+export default React.memo(RenderField)

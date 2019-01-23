@@ -9,10 +9,14 @@ import { IBanner } from '../../interfaces/IBanner'
 /**
  * Banner component
  */
-const Banner = React.memo<IBanner>(props => (
-    <a href={props.pageUrl}>
-        <img src={props.image} className="banner__image" />
-    </a>
-))
+const Banner: React.FC<IBanner> = props => {
+    const { image, pageUrl } = props
 
-export default Banner
+    return (
+        <a href={pageUrl}>
+            <img src={image} className="banner__image" />
+        </a>
+    )
+}
+
+export default React.memo(Banner)

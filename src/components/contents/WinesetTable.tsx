@@ -23,11 +23,12 @@ export default class WinesetTable extends React.Component<IWinesetTable> {
      * Return JSX to render
      */
     public render() {
-        if (this.props.winesets.length <= 0) {
+        const { winesets } = this.props
+        if (winesets.length <= 0) {
             return <span>Coming soon...</span>
         }
 
-        const rows = this.convertToRows(this.props.winesets)
+        const rows = this.convertToRows(winesets)
         const jsx = rows.map((row: IWineset[], index: number) => (
             <tr key={`wineset_row_${index}`}>
                 {row.map((wineset: IWineset) => (

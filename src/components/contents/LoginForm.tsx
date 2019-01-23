@@ -17,8 +17,10 @@ class LoginForm extends React.Component<InjectedFormProps<ILogin>> {
      * Return JSX to render
      */
     public render() {
+        const { handleSubmit, pristine, reset, submitting } = this.props
+
         return (
-            <form onSubmit={this.props.handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <Field
                         label="Eメール"
@@ -40,16 +42,13 @@ class LoginForm extends React.Component<InjectedFormProps<ILogin>> {
                     />
                 </div>
                 <div>
-                    <button
-                        type="submit"
-                        disabled={this.props.pristine || this.props.submitting}
-                    >
+                    <button type="submit" disabled={pristine || submitting}>
                         Submit
                     </button>
                     <button
                         type="button"
-                        disabled={this.props.pristine || this.props.submitting}
-                        onClick={this.props.reset}
+                        disabled={pristine || submitting}
+                        onClick={reset}
                     >
                         Clear Values
                     </button>

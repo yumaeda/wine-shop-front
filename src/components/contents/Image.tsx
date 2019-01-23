@@ -27,14 +27,9 @@ interface IState {
  */
 export class Image extends React.Component<IProps, IState> {
     /**
-     * Constructor for Image
+     * Initialize state
      */
-    public constructor(props: IProps) {
-        super(props)
-        this.state = {
-            srcUrl: this.props.srcUrl
-        }
-    }
+    public state = { srcUrl: this.props.srcUrl }
 
     /**
      * Return image JSX to render

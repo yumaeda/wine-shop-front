@@ -11,7 +11,7 @@ import FooterNav, { ILink } from './FooterNav'
 /**
  * AnywayFooter component
  */
-export default class AnywayFooter extends React.Component {
+class AnywayFooter extends React.Component {
     /**
      * Information of the footer links
      */
@@ -53,3 +53,5 @@ export default class AnywayFooter extends React.Component {
         )
     }
 }
+
+export default AnywayFooter

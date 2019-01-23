@@ -25,29 +25,25 @@ interface IState {
  */
 export class SearchBox extends React.Component<IProps, IState> {
     /**
+     * Initialize state
+     */
+    public state = { pressedKey: 0 }
+    /**
      * Refers search box
      */
     private searchBox = React.createRef<HTMLInputElement>()
 
     /**
-     * Constructor for SearchBox
-     */
-    public constructor(props: IProps) {
-        super(props)
-        this.state = {
-            pressedKey: 0
-        }
-    }
-
-    /**
      * Return image JSX to render
      */
     public render(): React.ReactElement<SearchBox> {
+        const { imgDir, placeholder } = this.props
+
         return (
             <div className="search-box">
                 <input
                     type="text"
-                    placeholder={this.props.placeholder}
+                    placeholder={placeholder}
                     className="search-box__input"
                     onKeyDown={this.onKeyDown}
                     onKeyUp={this.onKeyUp}
@@ -55,7 +51,7 @@ export class SearchBox extends React.Component<IProps, IState> {
                 />
 
                 <img
-                    src={`${this.props.imgDir}/search_wine.png`}
+                    src={`${imgDir}/search_wine.png`}
                     className="search-box__button"
                     onClick={this.onSearch}
                 />

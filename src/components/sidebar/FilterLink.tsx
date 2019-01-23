@@ -22,15 +22,19 @@ export interface IFilterLink {
 /**
  * FilterLink component
  */
-const FilterLink = React.memo<IFilterLink>(props => (
-    <Link
-        to="/filter"
-        className="sidebar__link"
-        children={props.text}
-        onClick={() => {
-            props.onFilterClick()
-        }}
-    />
-))
+const FilterLink: React.FC<IFilterLink> = props => {
+    const { onFilterClick, text } = props
 
-export default FilterLink
+    return (
+        <Link
+            to="/filter"
+            className="sidebar__link"
+            children={text}
+            onClick={() => {
+                onFilterClick()
+            }}
+        />
+    )
+}
+
+export default React.memo(FilterLink)

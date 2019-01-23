@@ -23,7 +23,8 @@ export default class PhotoTable extends React.Component<IPhotoTable> {
      * Return JSX to render
      */
     public render() {
-        const rows = this.convertToRows(this.props.photos)
+        const { photos } = this.props
+        const rows = this.convertToRows(photos)
         const jsx = rows.map((row: IPhoto[], index: number) => (
             <tr key={`photo_row_${index}`}>
                 {row.map((photo: IPhoto) => (

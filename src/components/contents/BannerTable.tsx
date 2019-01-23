@@ -8,7 +8,7 @@ import { IBanner } from '../../interfaces/IBanner'
 import Banner from './Banner'
 
 /**
- * Interface for banner table
+ * Props interface for BannerTable
  */
 interface IProps {
     banners: IBanner[]
@@ -24,20 +24,20 @@ export class BannerTable extends React.Component<IProps> {
      * Return JSX to render
      */
     public render(): React.ReactElement<BannerTable> {
+        const { banners } = this.props
+
         return (
             <table>
                 <tbody>
                     <tr>
-                        {this.props.banners.map(
-                            (banner: IBanner, index: number) => (
-                                <td key={index}>
-                                    <Banner
-                                        pageUrl={banner.pageUrl}
-                                        image={banner.image}
-                                    />
-                                </td>
-                            )
-                        )}
+                        {banners.map((banner: IBanner, index: number) => (
+                            <td key={index}>
+                                <Banner
+                                    pageUrl={banner.pageUrl}
+                                    image={banner.image}
+                                />
+                            </td>
+                        ))}
                     </tr>
                 </tbody>
             </table>

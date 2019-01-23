@@ -22,13 +22,13 @@ export class Menu extends React.Component<IProps> {
      * Return JSX to render
      */
     public render(): React.ReactElement<Menu> {
-        const siteUrl = this.props.siteUrl
+        const { logined, siteUrl } = this.props
         const jsx = (
             <div className="header__menu">
                 <a href={`${siteUrl}/cart.php`} className="header__command">
                     カート
                 </a>
-                {!this.props.logined ? (
+                {!logined ? (
                     <>
                         {' '}
                         <Link to="/login" className="header__command">

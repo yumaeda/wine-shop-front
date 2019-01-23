@@ -27,8 +27,9 @@ export default class WineProperties extends React.Component<IProps> {
      * Return wine column JSX to render
      */
     public render(): React.ReactElement<WineProperties> {
+        const { capacity, region_jpn, siteUrl, type } = this.props
         const country = UrlUtility.urlify(this.props.country)
-        const countryUrl = `${this.props.siteUrl}/producers/${country}`
+        const countryUrl = `${siteUrl}/producers/${country}`
 
         return (
             <table className="wine-info__properties">
@@ -38,7 +39,7 @@ export default class WineProperties extends React.Component<IProps> {
                             タイプ
                         </td>
                         <td className="wine-info__column">
-                            {WineUtility.getJpnType(this.props.type)}
+                            {WineUtility.getJpnType(type)}
                         </td>
                     </tr>
                     <tr>
@@ -47,18 +48,16 @@ export default class WineProperties extends React.Component<IProps> {
                         </td>
                         <td className="wine-info__column">
                             <a href={countryUrl} target="country_window">
-                                {CountryInfo.getJpnName(this.props.country)}
+                                {CountryInfo.getJpnName(country)}
                             </a>
-                            <span>{` > ${this.props.region_jpn}`}</span>
+                            <span>{` > ${region_jpn}`}</span>
                         </td>
                     </tr>
                     <tr>
                         <td className="wine-info__column wine-info__label-column">
                             容量
                         </td>
-                        <td className="wine-info__column">{`${
-                            this.props.capacity
-                        }ml`}</td>
+                        <td className="wine-info__column">{`${capacity}ml`}</td>
                     </tr>
                 </tbody>
             </table>

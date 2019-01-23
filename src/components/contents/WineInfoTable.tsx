@@ -11,14 +11,21 @@ import { WineImage } from './WineImage'
 import WineProperties from './WineProperties'
 
 /**
+ * Props interface for WineInfoTable
+ */
+interface IProps {
+    wine: IWine
+}
+
+/**
  * WineInfoTable component
  */
-export class WineInfoTable extends React.Component<{ wine: IWine }> {
+export class WineInfoTable extends React.Component<IProps> {
     /**
      * Return wine column JSX to render
      */
     public render(): React.ReactElement<WineInfoTable> {
-        const wine = this.props.wine
+        const { wine } = this.props
         const detailUrl = `store/index.php?submenu=wine_detail&id=${
             wine.barcode_number
         }`

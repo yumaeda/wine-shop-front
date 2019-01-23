@@ -10,12 +10,16 @@ import PageTemplate from './PageTemplate'
 /**
  * IframePage component
  */
-const IframePage = React.memo<{ match: any }>(props => (
-    <PageTemplate>
-        <div className="contents">
-            <Iframe src={`./pages/ja/${props.match.params.page}.html`} />
-        </div>
-    </PageTemplate>
-))
+const IframePage: React.FC<{ match: any }> = props => {
+    const { match } = props
 
-export default IframePage
+    return (
+        <PageTemplate>
+            <div className="contents">
+                <Iframe src={`./pages/ja/${match.params.page}.html`} />
+            </div>
+        </PageTemplate>
+    )
+}
+
+export default React.memo(IframePage)

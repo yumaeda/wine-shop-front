@@ -24,6 +24,8 @@ export default class AnywayHeader extends React.Component<IProps> {
      * Return image JSX to render
      */
     public render(): React.ReactElement<AnywayHeader> {
+        const { logined } = this.props
+
         return (
             <header className="header">
                 <UserContext.Consumer>
@@ -49,10 +51,7 @@ export default class AnywayHeader extends React.Component<IProps> {
                                 placeholder="ワイン検索"
                                 imgDir={ctx.imgDir}
                             />
-                            <Menu
-                                logined={this.props.logined}
-                                siteUrl={ctx.siteUrl}
-                            />
+                            <Menu logined={logined} siteUrl={ctx.siteUrl} />
                         </>
                     )}
                 </UserContext.Consumer>

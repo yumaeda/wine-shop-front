@@ -24,7 +24,9 @@ export class RankingWineList extends React.Component<IRankingWineList> {
      * Return horizontal wine list JSX to render
      */
     public render(): React.ReactElement<RankingWineList> {
-        return <HorizontalWineList wines={this.props.wines} />
+        const { wines } = this.props
+
+        return <HorizontalWineList wines={wines} />
     }
 
     /**

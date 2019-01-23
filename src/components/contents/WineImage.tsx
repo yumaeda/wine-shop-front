@@ -26,24 +26,23 @@ interface IState {
  */
 export class WineImage extends React.Component<IProps, IState> {
     /**
-     * Constructor for WineImage
+     * Initialize state
      */
-    public constructor(props: IProps) {
-        super(props)
-        this.state = {
-            src: `${this.props.baseUrl}/${this.props.id}.png`
-        }
+    public state = {
+        src: `${this.props.baseUrl}/${this.props.id}.png`
     }
 
     /**
      * Return image JSX to render
      */
     public render(): React.ReactElement<WineImage> {
+        const { className, id } = this.props
+
         return (
             <img
                 src={this.state.src}
-                className={this.props.className}
-                alt={this.props.id}
+                className={className}
+                alt={id}
                 onError={this.setDefaultImage}
             />
         )

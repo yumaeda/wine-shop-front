@@ -11,17 +11,28 @@ const AnywayFooter = React.lazy(() => import('../footer/AnywayFooter'))
 const AnywayHeader = React.lazy(() => import('../header/AnywayHeader'))
 
 /**
+ * Props interface for PageTemplate
+ */
+interface IProps {
+    children: React.ReactNode
+}
+
+/**
  * PageTemplate component
  */
-const PageTemplate = React.memo<{ children: React.ReactNode }>(props => (
-    <React.Suspense fallback={<div>Loading...</div>}>
-        <AnywayHeader logined={false} />
-        <div className="container">
-            <AnywayAside />
-            {props.children}
-        </div>
-        <AnywayFooter />
-    </React.Suspense>
-))
+const PageTemplate: React.FC<IProps> = props => {
+    const { children } = props
 
-export default PageTemplate
+    return (
+        <React.Suspense fallback={<div>Loading...</div>}>
+            <AnywayHeader logined={false} />
+            <div className="container">
+                <AnywayAside />
+                {children}
+            </div>
+            <AnywayFooter />
+        </React.Suspense>
+    )
+}
+
+export default React.memo(PageTemplate)

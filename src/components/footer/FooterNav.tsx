@@ -15,20 +15,31 @@ export interface ILink {
 }
 
 /**
+ * Props interface for FooterNav
+ */
+interface IProps {
+    links: ILink[]
+}
+
+/**
  * FooterNav component
  */
-const FooterNav = React.memo<{ links: ILink[] }>(props => (
-    <ul>
-        {props.links.map((link: ILink, index: number) => (
-            <li className="footer__list-item" key={index}>
-                <Link
-                    className="footer__link"
-                    to={link.path}
-                    children={link.text}
-                />
-            </li>
-        ))}
-    </ul>
-))
+const FooterNav: React.FC<IProps> = props => {
+    const { links } = props
 
-export default FooterNav
+    return (
+        <ul>
+            {links.map((link: ILink, index: number) => (
+                <li className="footer__list-item" key={index}>
+                    <Link
+                        className="footer__link"
+                        to={link.path}
+                        children={link.text}
+                    />
+                </li>
+            ))}
+        </ul>
+    )
+}
+
+export default React.memo(FooterNav)

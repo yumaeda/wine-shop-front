@@ -24,25 +24,23 @@ interface IState {
  */
 export class Iframe extends React.Component<IProps, IState> {
     /**
-     * Constructor for Iframe
+     * Initialize state
      */
-    public constructor(props: any) {
-        super(props)
-        this.state = { height: 0 }
-    }
+    public state = { height: 0 }
 
     /**
      * Return JSX to render
      */
     public render(): React.ReactElement<Iframe> {
-        const srcUrl = this.props.src ? this.props.src : ''
+        const { src } = this.props
+        const { height } = this.state
 
         return (
             <iframe
-                src={srcUrl}
+                src={src || ''}
                 onLoad={this.setContentHeight}
                 width="100%"
-                height={this.state.height + 'px'}
+                height={height + 'px'}
                 scrolling="no"
                 frameBorder="0"
             />

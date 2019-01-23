@@ -24,7 +24,8 @@ export class NewsList extends React.Component<INewsList> {
      * Return JSX to render
      */
     public render(): React.ReactElement<NewsList> {
-        const newsRows = this.props.news.map((info: INews, index: number) => (
+        const { news } = this.props
+        const newsRows = news.map((info: INews, index: number) => (
             <tr key={index}>
                 <td
                     className={`new-info__column ${this.getDateClassName(

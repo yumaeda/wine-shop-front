@@ -24,7 +24,8 @@ export default class ImporterTable extends React.Component<IImporterTable> {
      * Return JSX to render
      */
     public render(): React.ReactElement<ImporterTable> {
-        const rows = this.convertToRows(this.props.importers)
+        const { importers } = this.props
+        const rows = this.convertToRows(importers)
         const jsx = rows.map((row: IImporter[], index: number) => (
             <tr key={`importer_row_${index}`}>
                 {row.map((importer: IImporter) => (
