@@ -12,14 +12,14 @@ import { SearchBox } from './SearchBox'
 /**
  * Interface for AnywayHeader
  */
-interface IAnywayHeader {
+interface IProps {
     logined: boolean
 }
 
 /**
  * AnywayHeader component
  */
-export default class AnywayHeader extends React.Component<IAnywayHeader> {
+export default class AnywayHeader extends React.Component<IProps> {
     /**
      * Return image JSX to render
      */

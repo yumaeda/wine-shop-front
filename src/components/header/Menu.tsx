@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 /**
  * Interface for Menu
  */
-interface IMenu {
+interface IProps {
     logined: boolean
     siteUrl: string
 }
@@ -17,7 +17,7 @@ interface IMenu {
 /**
  * Menu component
  */
-export class Menu extends React.Component<IMenu> {
+export class Menu extends React.Component<IProps> {
     /**
      * Return JSX to render
      */

@@ -8,7 +8,7 @@ import * as React from 'react'
 /**
  * Interface for Image
  */
-interface IImage {
+interface IProps {
     alt: string
     srcUrl: string
     errorUrl: string
@@ -18,18 +18,18 @@ interface IImage {
 /**
  * Interface for Image state
  */
-interface IImageState {
+interface IState {
     srcUrl: string
 }
 
 /**
  * Image component
  */
-export class Image extends React.Component<IImage, IImageState> {
+export class Image extends React.Component<IProps, IState> {
     /**
      * Constructor for Image
      */
-    public constructor(props: IImage) {
+    public constructor(props: IProps) {
         super(props)
         this.state = {
             srcUrl: this.props.srcUrl

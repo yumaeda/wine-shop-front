@@ -9,7 +9,7 @@ import { WrappedFieldProps } from 'redux-form'
 /**
  * Interface for RenderField component
  */
-interface IRenderField extends WrappedFieldProps {
+interface IProps extends WrappedFieldProps {
     label: string
     placeholder: string
     type: string
@@ -18,7 +18,7 @@ interface IRenderField extends WrappedFieldProps {
 /**
  * RenderField component
  */
-const RenderField = React.memo<IRenderField>(props => (
+const RenderField = React.memo<IProps>(props => (
     <div>
         <label>{props.label}</label>
         <div>

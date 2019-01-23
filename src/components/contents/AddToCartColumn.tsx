@@ -7,7 +7,7 @@ import * as React from 'react'
 import { IUserContext, UserContext } from '../../context/UserContext'
 
 /**
- * Props interface for AddToCartColumn
+ * Props for AddToCartColumn
  */
 interface IProps {
     code: string
@@ -17,7 +17,7 @@ interface IProps {
 /**
  * AddToCartColumn component
  */
-export default class AddToCartColumn extends React.PureComponent<IProps> {
+class AddToCartColumn extends React.PureComponent<IProps> {
     /**
      * Return JSX to render
      */
@@ -60,3 +60,5 @@ export default class AddToCartColumn extends React.PureComponent<IProps> {
         alert('Add to cart!!')
     }
 }
+
+export default AddToCartColumn

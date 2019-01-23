@@ -8,20 +8,27 @@ import * as React from 'react'
 /**
  * Interface for WineImage
  */
-interface IWineImage {
+interface IProps {
     id: string
     baseUrl: string
     className?: string
 }
 
 /**
+ * Interface for WineImage state
+ */
+interface IState {
+    src: string
+}
+
+/**
  * WineImage component
  */
-export class WineImage extends React.Component<IWineImage, { src: string }> {
+export class WineImage extends React.Component<IProps, IState> {
     /**
      * Constructor for WineImage
      */
-    public constructor(props: IWineImage) {
+    public constructor(props: IProps) {
         super(props)
         this.state = {
             src: `${this.props.baseUrl}/${this.props.id}.png`

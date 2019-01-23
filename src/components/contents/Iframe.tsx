@@ -6,16 +6,23 @@
 import * as React from 'react'
 
 /**
- * Interface for Iframe
+ * Interface for Iframe props
  */
-interface IIframe {
+interface IProps {
     src?: string
+}
+
+/**
+ * Interface for Iframe state
+ */
+interface IState {
+    height: number
 }
 
 /**
  * Iframe component
  */
-export class Iframe extends React.Component<IIframe, { height: number }> {
+export class Iframe extends React.Component<IProps, IState> {
     /**
      * Constructor for Iframe
      */

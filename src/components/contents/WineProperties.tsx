@@ -11,7 +11,7 @@ import * as WineUtility from '../../lib/WineUtility'
 /**
  * Interface fro WineProperties
  */
-interface IWineProperties {
+interface IProps {
     capacity: number
     country: string
     region_jpn: string
@@ -22,7 +22,7 @@ interface IWineProperties {
 /**
  * WineProperties component
  */
-export default class WineProperties extends React.Component<IWineProperties> {
+export default class WineProperties extends React.Component<IProps> {
     /**
      * Return wine column JSX to render
      */

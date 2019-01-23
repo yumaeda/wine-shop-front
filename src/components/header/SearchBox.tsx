@@ -8,7 +8,7 @@ import * as React from 'react'
 /**
  * Interface for SearchBox
  */
-interface ISearchBox {
+interface IProps {
     imgDir: string
     placeholder: string
 }
@@ -16,14 +16,14 @@ interface ISearchBox {
 /**
  * Interface for SearchBox state
  */
-interface ISearchBoxState {
+interface IState {
     pressedKey: number
 }
 
 /**
  * SearchBox component
  */
-export class SearchBox extends React.Component<ISearchBox, ISearchBoxState> {
+export class SearchBox extends React.Component<IProps, IState> {
     /**
      * Refers search box
      */
@@ -32,7 +32,7 @@ export class SearchBox extends React.Component<ISearchBox, ISearchBoxState> {
     /**
      * Constructor for SearchBox
      */
-    public constructor(props: ISearchBox) {
+    public constructor(props: IProps) {
         super(props)
         this.state = {
             pressedKey: 0

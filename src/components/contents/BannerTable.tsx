@@ -10,7 +10,7 @@ import Banner from './Banner'
 /**
  * Interface for banner table
  */
-interface IBannerTable {
+interface IProps {
     banners: IBanner[]
     onMount: () => void
     url: string
@@ -19,7 +19,7 @@ interface IBannerTable {
 /**
  * BannerTable component
  */
-export class BannerTable extends React.Component<IBannerTable> {
+export class BannerTable extends React.Component<IProps> {
     /**
      * Return JSX to render
      */
