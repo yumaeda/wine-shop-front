@@ -9,7 +9,7 @@ import MemberRule from './MemberRule'
 /**
  * MemberRule5 component
  */
-const MemberRule5 = React.memo(() => (
+const MemberRule5: React.FC = () => (
     <MemberRule index={5} header="個人情報の利用">
         <ol>
             <li>
@@ -59,6 +59,6 @@ const MemberRule5 = React.memo(() => (
             </li>
         </ol>
     </MemberRule>
-))
+)
 
 export default MemberRule5

@@ -24,7 +24,7 @@ import MemberRule9 from './rules/MemberRule9'
 /**
  * RegistrationPage component
  */
-const RegistrationPage = React.memo(() => (
+const RegistrationPage: React.FC = () => (
     <PageTemplate>
         <div className="contents">
             <div className="registration">
@@ -94,6 +94,6 @@ const RegistrationPage = React.memo(() => (
             </div>
         </div>
     </PageTemplate>
-))
+)
 
 export default RegistrationPage

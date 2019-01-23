@@ -9,7 +9,7 @@ import MemberRule from './MemberRule'
 /**
  * MemberRule9 component
  */
-const MemberRule9 = React.memo(() => (
+const MemberRule9: React.FC = () => (
     <MemberRule index={9} header="当社ウェブサイトの利用について">
         <u>クッキー（cookie）について</u>
         <p>
@@ -39,6 +39,6 @@ const MemberRule9 = React.memo(() => (
             による暗号化通信を使用し、会員の個人情報を外部の第三者が通信傍受できないよう対策を行っています。
         </p>
     </MemberRule>
-))
+)
 
 export default MemberRule9

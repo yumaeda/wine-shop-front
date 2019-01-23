@@ -9,7 +9,7 @@ import MemberRule from './MemberRule'
 /**
  * MemberRule4 component
  */
-const MemberRule4 = React.memo(() => (
+const MemberRule4: React.FC = () => (
     <MemberRule index={4} header="個人情報の申告">
         <ol>
             <li>
@@ -26,6 +26,6 @@ const MemberRule4 = React.memo(() => (
             </li>
         </ol>
     </MemberRule>
-))
+)
 
 export default MemberRule4

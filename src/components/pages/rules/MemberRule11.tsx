@@ -9,7 +9,7 @@ import MemberRule from './MemberRule'
 /**
  * MemberRule11 component
  */
-const MemberRule11 = React.memo(() => (
+const MemberRule11: React.FC = () => (
     <MemberRule index={11} header="会員の退会">
         <ol>
             <li>
@@ -20,6 +20,6 @@ const MemberRule11 = React.memo(() => (
             </li>
         </ol>
     </MemberRule>
-))
+)
 
 export default MemberRule11

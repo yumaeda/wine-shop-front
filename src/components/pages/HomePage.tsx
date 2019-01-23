@@ -10,12 +10,12 @@ import PageTemplate from './PageTemplate'
 /**
  * HomePage component
  */
-const HomePage = React.memo(() => (
+const HomePage: React.FC = () => (
     <PageTemplate>
         <div className="contents">
             <DefaultContents />
         </div>
     </PageTemplate>
-))
+)
 
 export default HomePage

@@ -10,12 +10,12 @@ import PageTemplate from './PageTemplate'
 /**
  * FilteredWinePage component
  */
-const FilteredWinePage = React.memo(() => (
+const FilteredWinePage: React.FC = () => (
     <PageTemplate>
         <div className="contents">
             <FilteredWinesContainer />
         </div>
     </PageTemplate>
-))
+)
 
 export default FilteredWinePage

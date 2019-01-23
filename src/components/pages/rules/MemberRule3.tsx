@@ -9,7 +9,7 @@ import MemberRule from './MemberRule'
 /**
  * MemberRule3 component
  */
-const MemberRule3 = React.memo(() => (
+const MemberRule3: React.FC = () => (
     <MemberRule index={3} header="ログインID、パスワードの管理">
         <ol>
             <li>
@@ -20,6 +20,6 @@ const MemberRule3 = React.memo(() => (
             </li>
         </ol>
     </MemberRule>
-))
+)
 
 export default MemberRule3

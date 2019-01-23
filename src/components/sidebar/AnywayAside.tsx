@@ -12,7 +12,7 @@ import { WineVintageFilterLinks } from './WineVintageFilterLinks'
 /**
  * AnywayAside component
  */
-const AnywayAside = React.memo(() => (
+const AnywayAside: React.FC = () => (
     <aside className="sidebar">
         <h2 className="sidebar__title">産地</h2>
         <CountriesContainer url="api/v1/countries" />
@@ -26,6 +26,6 @@ const AnywayAside = React.memo(() => (
         <h2 className="sidebar__title">年代</h2>
         <WineVintageFilterLinks />
     </aside>
-))
+)
 
 export default AnywayAside

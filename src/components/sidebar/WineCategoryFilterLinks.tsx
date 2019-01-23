@@ -11,7 +11,7 @@ const api = 'api/v1/wines'
 /**
  * WineCategoryFilterLinks component
  */
-const WineCategoryFilterLinks = React.memo(() => (
+const WineCategoryFilterLinks: React.FC = () => (
     <ul>
         <li className="sidebar__list-item">
             <FilterLinkContainer
@@ -47,6 +47,6 @@ const WineCategoryFilterLinks = React.memo(() => (
             />
         </li>
     </ul>
-))
+)
 
 export default WineCategoryFilterLinks

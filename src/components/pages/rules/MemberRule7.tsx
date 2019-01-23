@@ -9,7 +9,7 @@ import MemberRule from './MemberRule'
 /**
  * MemberRule7 component
  */
-const MemberRule7 = React.memo(() => (
+const MemberRule7: React.FC = () => (
     <MemberRule index={7} header="著作権などの帰属">
         <ol>
             <li>
@@ -20,6 +20,6 @@ const MemberRule7 = React.memo(() => (
             </li>
         </ol>
     </MemberRule>
-))
+)
 
 export default MemberRule7

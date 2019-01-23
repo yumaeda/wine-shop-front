@@ -9,7 +9,7 @@ import MemberRule from './MemberRule'
 /**
  * MemberRule12 component
  */
-const MemberRule12 = React.memo(() => (
+const MemberRule12: React.FC = () => (
     <MemberRule index={12} header="免責事項">
         <ol>
             <li>
@@ -47,6 +47,6 @@ const MemberRule12 = React.memo(() => (
             </li>
         </ol>
     </MemberRule>
-))
+)
 
 export default MemberRule12

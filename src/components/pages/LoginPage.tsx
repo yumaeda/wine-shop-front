@@ -16,10 +16,10 @@ const confirmUser = (login: ILogin) =>
 /**
  * LoginPage component
  */
-const LoginPage = React.memo(() => (
+const LoginPage: React.FC = () => (
     <div className="contents">
         <LoginForm onSubmit={confirmUser} />
     </div>
-))
+)
 
 export default LoginPage
