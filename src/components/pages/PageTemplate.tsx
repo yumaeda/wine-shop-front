@@ -4,6 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import * as React from 'react'
+import ErrorBoundary from '../ErrorBoundary'
 
 // Code-Splitting
 const AnywayAside = React.lazy(() => import('../sidebar/AnywayAside'))
@@ -28,7 +29,7 @@ const PageTemplate: React.FC<IProps> = props => {
             <AnywayHeader logined={false} />
             <div className="container">
                 <AnywayAside />
-                {children}
+                <ErrorBoundary>{children}</ErrorBoundary>
             </div>
             <AnywayFooter />
         </React.Suspense>
