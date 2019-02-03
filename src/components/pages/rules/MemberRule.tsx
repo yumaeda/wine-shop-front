@@ -6,21 +6,26 @@
 import * as React from 'react'
 
 /**
- * Interface for MemberRule
+ * Props interface for MemberRule
  */
-interface IMemberRule {
-    index: number
+interface IProps {
+    children: any
     header: string
+    index: number
 }
 
 /**
  * MemberRule component
  */
-const MemberRule = React.memo<IMemberRule>(props => (
-    <>
-        <h4>{`第${props.index}条: ${props.header}`}</h4>
-        <p>{props.children}</p>
-    </>
-))
+const MemberRule: React.FC<IProps> = props => {
+    const { children, header, index } = props
 
-export default MemberRule
+    return (
+        <>
+            <h4>{`第${index}条: ${header}`}</h4>
+            <p>{children}</p>
+        </>
+    )
+}
+
+export default React.memo(MemberRule)
