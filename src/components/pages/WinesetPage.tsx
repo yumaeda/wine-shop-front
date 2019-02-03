@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import PageTemplate from 'components/pages/PageTemplate'
+import WinesetsContainer from 'containers/WinesetsContainer'
 import * as React from 'react'
-import WinesetsContainer from '../../containers/WinesetsContainer'
-import PageTemplate from './PageTemplate'
 
 /**
  * WinesetPage component

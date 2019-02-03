@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import LoginForm from 'components/contents/LoginForm'
 import * as React from 'react'
-import { ILogin } from '../../interfaces/ILogin'
-import LoginForm from '../contents/LoginForm'
+import { ILogin } from 'states/ILogin'
 
 /**
  * Callback function which is executed on submit

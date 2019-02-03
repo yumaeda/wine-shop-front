@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { Image } from 'components/contents/Image'
 import * as React from 'react'
-import { IWineset } from '../../interfaces/IWineset'
-import { Image } from './Image'
+import { IWineset } from 'states/IWineset'
 
 /**
  * Wineset table column component

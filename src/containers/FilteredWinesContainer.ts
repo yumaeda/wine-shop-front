@@ -3,10 +3,10 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import AnywayContents from 'components/contents/AnywayContents'
 import { connect } from 'react-redux'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
-import AnywayContents from '../components/contents/AnywayContents'
-import { IRootState } from '../states'
+import { IRootState } from 'states'
 
 /**
  * Map Redux state to component.props

@@ -3,10 +3,10 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { Iframe } from 'components/contents/Iframe'
+import FooterNav, { ILink } from 'components/footer/FooterNav'
+import { IUserContext, UserContext } from 'context/UserContext'
 import * as React from 'react'
-import { IUserContext, UserContext } from '../../context/UserContext'
-import { Iframe } from '../contents/Iframe'
-import FooterNav, { ILink } from './FooterNav'
 
 /**
  * AnywayFooter component

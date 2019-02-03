@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import HorizontalWineList from 'components/contents/HorizontalWineList'
 import * as React from 'react'
-import { IWine } from '../../interfaces/IWine'
-import HorizontalWineList from './HorizontalWineList'
+import { IWine } from 'states/IWine'
 
 /**
  * Interface for rendering ranking wines

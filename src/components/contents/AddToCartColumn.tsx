@@ -3,8 +3,8 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { IUserContext, UserContext } from 'context/UserContext'
 import * as React from 'react'
-import { IUserContext, UserContext } from '../../context/UserContext'
 
 /**
  * Props for AddToCartColumn

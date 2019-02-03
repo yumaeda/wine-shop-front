@@ -3,10 +3,10 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import * as CountryInfo from 'lib/CountryInfo'
+import * as UrlUtility from 'lib/UrlUtility'
+import * as WineUtility from 'lib/WineUtility'
 import * as React from 'react'
-import * as CountryInfo from '../../lib/CountryInfo'
-import * as UrlUtility from '../../lib/UrlUtility'
-import * as WineUtility from '../../lib/WineUtility'
 
 /**
  * Interface fro WineProperties
@@ -27,9 +27,8 @@ export default class WineProperties extends React.Component<IProps> {
      * Return wine column JSX to render
      */
     public render(): React.ReactElement<WineProperties> {
-        const { capacity, region_jpn, siteUrl, type } = this.props
-        const country = UrlUtility.urlify(this.props.country)
-        const countryUrl = `${siteUrl}/producers/${country}`
+        const { capacity, country, region_jpn, siteUrl, type } = this.props
+        const countryUrl = `${siteUrl}/producers/${UrlUtility.urlify(country)}`
 
         return (
             <table className="wine-info__properties">

@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { WineInfoTable } from 'components/contents/WineInfoTable'
 import * as React from 'react'
-import { IWine } from '../../interfaces/IWine'
-import { WineInfoTable } from './WineInfoTable'
+import { IWine } from 'states/IWine'
 
 /**
  * Props interface for FilteredContents

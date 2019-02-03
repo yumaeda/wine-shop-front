@@ -3,11 +3,11 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { ActionTypes, createFetchAction, IFetchAction } from 'actions'
+import { WineCountryFilterLinks } from 'components/sidebar/WineCountryFilterLinks'
 import { connect } from 'react-redux'
 import * as Redux from 'redux'
-import { ActionTypes, createFetchAction, IFetchAction } from '../actions'
-import { WineCountryFilterLinks } from '../components/sidebar/WineCountryFilterLinks'
-import { IRootState } from '../states'
+import { IRootState } from 'states'
 
 /**
  * Map Redux state to component.props

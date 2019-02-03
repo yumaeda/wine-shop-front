@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { IUserContext, UserContext } from 'context/UserContext'
 import * as React from 'react'
-import { IUserContext, UserContext } from '../../context/UserContext'
-import { IImporter } from '../../interfaces/IImporter'
+import { IImporter } from 'states/IImporter'
 
 /**
  * Importer table column component

@@ -3,23 +3,23 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import PageTemplate from 'components/pages/PageTemplate'
+import MemberRule1 from 'components/pages/rules/MemberRule1'
+import MemberRule10 from 'components/pages/rules/MemberRule10'
+import MemberRule11 from 'components/pages/rules/MemberRule11'
+import MemberRule12 from 'components/pages/rules/MemberRule12'
+import MemberRule13 from 'components/pages/rules/MemberRule13'
+import MemberRule2 from 'components/pages/rules/MemberRule2'
+import MemberRule3 from 'components/pages/rules/MemberRule3'
+import MemberRule4 from 'components/pages/rules/MemberRule4'
+import MemberRule5 from 'components/pages/rules/MemberRule5'
+import MemberRule6 from 'components/pages/rules/MemberRule6'
+import MemberRule7 from 'components/pages/rules/MemberRule7'
+import MemberRule8 from 'components/pages/rules/MemberRule8'
+import MemberRule9 from 'components/pages/rules/MemberRule9'
+import { IUserContext, UserContext } from 'context/UserContext'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import { IUserContext, UserContext } from '../../context/UserContext'
-import PageTemplate from './PageTemplate'
-import MemberRule1 from './rules/MemberRule1'
-import MemberRule10 from './rules/MemberRule10'
-import MemberRule11 from './rules/MemberRule11'
-import MemberRule12 from './rules/MemberRule12'
-import MemberRule13 from './rules/MemberRule13'
-import MemberRule2 from './rules/MemberRule2'
-import MemberRule3 from './rules/MemberRule3'
-import MemberRule4 from './rules/MemberRule4'
-import MemberRule5 from './rules/MemberRule5'
-import MemberRule6 from './rules/MemberRule6'
-import MemberRule7 from './rules/MemberRule7'
-import MemberRule8 from './rules/MemberRule8'
-import MemberRule9 from './rules/MemberRule9'
 
 /**
  * RegistrationPage component

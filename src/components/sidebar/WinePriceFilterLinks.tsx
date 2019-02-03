@@ -3,8 +3,8 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import FilterLinkContainer from 'containers/FilterLinkContainer'
 import * as React from 'react'
-import FilterLinkContainer from '../../containers/FilterLinkContainer'
 
 /**
  * WinePriceFilterLinks component

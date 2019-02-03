@@ -3,12 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { ActionTypes } from 'actions'
 import * as Redux from 'redux'
-import { ActionTypes } from '../actions'
-import {
-    IFilteredWineState,
-    initFilteredWines
-} from '../states/FilteredWineState'
+import { IFilteredWineState, initFilteredWines } from 'states/FilteredWineState'
 
 /**
  * Reducer for fetching filtered wines

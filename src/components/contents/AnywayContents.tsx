@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import FilteredContents from 'components/contents/FilteredContents'
 import * as React from 'react'
-import { IWine } from '../../interfaces/IWine'
-import FilteredContents from './FilteredContents'
+import { IWine } from 'states/IWine'
 
 /**
  * Props interface for AnywayContents

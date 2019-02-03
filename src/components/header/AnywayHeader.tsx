@@ -3,11 +3,11 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { Menu } from 'components/header/Menu'
+import { SearchBox } from 'components/header/SearchBox'
+import { IUserContext, UserContext } from 'context/UserContext'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import { IUserContext, UserContext } from '../../context/UserContext'
-import { Menu } from './Menu'
-import { SearchBox } from './SearchBox'
 
 /**
  * Interface for AnywayHeader

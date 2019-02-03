@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { ActionTypes } from 'actions'
 import * as Redux from 'redux'
-import { ActionTypes } from '../actions'
-import { IWineset } from '../interfaces/IWineset'
+import { IWineset } from 'states/IWineset'
 
 /**
  * Reducer for fetching winesets

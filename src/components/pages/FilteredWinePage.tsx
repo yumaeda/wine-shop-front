@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import PageTemplate from 'components/pages/PageTemplate'
+import FilteredWinesContainer from 'containers/FilteredWinesContainer'
 import * as React from 'react'
-import FilteredWinesContainer from '../../containers/FilteredWinesContainer'
-import PageTemplate from './PageTemplate'
 
 /**
  * FilteredWinePage component

@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import DefaultContents from 'components/contents/DefaultContents'
+import PageTemplate from 'components/pages/PageTemplate'
 import * as React from 'react'
-import DefaultContents from '../contents/DefaultContents'
-import PageTemplate from './PageTemplate'
 
 /**
  * HomePage component

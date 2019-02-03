@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 
-import { IWine } from '../interfaces/IWine'
+import { IWine } from 'states/IWine'
 
 /**
  * Interface for wine state

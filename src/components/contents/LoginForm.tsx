@@ -3,11 +3,11 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import RenderField from 'components/contents/RenderField'
 import * as React from 'react'
 import { Field, InjectedFormProps, reduxForm } from 'redux-form'
-import { ILogin } from '../../interfaces/ILogin'
+import { ILogin } from 'states/ILogin'
 import { email, required } from '../../validators'
-import RenderField from './RenderField'
 
 /**
  * LoginForm component

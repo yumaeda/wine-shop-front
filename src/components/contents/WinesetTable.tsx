@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import WinesetColumn from 'components/contents/WinesetColumn'
 import * as React from 'react'
-import { IWineset } from '../../interfaces/IWineset'
-import WinesetColumn from './WinesetColumn'
+import { IWineset } from 'states/IWineset'
 
 /**
  * Interface for rendering wineset table

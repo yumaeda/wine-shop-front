@@ -3,13 +3,15 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import ErrorBoundary from 'components/ErrorBoundary'
+import { IUserContext, UserContext } from 'context/UserContext'
 import * as React from 'react'
-import ErrorBoundary from '../ErrorBoundary'
+import { Redirect } from 'react-router-dom'
 
 // Code-Splitting
-const AnywayAside = React.lazy(() => import('../sidebar/AnywayAside'))
-const AnywayFooter = React.lazy(() => import('../footer/AnywayFooter'))
-const AnywayHeader = React.lazy(() => import('../header/AnywayHeader'))
+const AnywayAside = React.lazy(() => import('components/sidebar/AnywayAside'))
+const AnywayFooter = React.lazy(() => import('components/footer/AnywayFooter'))
+const AnywayHeader = React.lazy(() => import('components/header/AnywayHeader'))
 
 /**
  * Props interface for PageTemplate
@@ -25,14 +27,22 @@ const PageTemplate: React.FC<IProps> = props => {
     const { children } = props
 
     return (
-        <React.Suspense fallback={<div>Loading...</div>}>
-            <AnywayHeader logined={false} />
-            <div className="container">
-                <AnywayAside />
-                <ErrorBoundary>{children}</ErrorBoundary>
-            </div>
-            <AnywayFooter />
-        </React.Suspense>
+        <UserContext.Consumer>
+            {(ctx: IUserContext) => {
+                return ctx.isLogined ? (
+                    <React.Suspense fallback={<div>Loading...</div>}>
+                        <AnywayHeader logined={ctx.isLogined} />
+                        <div className="container">
+                            <AnywayAside />
+                            <ErrorBoundary>{children}</ErrorBoundary>
+                        </div>
+                        <AnywayFooter />
+                    </React.Suspense>
+                ) : (
+                    <Redirect to="/login" />
+                )
+            }}
+        </UserContext.Consumer>
     )
 }
 

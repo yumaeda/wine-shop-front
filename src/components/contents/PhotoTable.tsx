@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import PhotoColumn from 'components/contents/PhotoColumn'
 import * as React from 'react'
-import { IPhoto } from '../../interfaces/IPhoto'
-import PhotoColumn from './PhotoColumn'
+import { IPhoto } from 'states/IPhoto'
 
 /**
  * Interface for rendering photo table

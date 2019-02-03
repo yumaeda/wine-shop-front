@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import ImporterColumn from 'components/contents/ImporterColumn'
 import * as React from 'react'
-import { IImporter } from '../../interfaces/IImporter'
-import ImporterColumn from './ImporterColumn'
+import { IImporter } from 'states/IImporter'
 
 /**
  * Interface for rendering importer table

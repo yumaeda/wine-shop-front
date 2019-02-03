@@ -3,11 +3,11 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { ActionTypes, createFetchAction, IFetchAction } from 'actions'
+import { NewsList } from 'components/contents/NewsList'
 import { connect } from 'react-redux'
 import * as Redux from 'redux'
-import { ActionTypes, createFetchAction, IFetchAction } from '../actions'
-import { NewsList } from '../components/contents/NewsList'
-import { IRootState } from '../states'
+import { IRootState } from 'states'
 
 /**
  * Map Redux state to component.props

@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { ActionTypes } from 'actions'
 import * as Redux from 'redux'
-import { ActionTypes } from '../actions'
-import { IImporter } from '../interfaces/IImporter'
+import { IImporter } from 'states/IImporter'
 
 /**
  * Reducer for fetching importers

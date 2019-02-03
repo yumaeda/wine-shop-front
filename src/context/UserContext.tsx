@@ -11,6 +11,7 @@ import * as React from 'react'
 export interface IUserContext {
     code: string
     imgDir: string
+    isLogined: boolean
     siteUrl: string
 }
 
@@ -20,6 +21,7 @@ export interface IUserContext {
 export const defaultContext: IUserContext = {
     code: 'ja',
     imgDir: 'http://anyway-grapes.jp/images',
+    isLogined: true,
     siteUrl: 'http://anyway-grapes.jp'
 }
 

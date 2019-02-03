@@ -3,10 +3,10 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { WineImage } from 'components/contents/WineImage'
+import { IUserContext, UserContext } from 'context/UserContext'
 import * as React from 'react'
-import { IUserContext, UserContext } from '../../context/UserContext'
-import { IWine } from '../../interfaces/IWine'
-import { WineImage } from './WineImage'
+import { IWine } from 'states/IWine'
 
 /**
  * Props interface for WineColumn

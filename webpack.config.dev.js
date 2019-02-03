@@ -23,6 +23,15 @@ module.exports = [
         ]
     },
     resolve: {
+	alias: {
+	    'actions': path.resolve(__dirname, 'src/actions'),
+	    'components': path.resolve(__dirname, 'src/components'),
+	    'containers': path.resolve(__dirname, 'src/containers'),
+	    'context': path.resolve(__dirname, 'src/context'),
+	    'lib': path.resolve(__dirname, 'src/lib'),
+	    'reducers': path.resolve(__dirname, 'src/reducers'),
+	    'states': path.resolve(__dirname, 'src/states')
+	},
         extensions: [ '.ts', '.tsx', '.js', '.json' ]
     },
     plugins: [

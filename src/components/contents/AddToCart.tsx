@@ -3,10 +3,10 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import AddToCartColumn from 'components/contents/AddToCartColumn'
+import * as CartUtility from 'lib/CartUtility'
 import * as React from 'react'
-import { IWine } from '../../interfaces/IWine'
-import * as CartUtility from '../../lib/CartUtility'
-import AddToCartColumn from './AddToCartColumn'
+import { IWine } from 'states/IWine'
 
 /**
  * AddToCart component

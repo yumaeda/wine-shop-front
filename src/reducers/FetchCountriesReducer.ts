@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { ActionTypes } from 'actions'
 import * as Redux from 'redux'
-import { ActionTypes } from '../actions'
-import { ICountry } from '../interfaces/ICountry'
+import { ICountry } from 'states/ICountry'
 
 /**
  * Reducer for fetching countries

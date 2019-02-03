@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { ActionTypes } from 'actions'
 import * as Redux from 'redux'
-import { ActionTypes } from '../actions'
-import { IPhoto } from '../interfaces/IPhoto'
+import { IPhoto } from 'states/IPhoto'
 
 /**
  * Reducer for fetching photos

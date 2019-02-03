@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 
-import { IWineState } from './WineState'
+import { IWineState } from 'states/WineState'
 
 /**
  * String literal types for filter

@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { ActionTypes } from 'actions'
 import * as Redux from 'redux'
-import { ActionTypes } from '../actions'
-import { INews } from '../interfaces/INews'
+import { INews } from 'states/INews'
 
 /**
  * Reducer for fetching news

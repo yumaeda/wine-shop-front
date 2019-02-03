@@ -1,6 +1,6 @@
+import { ActionTypes } from 'actions'
 import { SagaIterator } from 'redux-saga'
 import { all, call, put, takeEvery } from 'redux-saga/effects'
-import { ActionTypes } from '../actions'
 
 /**
  * Saga for fetching wine and send the specified action

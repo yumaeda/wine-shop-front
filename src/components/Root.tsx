@@ -3,18 +3,18 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import FilteredWinePage from 'components/pages/FilteredWinePage'
+import HomePage from 'components/pages/HomePage'
+import IframePage from 'components/pages/IframePage'
+import LoginPage from 'components/pages/LoginPage'
+import PhotoPage from 'components/pages/PhotoPage'
+import RegistrationPage from 'components/pages/RegistrationPage'
+import WinesetPage from 'components/pages/WinesetPage'
+import { defaultContext, UserContext } from 'context/UserContext'
 import * as React from 'react'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import * as Redux from 'redux'
-import { defaultContext, UserContext } from '../context/UserContext'
-import FilteredWinePage from './pages/FilteredWinePage'
-import HomePage from './pages/HomePage'
-import IframePage from './pages/IframePage'
-import LoginPage from './pages/LoginPage'
-import PhotoPage from './pages/PhotoPage'
-import RegistrationPage from './pages/RegistrationPage'
-import WinesetPage from './pages/WinesetPage'
 
 /**
  * Root component

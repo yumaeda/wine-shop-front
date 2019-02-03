@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { Iframe } from 'components/contents/Iframe'
+import PageTemplate from 'components/pages/PageTemplate'
 import * as React from 'react'
-import { Iframe } from '../contents/Iframe'
-import PageTemplate from './PageTemplate'
 
 /**
  * IframePage component

@@ -3,14 +3,14 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import FeatureBannersContainer from 'containers/FeatureBannersContainer'
+import ImportersContainer from 'containers/ImportersContainer'
+import NewsContainer from 'containers/NewsContainer'
+import NewWinesContainer from 'containers/NewWinesContainer'
+import OtherDrinkBannersContainer from 'containers/OtherDrinkBannersContainer'
+import RankingWinesContainer from 'containers/RankingWinesContainer'
+import SaleBannersContainer from 'containers/SaleBannersContainer'
 import * as React from 'react'
-import FeatureBannersContainer from '../../containers/FeatureBannersContainer'
-import ImportersContainer from '../../containers/ImportersContainer'
-import NewsContainer from '../../containers/NewsContainer'
-import NewWinesContainer from '../../containers/NewWinesContainer'
-import OtherDrinkBannersContainer from '../../containers/OtherDrinkBannersContainer'
-import RankingWinesContainer from '../../containers/RankingWinesContainer'
-import SaleBannersContainer from '../../containers/SaleBannersContainer'
 
 /**
  * DefaultContents component

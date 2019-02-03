@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import PageTemplate from 'components/pages/PageTemplate'
+import PhotosContainer from 'containers/PhotosContainer'
 import * as React from 'react'
-import PhotosContainer from '../../containers/PhotosContainer'
-import PageTemplate from './PageTemplate'
 
 /**
  * PhotoPage component

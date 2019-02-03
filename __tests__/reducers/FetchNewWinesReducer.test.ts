@@ -1,18 +1,18 @@
-import FetchNewWinesReducer from '../../src/reducers/FetchNewWinesReducer';
-import { IWines, initWines } from '../../src/states';
-import { ActionTypes } from '../../src/actions';
+import { ActionTypes } from 'actions'
+import FetchNewWinesReducer from 'reducers/FetchNewWinesReducer'
+import { initWines, IWines } from 'states'
 
 /**
  * Pass an action with empty type with an ititial state
  */
 test('Empty action type', () => {
     const action = {
-        wines: [],
-        type: ''
+        type: '',
+        wines: []
     }
 
-    expect(FetchNewWinesReducer(initWines, action)).toEqual(initWines);
-});
+    expect(FetchNewWinesReducer(initWines, action)).toEqual(initWines)
+})
 
 /**
  * Pass an action with FETCH_NEW_WINES_SUCCESS type with an ititial state
@@ -27,7 +27,7 @@ test('Succeeded fetching new wines', () => {
     const action = {
         type: ActionTypes.FETCH_NEW_WINES_SUCCESS,
         wines
-    };
+    }
 
-    expect(FetchNewWinesReducer(initWines, action)).toEqual({ wines });
-});
+    expect(FetchNewWinesReducer(initWines, action)).toEqual({ wines })
+})

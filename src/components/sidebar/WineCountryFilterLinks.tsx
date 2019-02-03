@@ -3,11 +3,11 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { IUserContext, UserContext } from 'context/UserContext'
+import * as CountryInfo from 'lib/CountryInfo'
+import * as UrlUtility from 'lib/UrlUtility'
 import * as React from 'react'
-import { IUserContext, UserContext } from '../../context/UserContext'
-import { ICountry } from '../../interfaces/ICountry'
-import * as CountryInfo from '../../lib/CountryInfo'
-import * as UrlUtility from '../../lib/UrlUtility'
+import { ICountry } from 'states/ICountry'
 
 /**
  * Interface for rendering countries

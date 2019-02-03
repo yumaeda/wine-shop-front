@@ -3,11 +3,11 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import WineCategoryFilterLinks from 'components/sidebar/WineCategoryFilterLinks'
+import { WinePriceFilterLinks } from 'components/sidebar/WinePriceFilterLinks'
+import { WineVintageFilterLinks } from 'components/sidebar/WineVintageFilterLinks'
+import CountriesContainer from 'containers/CountriesContainer'
 import * as React from 'react'
-import CountriesContainer from '../../containers/CountriesContainer'
-import WineCategoryFilterLinks from './WineCategoryFilterLinks'
-import { WinePriceFilterLinks } from './WinePriceFilterLinks'
-import { WineVintageFilterLinks } from './WineVintageFilterLinks'
 
 /**
  * AnywayAside component

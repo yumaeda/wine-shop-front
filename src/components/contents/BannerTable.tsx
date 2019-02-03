@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import Banner from 'components/contents/Banner'
 import * as React from 'react'
-import { IBanner } from '../../interfaces/IBanner'
-import Banner from './Banner'
+import { IBanner } from 'states/IBanner'
 
 /**
  * Props interface for BannerTable

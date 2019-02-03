@@ -3,9 +3,9 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import { WineColumn } from 'components/contents/WineColumn'
 import * as React from 'react'
-import { IWine } from '../../interfaces/IWine'
-import { WineColumn } from './WineColumn'
+import { IWine } from 'states/IWine'
 
 /**
  * Props interface for HorizontalWineList

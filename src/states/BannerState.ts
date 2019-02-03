@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 
-import { IBanner } from '../interfaces/IBanner'
+import { IBanner } from 'states/IBanner'
 
 /**
  * Interface for feature banner state
