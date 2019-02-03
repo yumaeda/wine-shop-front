@@ -45,8 +45,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " TSX plugins
-Plugin ‘leafgarland/typescript-vim’
-Plugin ‘peitalin/vim-jsx-typescript’
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
 
 call vundle#end()
 
