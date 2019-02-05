@@ -3,6 +3,7 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import LocalStorage from 'lib/LocalStorage'
 import * as React from 'react'
 
 /**
@@ -21,7 +22,7 @@ export interface IUserContext {
 export const defaultContext: IUserContext = {
     code: 'ja',
     imgDir: 'http://anyway-grapes.jp/images',
-    isLogined: true,
+    isLogined: LocalStorage.get('isLogined') || false,
     siteUrl: 'http://anyway-grapes.jp'
 }
 

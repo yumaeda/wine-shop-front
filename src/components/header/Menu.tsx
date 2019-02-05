@@ -3,6 +3,7 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
+import LogoutLink from 'components/header/LogoutLink'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -41,12 +42,7 @@ export class Menu extends React.Component<IProps> {
                 ) : (
                     <>
                         {' '}
-                        <a
-                            href={`${siteUrl}/logout.php`}
-                            className="header__command"
-                        >
-                            ログアウト
-                        </a>{' '}
+                        <LogoutLink />{' '}
                         <a
                             href={`${siteUrl}/customer_info.php`}
                             className="header__command"
