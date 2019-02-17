@@ -2,8 +2,9 @@
     "defaultSeverity": "error",
     "extends": [
         "tslint:recommended",
-        "tslint-config-standard",
-        "tslint-config-prettier"
+	"tslint-config-standard",
+        "tslint-config-prettier",
+	"tslint-react-hooks"
     ],
     "jsRules": {},
     "rules": {
@@ -18,7 +19,8 @@
         ],
         "quotemark": [ true, "single", "jsx-double" ],
         "semicolon": [ "false", "never" ],
-        "trailing-comma": false
+        "trailing-comma": false,
+	"react-hooks-nesting": "error"
     },
     "rulesDirectory": [
         "tslint-plugin-prettier"

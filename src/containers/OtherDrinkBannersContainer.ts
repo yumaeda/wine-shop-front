@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import { ActionTypes, createFetchAction, IFetchAction } from 'actions'
-import { BannerTable } from 'components/contents/BannerTable'
+import BannerTable from 'components/contents/BannerTable'
 import { connect } from 'react-redux'
 import * as Redux from 'redux'
 import { IRootState } from 'states'

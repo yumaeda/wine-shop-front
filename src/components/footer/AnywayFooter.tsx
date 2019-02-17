@@ -3,7 +3,7 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import { Iframe } from 'components/contents/Iframe'
+import Iframe from 'components/contents/Iframe'
 import FooterNav, { ILink } from 'components/footer/FooterNav'
 import { IUserContext, UserContext } from 'context/UserContext'
 import * as React from 'react'

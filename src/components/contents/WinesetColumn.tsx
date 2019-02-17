@@ -3,7 +3,7 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import { Image } from 'components/contents/Image'
+import Image from 'components/contents/Image'
 import * as React from 'react'
 import { IWineset } from 'states/IWineset'
 

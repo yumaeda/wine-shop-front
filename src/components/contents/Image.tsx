@@ -16,44 +16,20 @@ interface IProps {
 }
 
 /**
- * Interface for Image state
- */
-interface IState {
-    srcUrl: string
-}
-
-/**
  * Image component
  */
-export class Image extends React.Component<IProps, IState> {
-    /**
-     * Initialize state
-     */
-    public state = { srcUrl: this.props.srcUrl }
+const Image: React.FC<IProps> = props => {
+    const [srcUrl, setSrcUrl] = React.useState(props.srcUrl)
+    const { alt, className, errorUrl } = props
 
-    /**
-     * Return image JSX to render
-     */
-    public render() {
-        const { alt, className } = this.props
-        const { srcUrl } = this.state
-
-        return (
-            <img
-                src={srcUrl}
-                className={className}
-                alt={alt}
-                onError={this.handleError}
-            />
-        )
-    }
-
-    /**
-     * Event handler for onerror event
-     */
-    private handleError = () => {
-        this.setState({
-            srcUrl: this.props.errorUrl
-        })
-    }
+    return (
+        <img
+            src={srcUrl}
+            className={className}
+            alt={alt}
+            onError={() => setSrcUrl(errorUrl)}
+        />
+    )
 }
+
+export default React.memo(Image)

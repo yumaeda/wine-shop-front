@@ -3,7 +3,7 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import { Iframe } from 'components/contents/Iframe'
+import Iframe from 'components/contents/Iframe'
 import PageTemplate from 'components/pages/PageTemplate'
 import * as React from 'react'
 

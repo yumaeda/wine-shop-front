@@ -19,35 +19,30 @@ interface IProps {
 /**
  * BannerTable component
  */
-export class BannerTable extends React.Component<IProps> {
-    /**
-     * Return JSX to render
-     */
-    public render(): React.ReactElement<BannerTable> {
-        const { banners } = this.props
+const BannerTable: React.FC<IProps> = props => {
+    const { banners, onMount } = props
 
-        return (
-            <table>
-                <tbody>
-                    <tr>
-                        {banners.map((banner: IBanner, index: number) => (
-                            <td key={index}>
-                                <Banner
-                                    pageUrl={banner.pageUrl}
-                                    image={banner.image}
-                                />
-                            </td>
-                        ))}
-                    </tr>
-                </tbody>
-            </table>
-        )
-    }
+    // Similar to componentDidMount and componentDidUpdate:
+    React.useEffect(() => {
+        onMount()
+    })
 
-    /**
-     * Dispatch FETCH_START action
-     */
-    public componentDidMount() {
-        this.props.onMount()
-    }
+    return (
+        <table>
+            <tbody>
+                <tr>
+                    {banners.map((banner: IBanner, index: number) => (
+                        <td key={index}>
+                            <Banner
+                                pageUrl={banner.pageUrl}
+                                image={banner.image}
+                            />
+                        </td>
+                    ))}
+                </tr>
+            </tbody>
+        </table>
+    )
 }
+
+export default React.memo(BannerTable)

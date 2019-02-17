@@ -15,45 +15,20 @@ interface IProps {
 }
 
 /**
- * Interface for WineImage state
- */
-interface IState {
-    src: string
-}
-
-/**
  * WineImage component
  */
-export class WineImage extends React.Component<IProps, IState> {
-    /**
-     * Initialize state
-     */
-    public state = {
-        src: `${this.props.baseUrl}/${this.props.id}.png`
-    }
+const WineImage: React.FC<IProps> = props => {
+    const { baseUrl, className, id } = props
+    const [src, setSrc] = React.useState(`${baseUrl}/${id}.png`)
 
-    /**
-     * Return image JSX to render
-     */
-    public render(): React.ReactElement<WineImage> {
-        const { className, id } = this.props
-
-        return (
-            <img
-                src={this.state.src}
-                className={className}
-                alt={id}
-                onError={this.setDefaultImage}
-            />
-        )
-    }
-
-    /**
-     * Event handler for onerror event
-     */
-    private setDefaultImage = (): void => {
-        this.setState({
-            src: `${this.props.baseUrl}/no_wine_photo.png`
-        })
-    }
+    return (
+        <img
+            src={src}
+            className={className}
+            alt={id}
+            onError={() => setSrc(`${baseUrl}/no_wine_photo.png`)}
+        />
+    )
 }
+
+export default React.memo(WineImage)

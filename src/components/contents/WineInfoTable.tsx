@@ -4,7 +4,7 @@
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
 import { AddToCart } from 'components/contents/AddToCart'
-import { WineImage } from 'components/contents/WineImage'
+import WineImage from 'components/contents/WineImage'
 import WineProperties from 'components/contents/WineProperties'
 import { IUserContext, UserContext } from 'context/UserContext'
 import * as React from 'react'

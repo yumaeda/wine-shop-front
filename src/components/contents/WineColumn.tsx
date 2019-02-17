@@ -3,7 +3,7 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-import { WineImage } from 'components/contents/WineImage'
+import WineImage from 'components/contents/WineImage'
 import { IUserContext, UserContext } from 'context/UserContext'
 import * as React from 'react'
 import { IWine } from 'states/IWine'
