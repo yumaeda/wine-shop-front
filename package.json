@@ -1,5 +1,5 @@
 {
-  "name": "anyway-react",
+  "name": "wine-shop-front",
   "version": "1.0.0",
   "description": "Demo & Test Repository for React",
   "main": "index.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yumaeda/anyway-react.git"
+    "url": "git+https://github.com/yumaeda/wine-shop-front.git"
   },
   "prettier": {
     "trailingComma": "none",
@@ -38,9 +38,9 @@
   "author": "Yukitaka Maeda",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yumaeda/anyway-react/issues"
+    "url": "https://github.com/yumaeda/wine-shop-front/issues"
   },
-  "homepage": "https://github.com/yumaeda/anyway-react#readme",
+  "homepage": "https://github.com/yumaeda/wine-shop-front#readme",
   "dependencies": {
     "moment": "^2.24.0",
     "react": "^16.8.2",
